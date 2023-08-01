@@ -1,0 +1,462 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model FeedStatus {
+  id            String   @id @unique @default(uuid())
+  LastRefreshed DateTime @updatedAt
+  Message       String
+}
+
+model Author {
+  id             String   @id @unique @default(uuid())
+  Name           String   @db.VarChar(18)
+  Slug           String   @unique
+  ProfilePicture String   @unique
+  Designation    String
+  DescriptionOne String   @db.VarChar(160)
+  DescriptionTwo String   @db.VarChar(500)
+  JoinedAt       DateTime @unique @default(now())
+
+  AuthorNumber Int @unique @default(autoincrement())
+
+  // Socail Media
+
+  Email     String  @unique
+  Twitter   String?
+  Instagram String?
+  Linktree  String?
+  Linkedin  String?
+
+  // Stroy Relation
+
+  HeadlinerStory         HeadlinerStory[]
+  SideStory              SideStory[]
+  MainStory              MainStory[]
+  TechHeadliner          TechHeadliner[]
+  NewsHeadliner          NewsHeadliner[]
+  EntertainmentHeadliner EntertainmentHeadliner[]
+  ReviewHeadliner        ReviewHeadliner[]
+  TopStories             TopStories[]
+}
+
+model HeadlinerStory {
+  id String @id @unique @default(uuid())
+
+  // Dedicated Page content
+
+  Title            String @unique @db.VarChar(60)
+  Description      String @db.VarChar(140)
+  // Author Relation
+  Author           Author @relation(fields: [authorId], references: [id])
+  authorId         String
+  // Category Relation 
+  Category         Genre  @relation(fields: [genreId], references: [id])
+  genreId          String
+  Slug             String @unique
+  Tag              String
+  Image            String
+  ImageDescription String @db.VarChar(100)
+
+  // Miscllaneous Data
+
+  BackgroundColor Colors   @default(LEAF)
+  PostNumber      Int      @unique @default(autoincrement())
+  Reads           Int      @default(0)
+  CreatedAt       DateTime @default(now())
+  UpdatedAt       DateTime @updatedAt
+
+  // Thumb Contnet
+
+  ThumbTitle            String @unique @db.VarChar(60)
+  ThumbDescription      String @db.VarChar(105)
+  ThumbImage            String
+  ThumbImageDescription String @db.VarChar(100)
+
+  // Story Content 
+
+  IntroPara String  @db.VarChar(450)
+  ParaTwo   String  @db.VarChar(450)
+  ParaThree String  @db.VarChar(450)
+  ParaFour  String  @db.VarChar(450)
+  ParaFive  String? @db.VarChar(450)
+  ParaSix   String? @db.VarChar(450)
+  ParaSeven String  @db.VarChar(400)
+  ParaEight String  @db.VarChar(450)
+
+  AsideText String @db.VarChar(120)
+
+  @@index([authorId])
+  @@index([genreId])
+}
+
+model TechHeadliner {
+  id String @id @unique @default(uuid())
+
+  // Dedicated Page content
+
+  Title            String @unique @db.VarChar(60)
+  Description      String @db.VarChar(140)
+  // Author Relation
+  Author           Author @relation(fields: [authorId], references: [id])
+  authorId         String
+  // Category Relation 
+  Category         Genre  @relation(fields: [genreId], references: [id])
+  genreId          String
+  Slug             String @unique
+  Tag              String
+  Image            String
+  ImageDescription String @db.VarChar(100)
+
+  // Miscllaneous Data
+
+  BackgroundColor Colors   @default(LEAF)
+  PostNumber      Int      @unique @default(autoincrement())
+  Reads           Int      @default(0)
+  CreatedAt       DateTime @default(now())
+  UpdatedAt       DateTime @updatedAt
+
+  // Thumb Contnet
+
+  ThumbTitle            String @unique @db.VarChar(60)
+  ThumbDescription      String @db.VarChar(105)
+  ThumbImage            String
+  ThumbImageDescription String @db.VarChar(100)
+
+  // Story Content 
+
+  IntroPara String  @db.VarChar(450)
+  ParaTwo   String  @db.VarChar(450)
+  ParaThree String  @db.VarChar(450)
+  ParaFour  String  @db.VarChar(450)
+  ParaFive  String? @db.VarChar(450)
+  ParaSix   String? @db.VarChar(450)
+  ParaSeven String  @db.VarChar(400)
+  ParaEight String  @db.VarChar(450)
+
+  AsideText String @db.VarChar(120)
+
+  @@index([authorId])
+  @@index([genreId])
+}
+
+model NewsHeadliner {
+  id String @id @unique @default(uuid())
+
+  // Dedicated Page content
+
+  Title            String @unique @db.VarChar(60)
+  Description      String @db.VarChar(140)
+  // Author Relation
+  Author           Author @relation(fields: [authorId], references: [id])
+  authorId         String
+  // Category Relation 
+  Category         Genre  @relation(fields: [genreId], references: [id])
+  genreId          String
+  Slug             String @unique
+  Tag              String
+  Image            String
+  ImageDescription String @db.VarChar(100)
+
+  // Miscllaneous Data
+
+  BackgroundColor Colors   @default(LEAF)
+  PostNumber      Int      @unique @default(autoincrement())
+  Reads           Int      @default(0)
+  CreatedAt       DateTime @default(now())
+  UpdatedAt       DateTime @updatedAt
+
+  // Thumb Contnet
+
+  ThumbTitle            String @unique @db.VarChar(60)
+  ThumbDescription      String @db.VarChar(105)
+  ThumbImage            String
+  ThumbImageDescription String @db.VarChar(100)
+
+  // Story Content 
+
+  IntroPara String  @db.VarChar(450)
+  ParaTwo   String  @db.VarChar(450)
+  ParaThree String  @db.VarChar(450)
+  ParaFour  String  @db.VarChar(450)
+  ParaFive  String? @db.VarChar(450)
+  ParaSix   String? @db.VarChar(450)
+  ParaSeven String  @db.VarChar(400)
+  ParaEight String  @db.VarChar(450)
+
+  AsideText String @db.VarChar(120)
+
+  @@index([authorId])
+  @@index([genreId])
+}
+
+model EntertainmentHeadliner {
+  id String @id @unique @default(uuid())
+
+  // Dedicated Page content
+
+  Title            String @unique @db.VarChar(60)
+  Description      String @db.VarChar(140)
+  // Author Relation
+  Author           Author @relation(fields: [authorId], references: [id])
+  authorId         String
+  // Category Relation 
+  Category         Genre  @relation(fields: [genreId], references: [id])
+  genreId          String
+  Slug             String @unique
+  Tag              String
+  Image            String
+  ImageDescription String @db.VarChar(100)
+
+  // Miscllaneous Data
+
+  BackgroundColor Colors   @default(LEAF)
+  PostNumber      Int      @unique @default(autoincrement())
+  Reads           Int      @default(0)
+  CreatedAt       DateTime @default(now())
+  UpdatedAt       DateTime @updatedAt
+
+  // Thumb Contnet
+
+  ThumbTitle            String @unique @db.VarChar(60)
+  ThumbDescription      String @db.VarChar(105)
+  ThumbImage            String
+  ThumbImageDescription String @db.VarChar(100)
+
+  // Story Content 
+
+  IntroPara String  @db.VarChar(450)
+  ParaTwo   String  @db.VarChar(450)
+  ParaThree String  @db.VarChar(450)
+  ParaFour  String  @db.VarChar(450)
+  ParaFive  String? @db.VarChar(450)
+  ParaSix   String? @db.VarChar(450)
+  ParaSeven String  @db.VarChar(400)
+  ParaEight String  @db.VarChar(450)
+
+  AsideText String @db.VarChar(120)
+
+  @@index([authorId])
+  @@index([genreId])
+}
+
+model ReviewHeadliner {
+  id String @id @unique @default(uuid())
+
+  // Dedicated Page content
+
+  Title            String @unique @db.VarChar(60)
+  Description      String @db.VarChar(140)
+  // Author Relation
+  Author           Author @relation(fields: [authorId], references: [id])
+  authorId         String
+  // Category Relation 
+  Category         Genre  @relation(fields: [genreId], references: [id])
+  genreId          String
+  Slug             String @unique
+  Tag              String
+  Image            String
+  ImageDescription String @db.VarChar(100)
+
+  // Miscllaneous Data
+
+  BackgroundColor Colors   @default(LEAF)
+  PostNumber      Int      @unique @default(autoincrement())
+  Reads           Int      @default(0)
+  CreatedAt       DateTime @default(now())
+  UpdatedAt       DateTime @updatedAt
+
+  // Thumb Contnet
+
+  ThumbTitle            String @unique @db.VarChar(60)
+  ThumbDescription      String @db.VarChar(105)
+  ThumbImage            String
+  ThumbImageDescription String @db.VarChar(100)
+
+  // Story Content 
+
+  IntroPara String  @db.VarChar(450)
+  ParaTwo   String  @db.VarChar(450)
+  ParaThree String  @db.VarChar(450)
+  ParaFour  String  @db.VarChar(450)
+  ParaFive  String? @db.VarChar(450)
+  ParaSix   String? @db.VarChar(450)
+  ParaSeven String  @db.VarChar(400)
+  ParaEight String  @db.VarChar(450)
+
+  AsideText String @db.VarChar(120)
+
+  @@index([authorId])
+  @@index([genreId])
+}
+
+model MainStory {
+  id String @id @unique @default(uuid())
+
+  // Dedicated Page content 
+
+  Title            String @unique @db.VarChar(60)
+  Description      String @db.VarChar(140)
+  // Author Relation 
+  Author           Author @relation(fields: [authorId], references: [id])
+  authorId         String
+  // Category Relation 
+  Category         Genre  @relation(fields: [genreId], references: [id])
+  genreId          String
+  Slug             String @unique
+  Tag              String
+  Image            String
+  ImageDescription String @db.VarChar(100)
+
+  // Miscllaneous Data 
+
+  BackgroundColor Colors   @default(LEAF)
+  PostNumber      Int      @unique @default(autoincrement())
+  CreatedAt       DateTime @default(now())
+  UpdatedAt       DateTime @updatedAt
+  Reads           Int      @default(0)
+
+  // Thumb Content 
+
+  ThumbTitle               String @db.VarChar(60)
+  ThumbDescription         String @db.VarChar(150)
+  ThumbImageOne            String
+  ThumbImageTwo            String
+  ThumbImageOneDescription String @db.VarChar(100)
+  ThumbImageTwoDescription String @db.VarChar(100)
+
+  SummaryHighlighted String @db.VarChar(200)
+  Summary            String @db.VarChar(700)
+
+  // Story Content 
+
+  IntroPara String  @db.VarChar(450)
+  ParaTwo   String  @db.VarChar(450)
+  ParaThree String  @db.VarChar(450)
+  ParaFour  String  @db.VarChar(450)
+  ParaFive  String? @db.VarChar(450)
+  ParaSix   String? @db.VarChar(450)
+  ParaSeven String  @db.VarChar(400)
+  ParaEight String  @db.VarChar(450)
+
+  AsideText String @db.VarChar(120)
+
+  @@index([authorId])
+  @@index([genreId])
+}
+
+model SideStory {
+  id String @id @unique @default(uuid())
+
+  // Dedicated Content 
+
+  Title            String @unique @db.VarChar(60)
+  Description      String @db.VarChar(140)
+  // Author Relation 
+  Author           Author @relation(fields: [authorId], references: [id])
+  authorId         String
+  // Category Relation 
+  Category         Genre  @relation(fields: [genreId], references: [id])
+  genreId          String
+  Slug             String @unique
+  Tag              String
+  Image            String
+  ImageDescription String @db.VarChar(100)
+
+  // Miscllaneous Data
+
+  BackgroundColor Colors   @default(LEAF)
+  PostNumber      Int      @unique @default(autoincrement())
+  CreatedAt       DateTime @default(now())
+  UpdateAt        DateTime @updatedAt
+  Reads           Int      @default(0)
+
+  // Thumb Contnet
+
+  ThumbTitle            String @unique @db.VarChar(60)
+  ThumbImage            String
+  ThumbImageDescription String @db.VarChar(100)
+  ThumbDescriptionOne   String @db.VarChar(105)
+  ThumbDescriptionTwo   String @db.VarChar(105)
+
+  // Story Content 
+
+  IntroPara String  @db.VarChar(450)
+  ParaTwo   String  @db.VarChar(450)
+  ParaThree String  @db.VarChar(450)
+  ParaFour  String  @db.VarChar(450)
+  ParaFive  String? @db.VarChar(450)
+  ParaSix   String? @db.VarChar(450)
+  ParaSeven String  @db.VarChar(400)
+  ParaEight String  @db.VarChar(450)
+
+  AsideText String @db.VarChar(120)
+
+  @@index([authorId])
+  @@index([genreId])
+}
+
+// Top Stories
+
+model TopStories {
+  id    String @id @unique @default(uuid())
+  Title String @db.VarChar(70)
+
+  // Author Relation
+  Author   Author @relation(fields: [authorId], references: [id])
+  authorId String
+
+  // Category Relation
+  Category Genre  @relation(fields: [genreId], references: [id])
+  genreId  String
+
+  CreatedAt        DateTime @default(now())
+  PostNumber       Int      @unique @default(autoincrement())
+  UpdatedAut       DateTime @updatedAt
+  Image            String
+  ImageDescription String   @db.VarChar(100)
+  Slug             String   @unique
+
+  @@index([authorId])
+  @@index([genreId])
+}
+
+// Story Category 
+
+model Genre {
+  id       String   @id @unique @default(uuid())
+  Category Category @default(Tech)
+
+  // Story Realtions
+
+  HeadlinerStory         HeadlinerStory[]
+  SideStory              SideStory[]
+  MainStory              MainStory[]
+  TechHeadliner          TechHeadliner[]
+  NewsHeadliner          NewsHeadliner[]
+  EntertainmentHeadliner EntertainmentHeadliner[]
+  ReviewHeadliner        ReviewHeadliner[]
+  TopStories             TopStories[]
+}
+
+//  ENUMS
+
+enum Colors {
+  ORANGE
+  PINK
+  LEAF
+  TORQUISE
+}
+
+enum Category {
+  Entertainment
+  News
+  Tech
+  Review
+}
