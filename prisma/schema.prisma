@@ -16,6 +16,7 @@ model FeedStatus {
 
 model Author {
   id             String   @id @unique @default(uuid())
+  
   Name           String   @db.VarChar(18)
   Slug           String   @unique
   ProfilePicture String   @unique

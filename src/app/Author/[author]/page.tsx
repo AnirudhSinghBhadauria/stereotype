@@ -1,77 +1,35 @@
-"use client";
+import { AuthorInterface } from "@/utils/interfaces";
+import Loading from "./loading";
+import { Suspense } from "react";
 
-import React, { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
+const getAuthorData = async (slug: string) => {
+  const authorData = await fetch(`http://localhost:3000/api/Author/${slug}`, {
+    method: "GET",
+  });
 
-interface AuthorInterface {
-  Name: string;
-  DescriptionOne: string;
-  DescriptionTwo: string;
-  Email: string;
-  Linkedin: string;
-  Linktree: string;
-  ProfilePicture: string;
-  Designation: string;
-  Instagram: string;
-  Twitter: string;
-  MainStory: {
-    ThumbTitle: string;
-    ThumbImageOne: string;
-    ThumbImageOneDescription: string;
-    Tag: string;
-    Slug: string;
-    CreatedAt: string;
-    Category: { Category: string };
-    Author: { Name: string };
-  };
-  SideStory: {
-    Author: { Name: string };
-    Category: { Category: string };
-    ThumbTitle: string;
-    Tag: string;
-    ThumbImage: string;
-    ThumbImageDescription: string;
-    Slug: string;
-    CreatedAt: string;
-  };
-}
+  const sanitizedAuthor = await authorData.json();
+  return sanitizedAuthor;
+};
 
-const Author = () => {
-  const [authorData, setAuthorData] = useState<AuthorInterface | null>(null);
-  const pathname = useParams();
+const Author = async ({ params }: { params: { author: string } }) => {
+  const slug = params.author;
 
-  const getAuthorData = async () => {
-    const authorData = await fetch("/api/AuthorProfile", {
-      cache: "force-cache",
-      method: "POST",
-      body: JSON.stringify({ author: pathname.author }),
-      headers: {
-        "Content-application": "application/json",
-      },
-    });
+  const AuthorData = await getAuthorData(slug);
 
-    const sanitizedAuthor = await authorData.json();
+  const Author: AuthorInterface = AuthorData.AuthorProfile;
 
-    setAuthorData(sanitizedAuthor.AuthorProfile);
-  };
-
-  useEffect(() => {
-    getAuthorData();
-  }, []);
+  const { Name, Designation, Email, DescriptionOne, DescriptionTwo } = Author;
 
   return (
-    <div>
-      {authorData ? (
-        <div>
-          <p>{authorData.Name}</p>
-          <p>{authorData.Designation}</p>
-          <p>{authorData.DescriptionOne}</p>
-          <p>{authorData.Email}</p>
-        </div>
-      ) : (
-        <p>loading..</p>
-      )}
-    </div>
+    <Suspense fallback={<Loading />}>
+      <div>
+        <p>{Name}</p>
+        <p>{Designation}</p>
+        <p>{Email}</p>
+        <p>{DescriptionOne}</p>
+        <p>{DescriptionTwo}</p>
+      </div>
+    </Suspense>
   );
 };
 
