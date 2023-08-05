@@ -7,7 +7,12 @@ const getAuthorData = async (slug: string) => {
     method: "GET",
   });
 
+  if (!authorData.ok) {
+    throw new Error("this is an Error message, be aware.");
+  }
+
   const sanitizedAuthor = await authorData.json();
+
   return sanitizedAuthor;
 };
 
@@ -19,7 +24,6 @@ const Author = async ({ params }: { params: { author: string } }) => {
   const Author: AuthorInterface = AuthorData.AuthorProfile;
 
   const { Name, Designation, Email, DescriptionOne, DescriptionTwo } = Author;
-
   return (
     <Suspense fallback={<Loading />}>
       <div>
@@ -34,12 +38,3 @@ const Author = async ({ params }: { params: { author: string } }) => {
 };
 
 export default Author;
-
-// This component should look like, and it must be a server component,
-
-// <Suspense fallback = {<Loading />}>
-//    <AuthorProfile />
-// </Suspense>
-// <Suspense fallback = {<Loading />}>
-//    <MorePostsByAuthor />
-// </Suspense>
