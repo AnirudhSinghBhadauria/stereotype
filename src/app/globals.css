@@ -2,8 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    color-scheme: dark;
 
-body {
-background-color: #131313;
-color: #fff;
+    --purple-100: #5200ff;
+    --purple-200: #5100ffe6;
+    --purple-300: #d6f31f;
+    --purple-400: #3904ab;
+
+    --torq-100: #3cffd0;
+    --torq-200: #3dffd2e6;
+    --torq-300: #5100ffe6;
+    --torq-400: #33cea8;
+
+    --mustard-100: #d6f31f;
+    --mustard-200: #d7f31fe7;
+    --mustard-300: #309875;
+    --mustard-400: #b2cb13;
+
+    --pink-100: #ffc2e7;
+    --pink-200: #ffc2e7e7;
+    --pink-300: #5200ff;
+    --pink-400: #e398c6;
+
+    --orange-100: #ff3d00;
+    --orange-200: #ff3c00e6;
+    --orange-300: #ffc2e7;
+    --orange-400: #c83102;
+  }
+
+  html {
+    text-rendering: optimizeSpeed;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+    font-kerning: none;
+    list-style: none;
+  }
+
+  body {
+    background-color: #131313;
+    color: gray;
+    /* background-color: #5100ffe6; */
+  }
+
+  .primary-container {
+    @apply max-w-full md:max-w-[560px] lg:max-w-[1100px];
+  }
+
+  .marking-border {
+    @apply border border-white border-opacity-30;
+  }
 }

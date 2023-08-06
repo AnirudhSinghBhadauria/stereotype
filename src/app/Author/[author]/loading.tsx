@@ -1,9 +1,13 @@
-import React from "react";
+import React from 'react'
 
-const Loading = () => {
+const AuthorLoading = () => {
   return (
-    <p>loading...</p>
-  );
-};
+    <div>Author Data is loading ...</div>
+  )
+}
 
-export default Loading;
+const AuthorAnotherLoading = ()=> {
+  return <p>another loading...</p>
+}
+
+export default AuthorLoading

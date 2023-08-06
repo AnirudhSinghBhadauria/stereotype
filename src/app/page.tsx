@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Home = () => {
   return (
-    <Fragment>
+    <div className="pt-[174px] primary-container">
       <Link href="/Author/AnirudhBhadauria">Profile</Link>
       <br />
       <Link href="/Tech">Technology</Link>
@@ -13,7 +13,7 @@ const Home = () => {
       <Link href="/News">News</Link>
       <br />
       <Link href="/Entertainment">Entertainment</Link>
-    </Fragment>
+    </div>
   );
 };
 
