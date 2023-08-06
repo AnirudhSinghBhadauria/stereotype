@@ -44,8 +44,8 @@
   }
 
   body {
-    background-color: #131313;
-    color: gray;
+    background-color: #131313cc;
+    color: rgb(255, 255, 255);
     /* background-color: #5100ffe6; */
   }
 
@@ -55,5 +55,18 @@
 
   .marking-border {
     @apply border border-white border-opacity-30;
+  }
+
+  .author-gradinet {
+    background: linear-gradient(180deg, #5200ff 0%, #131313 100%);
+    transform: translateY(-60px);
+    z-index: -20;
+  }
+
+  .underline-on-hover {
+    text-decoration-line: underline;
+    text-decoration-color: #3cffd0;
+    text-decoration-thickness: 0.75px;
+    text-underline-offset: 4px;
   }
 }
