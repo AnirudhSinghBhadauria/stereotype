@@ -1,7 +1,12 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import SiteHeader from "@/components/ui/site-header";
-import { titleFont, generalFont, sansFont } from "../misc/fonts/fonts";
+import {
+  titleFont,
+  generalFont,
+  sansFont,
+  polyFont,
+} from "../misc/fonts/fonts";
 import SiteFooter from "@/components/ui/site-footer";
 
 export const metadata: Metadata = {
@@ -19,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${titleFont.variable} ${generalFont.variable} ${sansFont.variable}`}
+        className={`${titleFont.variable} ${generalFont.variable} ${sansFont.variable} ${polyFont.variable}`}
       >
         <SiteHeader />
         {children}

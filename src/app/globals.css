@@ -45,7 +45,7 @@
 
   body {
     background-color: #131313cc;
-    color: rgb(255, 255, 255);
+    color: #ffffff;
     /* background-color: #5100ffe6; */
   }
 
@@ -68,5 +68,16 @@
     text-decoration-color: #3cffd0;
     text-decoration-thickness: 0.75px;
     text-underline-offset: 4px;
+  }
+
+  .underline-on-hover-author {
+    text-decoration-line: underline;
+    text-decoration-color: #3cffd0;
+    text-decoration-thickness: 0.75px;
+    text-underline-offset: 1.5px;
+  }
+
+  .text-wrap {
+    text-wrap: balance;
   }
 }

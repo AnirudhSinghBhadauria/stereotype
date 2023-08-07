@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
 
 const AuthorStroySkeleton = () => {
   return (
-    <div>loading...</div>
-  )
-}
+    <section className="w-full flex flex-center justify-center">
+      <div className="primary-container">
+        <p className="py-20">loading...</p>
+      </div>
+    </section>
+  );
+};
 
-export default AuthorStroySkeleton
+export default AuthorStroySkeleton;

@@ -52,7 +52,7 @@ model HeadlinerStory {
 
   // Dedicated Page content
 
-  Title            String @unique @db.VarChar(60)
+  Title            String @unique @db.VarChar(90)
   Description      String @db.VarChar(140)
   // Author Relation
   Author           Author @relation(fields: [authorId], references: [id])
@@ -75,8 +75,8 @@ model HeadlinerStory {
 
   // Thumb Contnet
 
-  ThumbTitle            String @unique @db.VarChar(60)
-  ThumbDescription      String @db.VarChar(105)
+  ThumbTitle            String @unique @db.VarChar(70)
+  ThumbDescription      String @db.VarChar(120)
   ThumbImage            String
   ThumbImageDescription String @db.VarChar(100)
 
@@ -302,7 +302,7 @@ model MainStory {
 
   // Dedicated Page content 
 
-  Title            String @unique @db.VarChar(60)
+  Title            String @unique @db.VarChar(90)
   Description      String @db.VarChar(140)
   // Author Relation 
   Author           Author @relation(fields: [authorId], references: [id])
@@ -325,7 +325,7 @@ model MainStory {
 
   // Thumb Content 
 
-  ThumbTitle               String @db.VarChar(60)
+  ThumbTitle               String @db.VarChar(90)
   ThumbDescription         String @db.VarChar(150)
   ThumbImageOne            String
   ThumbImageTwo            String
@@ -357,7 +357,7 @@ model SideStory {
 
   // Dedicated Content 
 
-  Title            String @unique @db.VarChar(60)
+  Title            String @unique @db.VarChar(90)
   Description      String @db.VarChar(140)
   // Author Relation 
   Author           Author @relation(fields: [authorId], references: [id])
@@ -380,7 +380,7 @@ model SideStory {
 
   // Thumb Contnet
 
-  ThumbTitle            String @unique @db.VarChar(60)
+  ThumbTitle            String @unique @db.VarChar(90)
   ThumbImage            String
   ThumbImageDescription String @db.VarChar(100)
   ThumbDescriptionOne   String @db.VarChar(105)
@@ -407,7 +407,7 @@ model SideStory {
 
 model TopStories {
   id    String @id @unique @default(uuid())
-  Title String @db.VarChar(70)
+  Title String @db.VarChar(90)
 
   // Author Relation
   Author   Author @relation(fields: [authorId], references: [id])

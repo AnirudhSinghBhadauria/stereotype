@@ -1,30 +1,17 @@
 import React, { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { AuthorInterface } from "@/utils/interfaces";
 import X from "@/misc/logos/author/twitter";
 import Tree from "@/misc/logos/author/link";
 import Mail from "@/misc/logos/author/email";
 import In from "@/misc/logos/author/linkedin";
-
-const getAuthorData = async (slug: string) => {
-  const authorData = await fetch(`http://localhost:3000/api/Author/${slug}`, {
-    method: "GET",
-  });
-
-  if (!authorData.ok) {
-    throw new Error("this is an Error message, be aware.");
-  }
-
-  const sanitizedAuthor = await authorData.json();
-
-  return sanitizedAuthor;
-};
+import { AuthorProfileInterface } from "@/utils/interfaces";
+import { getAuthorProfile } from "@/lib/author/get-author-profiles";
 
 const AuthorIntro = async ({ author }: { author: string }) => {
-  const AuthorData = await getAuthorData(author);
+  const AuthorData = await getAuthorProfile(author);
 
-  const Author: AuthorInterface = AuthorData.AuthorProfile;
+  const Author: AuthorProfileInterface = AuthorData.AuthorProfile;
 
   const {
     Name,
@@ -59,7 +46,7 @@ const AuthorIntro = async ({ author }: { author: string }) => {
             <Image src={ProfilePicture} alt={Name} width={512} height={512} />
           </section>
           <section className="col-start-1 col-end-8 w-full md:col-start-2 md:row-start-1">
-            <p className="font-mono uppercase text-torq-100 text-[15px] tracking-[0.09em] font-[550] mb-[15px]">
+            <p className="font-mono uppercase text-torq-100 text-[15px] tracking-[0.1em] font-[550] mb-[15px]">
               {Designation}
             </p>
             <div className="mb-[20px]">
@@ -81,7 +68,7 @@ const AuthorIntro = async ({ author }: { author: string }) => {
                 target="_blank"
               >
                 <Mail />
-                <p className="ml-[12px] font-mono uppercase text-torq-100 text-[15px] tracking-[0.125em] font-semibold hover:underline hover:underline-offset-[4.5px]">
+                <p className="ml-[12px] font-mono uppercase text-torq-100 text-[15px] tracking-[0.125em] font-semibold hover:underline hover:underline-offset-[4.4px]">
                   {Email}
                 </p>
               </Link>
@@ -93,7 +80,7 @@ const AuthorIntro = async ({ author }: { author: string }) => {
                   target="_blank"
                 >
                   <X />
-                  <p className="ml-[12px] font-mono uppercase text-torq-100 text-[15px] tracking-[0.125em] font-semibold hover:underline hover:underline-offset-[4.5px]">
+                  <p className="ml-[12px] font-mono uppercase text-torq-100 text-[15px] tracking-[0.125em] font-semibold hover:underline hover:underline-offset-[4.4px]">
                     Twitter
                   </p>
                 </Link>
@@ -106,7 +93,7 @@ const AuthorIntro = async ({ author }: { author: string }) => {
                   target="_blank"
                 >
                   <In />
-                  <p className="ml-[12px] font-mono uppercase text-torq-100 text-[15px] tracking-[0.125em] font-semibold hover:underline hover:underline-offset-[4.5px]">
+                  <p className="ml-[12px] font-mono uppercase text-torq-100 text-[15px] tracking-[0.125em] font-semibold hover:underline hover:underline-offset-[4.4px]">
                     Linkedin
                   </p>
                 </Link>
@@ -119,7 +106,7 @@ const AuthorIntro = async ({ author }: { author: string }) => {
                   target="_blank"
                 >
                   <Tree />
-                  <p className="ml-[12px] font-mono uppercase text-torq-100 text-[15px] tracking-[0.125em] font-semibold hover:underline hover:underline-offset-[4.5px]">
+                  <p className="ml-[12px] font-mono uppercase text-torq-100 text-[15px] tracking-[0.125em] font-semibold hover:underline hover:underline-offset-[4.4px]">
                     Linktree
                   </p>
                 </Link>

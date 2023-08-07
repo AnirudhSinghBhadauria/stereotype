@@ -31,10 +31,8 @@ const Author = async ({ params }: { params: { author: string } }) => {
       </section>
 
       <section className="w-full py-[40px] flex flex-row justify-center">
-        <div className="primary-container w-full">
-          <Suspense fallback={<AuthorIntroSkeleton />}>
+        <div className="primary-container w-full">   
             <AuthorStories author={params.author} />
-          </Suspense>
         </div>
       </section>
     </section>

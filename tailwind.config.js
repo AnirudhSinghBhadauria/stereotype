@@ -11,6 +11,7 @@ module.exports = {
         title: ["var(--font-title)"],
         gen: ["var(--font-general)"],
         sans: ["var(--font-sans)"],
+        poly: ["var(--font-poly)"],
       },
       screens: {
         lg: "1180px",

@@ -17,3 +17,9 @@ export const sansFont = localFont({
   display: "swap",
   variable: "--font-sans",
 });
+
+export const polyFont = localFont({
+  src: "./PolySans-Neutral.woff2",
+  display: "swap",
+  variable: "--font-poly",
+});
