@@ -4,6 +4,7 @@ import Link from "next/link";
 import AuthorIntro from "@/components/author/author-intro";
 import AuthorIntroSkeleton from "@/components/author/skeleton/author-intro-skeleton";
 import AuthorStories from "@/components/author/author-stories";
+import AuthorStroySkeleton from "@/components/author/skeleton/author-story-skeleton";
 
 const Author = async ({ params }: { params: { author: string } }) => {
   return (
@@ -31,8 +32,10 @@ const Author = async ({ params }: { params: { author: string } }) => {
       </section>
 
       <section className="w-full py-[40px] flex flex-row justify-center">
-        <div className="primary-container w-full">   
+        <div className="primary-container w-full">
+          <Suspense fallback={<AuthorStroySkeleton />}>
             <AuthorStories author={params.author} />
+          </Suspense>
         </div>
       </section>
     </section>

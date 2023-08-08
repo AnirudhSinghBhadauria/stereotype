@@ -26,7 +26,6 @@ const AuthorStories = async ({ author }: { author: string }) => {
             ThumbTitle,
             Reads,
           }) => (
-            <Suspense fallback={<AuthorStroySkeleton />}>
               <StoryCard
                 Author={Author}
                 Alt={ThumbImageOneDescription}
@@ -37,7 +36,6 @@ const AuthorStories = async ({ author }: { author: string }) => {
                 Reads={Reads}
                 ThumbImage={ThumbImageOne}
               />
-            </Suspense>
           )
         )}
 
@@ -52,7 +50,6 @@ const AuthorStories = async ({ author }: { author: string }) => {
             ThumbTitle,
             Reads,
           }) => (
-            <Suspense fallback={<AuthorStroySkeleton />}>
               <StoryCard
                 Author={Author}
                 CreatedAt={CreatedAt}
@@ -63,7 +60,6 @@ const AuthorStories = async ({ author }: { author: string }) => {
                 ThumbImage={ThumbImage}
                 Alt={ThumbImageDescription}
               />
-            </Suspense>
           )
         )}
       </ul>

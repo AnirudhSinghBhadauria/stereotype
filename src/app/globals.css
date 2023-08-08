@@ -30,6 +30,13 @@
     --orange-200: #ff3c00e6;
     --orange-300: #ffc2e7;
     --orange-400: #c83102;
+
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+  }
+
+  * {
+    box-sizing: border-box;
   }
 
   html {
@@ -45,7 +52,7 @@
 
   body {
     background-color: #131313cc;
-    color: #ffffff;
+    color: #fff;
     /* background-color: #5100ffe6; */
   }
 
@@ -79,5 +86,15 @@
 
   .text-wrap {
     text-wrap: balance;
+  }
+
+  .shadow-highlight-blurple {
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000);
+    text-shadow: 5px 5px var(--purple-100);
+  }
+
+  .aspect-five-four {
+    aspect-ratio: 5/4;
   }
 }

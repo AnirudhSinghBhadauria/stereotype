@@ -1,6 +1,6 @@
 export const getAuthorStories = async (slug: string) => {
   const authorData = await fetch(
-    `https://breakingstereotypes.vercel.app/api/Author/Stories/${slug}`,
+    `http://localhost:3000/api/Author/Stories/${slug}`,
     {
       method: "GET",
     }

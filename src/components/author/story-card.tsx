@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { getDate } from "@/lib/global/convert-date";
+import AuthorReadsDate from "../ui/author-date-reads";
 
 const StoryCard = async ({
   Author,
@@ -45,21 +46,13 @@ const StoryCard = async ({
           >
             {ThumbTitle}
           </Link>
-          <div className="flex flex-row">
-            <Link
-              href={`/Author/${Author.Slug}`}
-              aria-label={`See ${Author.Name}'s Profile.`}
-              className="uppercase mr-[8px] leading-[1.2] font-medium font-poly text-[10.79px] tracking-[0.175em] text-torq-100 hover:underline-on-hover-author"
-            >
-              {Author.Name}
-            </Link>
-            <p className="uppercase mr-[8px] leading-[1.2] font-medium font-poly text-[10.78px] tracking-[0.175em] text-[#949494]">
-              {`${Reads} READS`}
-            </p>
-            <p className="uppercase mr-[8px] leading-[1.2] font-medium font-poly text-[10.78px] tracking-[0.175em] text-[#949494]">
-              {getDate(CreatedAt)}
-            </p>
-          </div>
+          <AuthorReadsDate
+            name={Author.Name}
+            date={CreatedAt}
+            reads={Reads}
+            slug={Slug}
+            ifReads={true}
+          />
         </div>
       </div>
 
