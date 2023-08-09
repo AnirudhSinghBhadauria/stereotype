@@ -27,7 +27,6 @@ export const headerNavbar = [
 ];
 
 export const footerNavbar = [
-
   {
     text: "tip us",
     link: "",
@@ -69,3 +68,6 @@ export const footerNavbar = [
     aria: "provide us a feedback",
   },
 ];
+
+
+ 

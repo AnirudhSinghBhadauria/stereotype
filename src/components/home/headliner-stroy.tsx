@@ -1,19 +1,39 @@
 import Image from "next/image";
-import React, { Fragment } from "react";
+import React from "react";
 import Link from "next/link";
 import AuthorReadsDate from "../ui/author-date-reads";
 import StereotypeInclined from "@/misc/logos/StereotypeInclined";
+import { HeadlineInterface } from "@/utils/interfaces";
+import { getHeadlines } from "@/lib/Home/get-headline";
 
 const Headliner = async () => {
+  const headline = await getHeadlines();
+
+  const {
+    Author,
+    Reads,
+    Slug,
+    ThumbDescription,
+    ThumbImage,
+    ThumbImageDescription,
+    ThumbTitle,
+    CreatedAt,
+    Tag,
+  }: HeadlineInterface = headline.headlineThumbData;
+
   return (
     <div className="group mb-[20px] pt-[28px] md:mb-[50px] lg:top-[150px] lg:mb-0 lg:min-h-[750px] lg:pr-[40px] pb-48">
       <div className="overflow-hidden relative ml-[40px] md:ml-0 lg:ml-[20px] lg:mr-[70px] h-[464px] aspect-five-four">
-        <Link href="" aria-label="">
+        <Link
+          href="LINK TO THE POST"
+          aria-label={`A post written by ${Author.Name} taggeed: ${Tag}`}
+        >
           <Image
+            priority
             width={750}
             height={500}
-            alt=""
-            src="https://cdn.sanity.io/images/aftdl3p2/production/74d2d18244ccaae01920cfd3c5de0b4debe4cba8-580x464.jpg"
+            src={ThumbImage}
+            alt={ThumbImageDescription}
             className="object-cover object-center rounded-[3px]"
           />
         </Link>
@@ -25,29 +45,29 @@ const Headliner = async () => {
         >
           <Link
             className="group-hover:shadow-highlight-blurple"
-            aria-label=""
-            href=""
+            aria-label={`A post written by ${Author.Name} taggeed: ${Tag}`}
+            href="LINK TO THE POST"
           >
-            For this startup, Nvidia GPUs are currency
+            {ThumbTitle}
           </Link>
         </h2>
         <p className="font-sans text-[#efefef] mb-[6px] text-[20px] leading-[1.2] tracking-[-0.025em] text-gray-ef md:text-[24px] md:leading-[1.1]">
-          The chip shortage reaches its final form: GPU-backed startup loans.
+          {ThumbDescription}
         </p>
         <AuthorReadsDate
-          name="Anirudh Bhadauria"
-          reads={0}
-          slug="AnirudhBhadauria"
-          date="2023-08-01T16:41:06.003Z"
+          name={Author.Name}
+          reads={Reads}
+          slug={Author.Slug}
+          date={CreatedAt}
           className="pt-[10px]"
           ifReads={true}
         />
       </div>
       <StereotypeInclined
         fill="#fff"
-        height="615.25"
-        width="115"
-        className="absolute top-[138px] -left-[45px] z-10"
+        height="588.5"
+        width="110"
+        className="absolute top-[140px] -left-[45px] z-10"
       />
     </div>
   );

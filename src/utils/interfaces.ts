@@ -1,3 +1,5 @@
+// Author---------------------
+
 export interface AuthorProfileInterface {
   Name: string;
   DescriptionOne: string;
@@ -39,3 +41,32 @@ interface SideStories {
   CreatedAt: string;
   Reads: number;
 }
+
+// Headlines---------------------
+
+export interface HeadlineInterface {
+  Author: { Name: string; Slug: string };
+  CreatedAt: string;
+  ThumbTitle: string;
+  ThumbDescription: string;
+  ThumbImage: string;
+  ThumbImageDescription: string;
+  Reads: number;
+  Slug: string;
+  Category: { Category: string };
+  Tag: string;
+}
+
+// TopStories---------------------
+
+ export interface TopStoryInterface {
+  Author: { Name: string; Slug: string };
+  CreatedAt: string;
+  ThumbImageDescription: string;
+  ThumbImage: string;
+  ThumbTitle: string;
+  Tag: string;
+  Slug: string;
+  Category: { Category: string };
+}
+

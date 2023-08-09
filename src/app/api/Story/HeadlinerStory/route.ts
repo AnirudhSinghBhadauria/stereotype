@@ -7,7 +7,7 @@ export async function GET(request: Request) {
       orderBy: { PostNumber: "desc" },
       take: 1,
       select: {
-        Author: { select: { Name: true } },
+        Author: { select: { Name: true, Slug: true } },
         CreatedAt: true,
         ThumbTitle: true,
         ThumbDescription: true,
@@ -16,6 +16,7 @@ export async function GET(request: Request) {
         Reads: true,
         Slug: true,
         Category: { select: { Category: true } },
+        Tag: true,
       },
     });
 

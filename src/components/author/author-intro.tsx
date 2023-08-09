@@ -10,7 +10,7 @@ import { getAuthorProfile } from "@/lib/author/get-author-profiles";
 
 const AuthorIntro = async ({ author }: { author: string }) => {
   const AuthorData = await getAuthorProfile(author);
-
+  
   const Author: AuthorProfileInterface = AuthorData.AuthorProfile;
 
   const {

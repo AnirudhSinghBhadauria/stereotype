@@ -3,15 +3,16 @@ import { prisma } from "../../../../../prisma/prismaClient";
 
 export async function GET(request: Request) {
   try {
-    const topStories = await prisma.topStories.findMany({
+    const topStories = await prisma.headlinerStory.findMany({
       take: 5,
       orderBy: { PostNumber: "desc" },
       select: {
-        Title: true,
-        Author: { select: { Name: true } },
+        Author: { select: { Name: true, Slug: true } },
         CreatedAt: true,
-        Image: true,
-        ImageDescription: true,
+        ThumbImageDescription: true,
+        ThumbImage: true,
+        ThumbTitle: true,
+        Tag: true,
         Slug: true,
         Category: { select: { Category: true } },
       },
