@@ -53,7 +53,14 @@
   body {
     background-color: #131313cc;
     color: #fff;
-    /* background-color: #5100ffe6; */
+  }
+
+  .primary-small-gray-11px {
+    @apply uppercase leading-[1.2] font-medium font-poly text-[10.78px] tracking-[0.175em] text-[#949494];
+  }
+
+  .primary-small-torq-11px {
+    @apply uppercase leading-[1.2] font-medium font-poly text-[10.79px] tracking-[0.175em] text-torq-100;
   }
 
   .primary-container {
@@ -96,5 +103,9 @@
 
   .aspect-five-four {
     aspect-ratio: 5/4;
+  }
+
+  .center-by-margin {
+    margin: 0 auto;
   }
 }

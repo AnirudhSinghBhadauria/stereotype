@@ -8,32 +8,28 @@ const AuthorReadsDate = ({
   name,
   reads,
   date,
-  ifReads
+  ifReads,
 }: {
   className?: string;
   slug?: string;
   name: string;
   reads?: number;
   date: string;
-  ifReads: boolean
+  ifReads: boolean;
 }) => {
   return (
     <div className={`flex flex-row ${className}`}>
       <Link
         href={`/Author/${slug}`}
         aria-label={`See ${name}'s Profile.`}
-        className="uppercase mr-[8px] leading-[1.2] font-medium font-poly text-[10.79px] tracking-[0.175em] text-torq-100 hover:underline-on-hover-author"
+        className="mr-[8px] primary-small-torq-11px hover:underline-on-hover-author"
       >
         {name}
       </Link>
       {ifReads && (
-        <p className="uppercase mr-[8px] leading-[1.2] font-medium font-poly text-[10.78px] tracking-[0.175em] text-[#949494]">
-          {`${reads} READS`}
-        </p>
+        <p className="mr-[8px] primary-small-gray-11px">{`${reads} READS`}</p>
       )}
-      <p className="uppercase mr-[8px] leading-[1.2] font-medium font-poly text-[10.78px] tracking-[0.175em] text-[#949494]">
-        {getDate(date)}
-      </p>
+      <p className="mr-[8px] primary-small-gray-11px">{getDate(date)}</p>
     </div>
   );
 };

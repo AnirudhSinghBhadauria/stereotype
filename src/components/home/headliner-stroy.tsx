@@ -22,7 +22,7 @@ const Headliner = async () => {
   }: HeadlineInterface = headline.headlineThumbData;
 
   return (
-    <div className="group mb-[20px] pt-[28px] md:mb-[50px] lg:top-[150px] lg:mb-0 lg:min-h-[750px] lg:pr-[40px] pb-48">
+    <div className="group mb-[20px] pt-[28px] md:mb-[50px] lg:top-[150px] lg:mb-0 lg:min-h-[750px] lg:pr-[40px]">
       <div className="overflow-hidden relative ml-[40px] md:ml-0 lg:ml-[20px] lg:mr-[70px] h-[464px] aspect-five-four">
         <Link
           href="LINK TO THE POST"
@@ -67,7 +67,7 @@ const Headliner = async () => {
         fill="#fff"
         height="588.5"
         width="110"
-        className="absolute top-[140px] -left-[45px] z-10"
+        className="absolute top-[140px] -left-[40px] z-10"
       />
     </div>
   );
