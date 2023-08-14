@@ -5,6 +5,7 @@ export async function GET(request: Request) {
   try {
     const mainStories = await prisma.mainStory.findMany({
       orderBy: { PostNumber: "desc" },
+      skip: 0,
       take: 2,
       select: {
         Author: { select: { Name: true } },

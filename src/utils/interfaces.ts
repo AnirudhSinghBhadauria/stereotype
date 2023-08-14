@@ -14,11 +14,11 @@ export interface AuthorProfileInterface {
 }
 
 export interface AuthorStoriesInterface {
-  MainStory: MainStories[];
-  SideStory: SideStories[];
+  MainStory: MainStoriesThumbForAuthor[];
+  SideStory: SideStoriesThumbForAuthor[];
 }
 
-interface MainStories {
+interface MainStoriesThumbForAuthor {
   ThumbTitle: string;
   ThumbImageOne: string;
   ThumbImageOneDescription: string;
@@ -30,7 +30,7 @@ interface MainStories {
   Reads: number;
 }
 
-interface SideStories {
+interface SideStoriesThumbForAuthor {
   Author: { Name: string; Slug: string };
   Category: { Category: string };
   ThumbTitle: string;
@@ -59,7 +59,7 @@ export interface HeadlineInterface {
 
 // TopStories---------------------
 
- export interface TopStoryInterface {
+export interface TopStoryInterface {
   Author: { Name: string; Slug: string };
   CreatedAt: string;
   ThumbImageDescription: string;
@@ -70,3 +70,41 @@ export interface HeadlineInterface {
   Category: { Category: string };
 }
 
+// GlobalStories ------------------
+
+export interface MainStoriesThumb {
+  Author: { Name: string; Slug: string };
+  Category: { Category: string };
+  Slug: string;
+  CreatedAt: string;
+  ThumbTitle: string;
+  ThumbDescription: string;
+  ThumbImageOne: string;
+  ThumbImageTwo: string;
+  ThumbImageOneDescription: string;
+  ThumbImageTwoDescription: string;
+  Summary: string;
+  SummaryHighlighted: string;
+  Reads: number;
+  Tag: string;
+}
+
+export interface SideStoryThumb {
+  ThumbTitle: string;
+  ThumbDescriptionOne: string;
+  ThumbDescriptionTwo: string;
+  ThumbImage: string;
+  ThumbImageDescription: string;
+  BackgroundColor: string;
+  Reads: number;
+  Slug: string;
+  Category: { Category: string };
+  Author: { Name: string; Slug: string };
+  CreatedAt: string;
+  Tag: string;
+}
+
+export interface FeedStatus {
+  LastRefreshed: string;
+  Message: string;
+}

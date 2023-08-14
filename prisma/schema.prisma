@@ -302,7 +302,7 @@ model MainStory {
 
   // Dedicated Page content 
 
-  Title            String @unique @db.VarChar(90)
+  Title            String @db.VarChar(90)
   Description      String @db.VarChar(140)
   // Author Relation 
   Author           Author @relation(fields: [authorId], references: [id])
@@ -357,7 +357,7 @@ model SideStory {
 
   // Dedicated Content 
 
-  Title            String @unique @db.VarChar(90)
+  Title            String @db.VarChar(90)
   Description      String @db.VarChar(140)
   // Author Relation 
   Author           Author @relation(fields: [authorId], references: [id])

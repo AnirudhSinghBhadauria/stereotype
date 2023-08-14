@@ -6,6 +6,8 @@ import TopStoriesSkeleton from "@/components/home/skeleton/top-stories-skeleton"
 import ReaderStoryline from "@/components/home/readers-storyline";
 import MainStory from "@/components/home/main-story";
 import SideStory from "@/components/home/side-story";
+import StroriesContainer from "@/components/home/stories-container";
+import StoriesWrapper from "@/components/home/stories-wrapper";
 
 const Home = () => {
   return (
@@ -30,23 +32,8 @@ const Home = () => {
       </div>
 
       <div className="pt-[28px] lg:pt-[40px] w-full flex flex-col justify-center items-center">
-        <div className="flex flex-col primary-container w-full">
-          <section className="flex flex-row mb-[80px]">
-            <div className="flex-1 flex max-w-[560px] flex-col lg:mr-[100px] mx-auto sm:max-w-[500px]">
-              <ReaderStoryline />
-              <ul>
-                <MainStory />
-                <MainStory />
-              </ul>
-            </div>
-
-            <div className="flex-1 relative">
-              <SideStory />
-            </div>
-          </section>
-        </div>
+        <StoriesWrapper />
       </div>
-
     </section>
   );
 };
