@@ -19,7 +19,7 @@ const StroriesContainer = ({
   feedThumb: FeedStatus;
 }) => {
   return (
-    <section className="flex flex-row mb-[80px]">
+    <li className="flex flex-row last-of-type:mb-[0px] mb-[80px]">
       <div className="flex-1 flex max-w-[560px] flex-col lg:mr-[100px] mx-auto sm:max-w-[500px]">
         <ReaderStoryline
           date={getDate(mainThumb[0].CreatedAt)}
@@ -37,7 +37,7 @@ const StroriesContainer = ({
           <SideStory postProps={post} />
         ))}
       </div>
-    </section>
+    </li>
   );
 };
 

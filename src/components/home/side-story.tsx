@@ -4,6 +4,7 @@ import Link from "next/link";
 import React from "react";
 import { SideStoryThumb } from "@/utils/interfaces";
 import { getDate } from "@/lib/global/convert-date";
+import { getColors } from "@/lib/global/get-colors";
 
 const SideStory = ({ postProps }: { postProps: SideStoryThumb }) => {
   const {
@@ -21,11 +22,22 @@ const SideStory = ({ postProps }: { postProps: SideStoryThumb }) => {
     ThumbTitle,
   } = postProps;
 
-  console.log(BackgroundColor);
+  const { primary, secondary, tertiary, quadrple } = getColors(BackgroundColor);
+
+  const textHoverColor = `${
+    BackgroundColor === "ORANGE"
+      ? "hover:text-[#ffc2e7]"
+      : BackgroundColor === "LEAF"
+      ? "hover:text-[#309875]"
+      : "hover:text-[#5200ff]"
+  }`;
 
   return (
     <div className="full-side-post w-full h-full">
-      <div className="flex flex-col w-full bg-mustard-200 h-[667.5px] rounded-[20px] sticky top-[40px] mb-20px] lg:min-h-[500px] p-[20px]">
+      <div
+        style={{ backgroundColor: secondary }}
+        className="flex flex-col w-full h-[667.5px] rounded-[20px] sticky top-[40px] mb-20px] lg:min-h-[500px] p-[20px]"
+      >
         <p className="pb-[20px] font-poly font-semibold tracking-[0.15em] uppercase text-black text-[10px]">
           <Link
             href={`/${Category.Category}`}
@@ -35,8 +47,13 @@ const SideStory = ({ postProps }: { postProps: SideStoryThumb }) => {
           </Link>
         </p>
         <div className="ml-[20px] lg:ml-[35px]">
-          <div className="flex flex-col border-l-mustard-300 border-l-[1px] pl-[10px] mb-[8px]">
-            <h2 className="font-title text-[58px] text-[black] font-[800] leading-[0.85] mb-[10px] hover:text-mustard-300">
+          <div
+            style={{ borderLeftColor: tertiary }}
+            className="flex flex-col border-l-[1px] pl-[10px] mb-[8px]"
+          >
+            <h2
+              className={`font-title text-[58px] font-[800] text-black leading-[0.85] mb-[10px] ${textHoverColor} `}
+            >
               <Link
                 href="LINK TO THE POST"
                 aria-label={`Link to the post tagged : ${Tag}`}
@@ -79,10 +96,21 @@ const SideStory = ({ postProps }: { postProps: SideStoryThumb }) => {
               href="LINK TO THE POST"
               className="flex flex-row items-start gap-[30px]"
             >
-              <div className="h-[7.25px] w-[7px] rounded-full bg-mustard-300 ml-[7px] mt-[8px]"></div>
-              <p className="text-[15px] leading-[1.2] max-w-[290px] font-[550] text-black font-gen">
-                {ThumbDescriptionOne}
-              </p>
+              <div
+                style={{ backgroundColor: tertiary }}
+                className="h-[7.25px] w-[7px] rounded-full ml-[7px] mt-[8px]"
+              ></div>
+              <section className="flex flex-col">
+                <p
+                  className={`text-[15px] leading-[1.2] max-w-[290px] font-[550] text-black font-gen ${textHoverColor}`}
+                >
+                  {ThumbDescriptionOne}
+                </p>
+                  <div
+                    style={{ backgroundColor: tertiary }}
+                    className="w-full h-[1px] mt-[13.5px]"
+                  ></div>
+              </section>
             </Link>
           </li>
           <li>
@@ -91,8 +119,13 @@ const SideStory = ({ postProps }: { postProps: SideStoryThumb }) => {
               href="LINK TO THE POST"
               className="flex flex-row items-start gap-[30px]"
             >
-              <div className="h-[7.25px] w-[7px] rounded-full bg-mustard-300 ml-[7px] mt-[8px]"></div>
-              <p className="text-[15px] leading-[1.2] max-w-[290px] font-[550] text-black font-gen">
+              <div
+                style={{ backgroundColor: tertiary }}
+                className="h-[7.25px] w-[7px] rounded-full ml-[7px] mt-[8px]"
+              ></div>
+              <p
+                className={`text-[15px] leading-[1.2] max-w-[290px] font-[550] text-black font-gen ${textHoverColor}`}
+              >
                 {ThumbDescriptionTwo}
               </p>
             </Link>
@@ -109,7 +142,8 @@ const SideStory = ({ postProps }: { postProps: SideStoryThumb }) => {
           <StereotypeStroked
             height="428"
             width="80"
-            className="z-10 absolute bottom-[6px] right-[6px] fill-mustard-400"
+            className="z-10 absolute bottom-[6px] right-[6px]"
+            fill={quadrple}
           />
         </Link>
       </div>

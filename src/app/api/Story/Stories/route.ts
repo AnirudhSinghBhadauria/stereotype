@@ -2,11 +2,18 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "../../../../../prisma/prismaClient";
 
 export async function GET(request: NextRequest) {
+  const params = new URL(request.url);
+
+  let skip: any = params.searchParams.get("skip");
+
+  let skipForSide = parseInt(skip);
+  let skipForMain = skipForSide * 2;
+
   try {
     const mainStories = await prisma.mainStory.findMany({
       orderBy: { PostNumber: "desc" },
       take: 2,
-      skip: 0,
+      skip: skipForMain,
       select: {
         Author: { select: { Name: true, Slug: true } },
         Category: { select: { Category: true } },
@@ -28,7 +35,7 @@ export async function GET(request: NextRequest) {
     const sideStories = await prisma.sideStory.findMany({
       orderBy: { PostNumber: "desc" },
       take: 1,
-      skip: 0,
+      skip: skipForSide,
       select: {
         ThumbTitle: true,
         ThumbDescriptionOne: true,

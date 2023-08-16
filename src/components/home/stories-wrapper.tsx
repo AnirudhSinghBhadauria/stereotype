@@ -1,29 +1,18 @@
 import React from "react";
 import StroriesContainer from "./stories-container";
-import { getMainStories } from "@/lib/Home/get-main-stories.";
-import { getSideStories } from "@/lib/Home/get-side-stories";
 import { getStories } from "@/lib/Home/get-stories";
-import {
-  FeedStatus,
-  MainStoriesThumb,
-  SideStoryThumb,
-} from "@/utils/interfaces";
+import { StoriesInterface } from "@/utils/interfaces";
+import LoadMore from "./load-more";
 
 const StoriesWrapper = async () => {
-  let storyData = [];
+  let storyData: StoriesInterface[] = [];
 
-  const stories: {
-    mainThumb: MainStoriesThumb[];
-    sideThumb: SideStoryThumb[];
-    feedThumb: FeedStatus;
-  } = await getStories();
-  
-  stories && storyData.unshift(stories);
+  const stories: StoriesInterface = await getStories(0);
 
-  //   console.log(storyData);
+  storyData.unshift(stories);
 
   return (
-    <div className="flex flex-col primary-container w-full">
+    <ul className="flex flex-col primary-container w-full">
       {storyData.map(({ mainThumb, sideThumb, feedThumb }) => (
         <StroriesContainer
           mainThumb={mainThumb}
@@ -31,10 +20,11 @@ const StoriesWrapper = async () => {
           feedThumb={feedThumb}
         />
       ))}
-    </div>
+      <LoadMore />
+    </ul>
   );
 };
 
 export default StoriesWrapper;
 
-// [{ main: mainStories, side: getSideStories, status: getFeedStatus }];
+// const storyData = [{ main: mainStories, side: getSideStories, status: getFeedStatus }];

@@ -4,7 +4,7 @@ export const getColors = (color: string) => {
       return {
         primary: "#ff3d00",
         secondary: "#ff3c00e6",
-        teritary: "#ffc2e7",
+        tertiary: "#ffc2e7",
         quadrple: "#c83102",
       };
     }
@@ -13,7 +13,7 @@ export const getColors = (color: string) => {
         primary: "#d6f31f",
         secondary: "#d7f31fe7",
         tertiary: "#309875",
-        quadrple: "#b2cb13",
+        quadrple: "#b2cb13"
       };
     }
     case "PINK": {

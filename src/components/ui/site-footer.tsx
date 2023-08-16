@@ -5,7 +5,7 @@ import React from "react";
 
 const SiteFooter = () => {
   return (
-    <footer className="pb-[70px] pt-[20px] font-gen text-[10px] uppercase leading-[19px] tracking-[0.1em] text-white md:pt-[40px] lg:text-left lg:text-[12px] lg:leading-[21.6px] font-medium flex flex-row justify-center">
+    <footer className="pb-[90px] pt-[20px] font-gen text-[10px] uppercase leading-[19px] tracking-[0.1em] text-white md:pt-[120px] lg:text-left lg:text-[12px] lg:leading-[21.6px] font-medium flex flex-row justify-center">
       <section className="primary-container w-full flex flex-col">
         <Stereotype fill="white" width={431.1} height={80} className="mb-12" />
         <nav className="max-w-[610px] flex flex-row items-center">

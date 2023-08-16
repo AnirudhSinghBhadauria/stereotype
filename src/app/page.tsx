@@ -1,13 +1,10 @@
-import React, { Fragment, Suspense } from "react";
+import React, { Suspense } from "react";
 import Headliner from "@/components/home/headliner-stroy";
 import TopStories from "@/components/home/top-stories";
 import HeadlineSkeleton from "@/components/home/skeleton/headline-skeleton";
 import TopStoriesSkeleton from "@/components/home/skeleton/top-stories-skeleton";
-import ReaderStoryline from "@/components/home/readers-storyline";
-import MainStory from "@/components/home/main-story";
-import SideStory from "@/components/home/side-story";
-import StroriesContainer from "@/components/home/stories-container";
 import StoriesWrapper from "@/components/home/stories-wrapper";
+import StoriesWrapperSkeleton from "@/components/home/skeleton/stories-wrapper-skeleton";
 
 const Home = () => {
   return (
@@ -32,7 +29,9 @@ const Home = () => {
       </div>
 
       <div className="pt-[28px] lg:pt-[40px] w-full flex flex-col justify-center items-center">
-        <StoriesWrapper />
+        <Suspense fallback={<StoriesWrapperSkeleton />}>
+          <StoriesWrapper />
+        </Suspense>
       </div>
     </section>
   );

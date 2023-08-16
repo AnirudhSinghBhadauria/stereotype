@@ -28,7 +28,6 @@ export default function RootLayout({
       >
         <SiteHeader />
         {children}
-        {/* <SiteFooter /> */}
       </body>
     </html>
   );

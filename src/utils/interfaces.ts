@@ -108,3 +108,9 @@ export interface FeedStatus {
   LastRefreshed: string;
   Message: string;
 }
+
+export interface StoriesInterface {
+  mainThumb: MainStoriesThumb[];
+  sideThumb: SideStoryThumb[];
+  feedThumb: FeedStatus;
+}
