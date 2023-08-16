@@ -1,8 +1,8 @@
-export const getHeadlines = async () => {
+export const getHeadlines = async (Category: string | null) => {
   const headlines = await fetch(
-    "http://localhost:3000/api/Story/HeadlinerStory/",
+    `http://localhost:3000/api/Story/HeadlinerStory/${Category}`,
     {
-      method: "GET"
+      method: "GET",
     }
   );
 

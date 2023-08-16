@@ -6,8 +6,8 @@ import StereotypeInclined from "@/misc/logos/StereotypeInclined";
 import { HeadlineInterface } from "@/utils/interfaces";
 import { getHeadlines } from "@/lib/Home/get-headline";
 
-const Headliner = async () => {
-  const headline = await getHeadlines();
+const Headliner = async ({ Category }: { Category: string | null }) => {
+  const headline = await getHeadlines(Category);
 
   const {
     Author,

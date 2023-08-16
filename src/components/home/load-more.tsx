@@ -8,6 +8,7 @@ import StroriesContainer from "./stories-container";
 import { getStoriesLength } from "@/lib/Home/get-length";
 import SiteFooter from "../ui/site-footer";
 import LoadingSpinner from "./loading-spinner";
+import { useParams } from "next/navigation";
 
 const LoadMore = () => {
   const [stories, setStories] = useState<StoriesInterface[]>([]);
@@ -17,13 +18,16 @@ const LoadMore = () => {
     sideStoriesLength: number;
   }>();
 
+  const { category } = useParams();
   const { ref, inView } = useInView();
+
+  const ifCategory = `${category ? category : ""}`;
 
   const newStoriesContainer: StoriesInterface[] = [];
 
   const loadMoreStories = async () => {
-    const nextPage = (pagesLoaded % 10) + 1;
-    const newStories = await getStories(nextPage);
+    const nextPage = pagesLoaded + 1;
+    const newStories = await getStories(nextPage, ifCategory);
     newStoriesContainer.unshift(newStories);
 
     setStories((prevStories: StoriesInterface[]) => [
@@ -32,7 +36,7 @@ const LoadMore = () => {
     ]);
 
     const length: { mainStoriesLength: number; sideStoriesLength: number } =
-      await getStoriesLength();
+      await getStoriesLength(ifCategory);
 
     setStoriesLength(length);
     setPagesLoaded(nextPage);
@@ -44,9 +48,11 @@ const LoadMore = () => {
     }
   }, [inView]);
 
-  const limit =
-    (storiesLength && Math.floor(storiesLength.mainStoriesLength / 2) - 1) ||
-    (storiesLength && storiesLength.sideStoriesLength - 1);
+  const mainLimit =
+    storiesLength && Math.floor(storiesLength.mainStoriesLength / 2) - 1;
+  const sideLimit = storiesLength && storiesLength.sideStoriesLength - 1;
+
+  // console.log(storiesLength?.mainStoriesLength);
 
   return (
     <Fragment>
@@ -58,7 +64,7 @@ const LoadMore = () => {
         />
       ))}
 
-      {pagesLoaded !== limit ? (
+      {pagesLoaded !== mainLimit && pagesLoaded !== sideLimit ? (
         <div
           ref={ref}
           className="primary-container flex flex-row justify-center items-center h-[10rem]"

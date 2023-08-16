@@ -380,7 +380,7 @@ model SideStory {
 
   // Thumb Contnet
 
-  ThumbTitle            String @unique @db.VarChar(90)
+  ThumbTitle            String @db.VarChar(90)
   ThumbImage            String
   ThumbImageDescription String @db.VarChar(100)
   ThumbDescriptionOne   String @db.VarChar(105)

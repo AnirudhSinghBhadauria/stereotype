@@ -3,6 +3,9 @@ export const getMainStories = async () => {
     "http://localhost:3000/api/Story/MainStories",
     {
       method: "GET",
+      next: {
+        revalidate: 5,
+      },
     }
   );
 

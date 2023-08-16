@@ -6,7 +6,7 @@ export const headerNavbar = [
   },
   {
     text: "Reviews",
-    link: "/Reviews",
+    link: "/Review",
     aria: "Product reviews",
   },
   {

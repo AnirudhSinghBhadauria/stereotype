@@ -9,18 +9,19 @@ export async function GET(
   try {
     const category = params.category;
 
-    const topStories = await prisma.topStories.findMany({
+    const topStories = await prisma.headlinerStory.findMany({
       where: {
         Category: { Category: category },
       },
       take: 5,
       orderBy: { PostNumber: "desc" },
       select: {
-        Title: true,
-        Author: { select: { Name: true } },
+        Author: { select: { Name: true, Slug: true } },
         CreatedAt: true,
-        Image: true,
-        ImageDescription: true,
+        ThumbImageDescription: true,
+        ThumbImage: true,
+        ThumbTitle: true,
+        Tag: true,
         Slug: true,
         Category: { select: { Category: true } },
       },
