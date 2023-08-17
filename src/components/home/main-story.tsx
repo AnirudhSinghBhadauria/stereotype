@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import AuthorReadsDate from "../ui/author-date-reads";
-import LinkSvg from "@/misc/svg/link-svg";
 import CopyPostLink from "./post-link-copy";
 import { MainStoriesThumb } from "@/utils/interfaces";
 import { getDate } from "@/lib/global/convert-date";

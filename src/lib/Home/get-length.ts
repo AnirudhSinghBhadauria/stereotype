@@ -1,6 +1,6 @@
-export const getStoriesLength = async (Category: string | null) => {
+export const getStoriesLength = async (StoryCategory: string | null) => {
   const length = await fetch(
-    `http://localhost:3000/api/Global/Length/${Category}`,
+    `${process.env.NEXT_PUBLIC_DOMAIN_URL}/api/Global/Length/${StoryCategory}`,
     {
       method: "GET",
       next: {

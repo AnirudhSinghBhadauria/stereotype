@@ -1,6 +1,6 @@
 export const getAuthorProfile = async (slug: string) => {
   const authorData = await fetch(
-    `http://localhost:3000/api/Author/Profile/${slug}`,
+    `${process.env.NEXT_PUBLIC_DOMAIN_URL}/api/Author/Profile/${slug}`,
     {
       method: "GET",
     }

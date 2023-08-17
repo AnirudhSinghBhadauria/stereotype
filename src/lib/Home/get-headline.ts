@@ -1,8 +1,11 @@
-export const getHeadlines = async (Category: string | null) => {
+export const getHeadlines = async (StoryCategory: string | null) => {
   const headlines = await fetch(
-    `http://localhost:3000/api/Story/HeadlinerStory/${Category}`,
+    `${process.env.NEXT_PUBLIC_DOMAIN_URL}/api/Story/HeadlinerStory/${StoryCategory}`,
     {
       method: "GET",
+      next: {
+        revalidate: 5
+      }
     }
   );
 

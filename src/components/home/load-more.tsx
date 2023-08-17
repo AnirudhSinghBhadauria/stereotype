@@ -52,8 +52,6 @@ const LoadMore = () => {
     storiesLength && Math.floor(storiesLength.mainStoriesLength / 2) - 1;
   const sideLimit = storiesLength && storiesLength.sideStoriesLength - 1;
 
-  // console.log(storiesLength?.mainStoriesLength);
-
   return (
     <Fragment>
       {stories.map(({ mainThumb, sideThumb, feedThumb }) => (

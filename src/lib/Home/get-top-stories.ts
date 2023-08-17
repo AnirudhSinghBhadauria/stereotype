@@ -1,6 +1,6 @@
-export const getTopStories = async (Category: string | null) => {
+export const getTopStories = async (StoryCategory: string | null) => {
   const topStories = await fetch(
-    `http://localhost:3000/api/Story/TopStories/${Category}`,
+    `${process.env.NEXT_PUBLIC_DOMAIN_URL}/api/Story/TopStories/${StoryCategory}`,
     {
       method: "GET",
     }

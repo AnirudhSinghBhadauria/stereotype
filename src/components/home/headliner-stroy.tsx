@@ -5,9 +5,14 @@ import AuthorReadsDate from "../ui/author-date-reads";
 import StereotypeInclined from "@/misc/logos/StereotypeInclined";
 import { HeadlineInterface } from "@/utils/interfaces";
 import { getHeadlines } from "@/lib/Home/get-headline";
+import { getColors } from "@/lib/global/get-colors";
 
-const Headliner = async ({ Category }: { Category: string | null }) => {
-  const headline = await getHeadlines(Category);
+const Headliner = async ({
+  StoryCategory,
+}: {
+  StoryCategory: string | null;
+}) => {
+  const headline = await getHeadlines(StoryCategory);
 
   const {
     Author,
@@ -19,13 +24,17 @@ const Headliner = async ({ Category }: { Category: string | null }) => {
     ThumbTitle,
     CreatedAt,
     Tag,
+    Category,
+    BackgroundColor,
   }: HeadlineInterface = headline.headlineThumbData;
+
+  const color = getColors(BackgroundColor).colorSlug;
 
   return (
     <div className="group mb-[20px] pt-[28px] md:mb-[50px] lg:top-[150px] lg:mb-0 lg:min-h-[750px] lg:pr-[40px]">
       <div className="overflow-hidden relative ml-[40px] md:ml-0 lg:ml-[20px] lg:mr-[70px] h-[464px] aspect-five-four">
         <Link
-          href="LINK TO THE POST"
+          href={`/Story/${Category.Category}/Headline/${Slug}/${color}`}
           aria-label={`A post written by ${Author.Name} taggeed: ${Tag}`}
         >
           <Image
@@ -46,7 +55,7 @@ const Headliner = async ({ Category }: { Category: string | null }) => {
           <Link
             className="group-hover:shadow-highlight-blurple"
             aria-label={`A post written by ${Author.Name} taggeed: ${Tag}`}
-            href="LINK TO THE POST"
+            href={`/Story/${Category.Category}/Headline/${Slug}/${color}`}
           >
             {ThumbTitle}
           </Link>
@@ -67,7 +76,7 @@ const Headliner = async ({ Category }: { Category: string | null }) => {
         fill="#fff"
         height="588.5"
         width="110"
-        className="absolute top-[140px] -left-[40px] z-10"
+        className="absolute top-[140px] -left-[40px] z-10 title-shadow"
       />
     </div>
   );

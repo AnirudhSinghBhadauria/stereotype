@@ -4,10 +4,14 @@ import { getStories } from "@/lib/Home/get-stories";
 import { StoriesInterface } from "@/utils/interfaces";
 import LoadMore from "./load-more";
 
-const StoriesWrapper = async ({ Category }: { Category: string | null }) => {
+const StoriesWrapper = async ({
+  StoryCategory,
+}: {
+  StoryCategory: string | null;
+}) => {
   let storyData: StoriesInterface[] = [];
 
-  const stories: StoriesInterface = await getStories(0, Category);
+  const stories: StoriesInterface = await getStories(0, StoryCategory);
 
   storyData.unshift(stories);
 

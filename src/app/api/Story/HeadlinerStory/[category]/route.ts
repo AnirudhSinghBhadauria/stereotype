@@ -28,6 +28,7 @@ export async function GET(
         Slug: true,
         Category: { select: { Category: true } },
         Tag: true,
+        BackgroundColor: true,
       },
       take: 1,
       orderBy: { PostNumber: "desc" },

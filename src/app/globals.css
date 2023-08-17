@@ -68,6 +68,10 @@
     @apply max-w-full md:max-w-[560px] lg:max-w-[1100px];
   }
 
+  .title-shadow {
+    filter: drop-shadow(0 35px 35px rgba(0, 0, 0, 0.6));
+  }
+
   .marking-border {
     @apply border border-white border-opacity-30;
   }

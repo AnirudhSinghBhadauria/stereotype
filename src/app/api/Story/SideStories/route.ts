@@ -2,9 +2,6 @@ import { NextResponse } from "next/server";
 import { prisma } from "../../../../../prisma/prismaClient";
 
 export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url);
-
-  console.log(searchParams);
   try {
     const sideStories = await prisma.sideStory.findFirst({
       orderBy: { PostNumber: "desc" },

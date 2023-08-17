@@ -4,8 +4,8 @@ export const seed = async () => {
   // const seeding = await prisma.mainStory.createMany({
   //   data: [
   //     {
-  //       Slug: "j",
-  //       genreId: "e123039d-81cb-404d-8cca-cb99b489116d",
+  //       Slug: "x",
+  //       genreId: "1fda14d7-71b9-439f-b63c-a9bc5457b343",
   //       authorId: "8b589a4c-272f-46c2-b918-21c5601f4773",
   //       ThumbTitle: "Lorem ipsum dolor sit amet consectet?",
   //       ThumbDescription:
@@ -51,8 +51,8 @@ export const seed = async () => {
   const seeding = await prisma.sideStory.createMany({
     data: [
       {
-        Slug: "e",
-        genreId: "e123039d-81cb-404d-8cca-cb99b489116d",
+        Slug: "v",
+        genreId: "1fda14d7-71b9-439f-b63c-a9bc5457b343",
         authorId: "8b589a4c-272f-46c2-b918-21c5601f4773",
         Image:
           "https://cdn.sanity.io/images/aftdl3p2/production/74d2d18244ccaae01920cfd3c5de0b4debe4cba8-580x464.jpg",
@@ -63,7 +63,7 @@ export const seed = async () => {
         ThumbImageDescription:
           "This is the alt text for the image, include text for the image too.",
         Tag: "Elon Musk",
-        BackgroundColor: "TORQUISE",
+        BackgroundColor: "PINK",
         Description: "this is summary of that thing",
         ThumbDescriptionOne:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste magni quos aliquam qui ratione ducimus um.",

@@ -14,6 +14,7 @@ export async function GET() {
         ThumbImageDescription: true,
         Reads: true,
         Slug: true,
+        BackgroundColor: true,
       },
     });
 

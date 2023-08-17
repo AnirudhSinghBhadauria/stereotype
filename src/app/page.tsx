@@ -12,7 +12,7 @@ const Home = () => {
       <div className="primary-cotnainer relative flex flex-row mb-[60px] pl-[10px]">
         <div className="w-full lg:w-[710px] lg:pt-[150px]">
           <Suspense fallback={<HeadlineSkeleton />}>
-            <Headliner Category="" />
+            <Headliner StoryCategory="" />
           </Suspense>
         </div>
         <div className="h-full w-full lg:max-h-full lg:w-[380px] lg:pt-[174px]">
@@ -23,14 +23,14 @@ const Home = () => {
             Top Stories
           </h2>
           <Suspense fallback={<TopStoriesSkeleton />}>
-            <TopStories Category="" />
+            <TopStories StoryCategory="" />
           </Suspense>
         </div>
       </div>
 
       <div className="pt-[28px] lg:pt-[40px] w-full flex flex-col justify-center items-center">
         <Suspense fallback={<StoriesWrapperSkeleton />}>
-          <StoriesWrapper Category="" />
+          <StoriesWrapper StoryCategory="" />
         </Suspense>
       </div>
     </section>

@@ -1,5 +1,5 @@
 export const getSideStories = async () => {
-  const stories = await fetch("http://localhost:3000/api/Story/SideStories", {
+  const stories = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN_URL}/api/Story/SideStories`, {
     method: "GET",
     next: {
       revalidate: 5,

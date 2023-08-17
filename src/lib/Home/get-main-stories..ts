@@ -1,6 +1,6 @@
 export const getMainStories = async () => {
   const stories = await fetch(
-    "http://localhost:3000/api/Story/MainStories",
+    `${process.env.NEXT_PUBLIC_DOMAIN_URL}/api/Story/MainStories`,
     {
       method: "GET",
       next: {

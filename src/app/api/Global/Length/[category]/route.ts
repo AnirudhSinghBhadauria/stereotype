@@ -3,7 +3,7 @@ import { prisma } from "../../../../../../prisma/prismaClient";
 import { Category } from "@prisma/client";
 
 export async function GET(
-  request: NextResponse,
+  request: Request,
   { params }: { params: { category: Category | undefined } }
 ) {
   try {

@@ -1,12 +1,12 @@
-export const getStories = async (skip: number, category: string | null) => {
-  const storiesForCat = `/${category}`;
+export const getStories = async (skip: number, StoryCategory: string | null) => {
+  const storiesForCat = `/${StoryCategory}`;
   const stories = await fetch(
-    `http://localhost:3000/api/Story/Stories${storiesForCat}?skip=${skip}&take=1`,
+    `${process.env.NEXT_PUBLIC_DOMAIN_URL}/api/Story/Stories${storiesForCat}?skip=${skip}&take=1`,
     {
+      method: "GET",
       next: {
         revalidate: 5,
       },
-      method: "GET",
     }
   );
 

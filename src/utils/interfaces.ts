@@ -55,6 +55,7 @@ export interface HeadlineInterface {
   Slug: string;
   Category: { Category: string };
   Tag: string;
+  BackgroundColor: string;
 }
 
 // TopStories---------------------
