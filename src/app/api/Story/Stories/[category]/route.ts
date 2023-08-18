@@ -36,6 +36,7 @@ export async function GET(
         SummaryHighlighted: true,
         Reads: true,
         Tag: true,
+        BackgroundColor: true
       },
     });
 

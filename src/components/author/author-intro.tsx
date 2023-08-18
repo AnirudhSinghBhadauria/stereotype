@@ -67,7 +67,7 @@ const AuthorIntro = async ({ author }: { author: string }) => {
                 className="flex flex-row items-center group"
                 target="_blank"
               >
-                <Mail />
+                <Mail height="20" width="20" className="fill-[#3CFFD0]" />
                 <p className="ml-[12px] font-mono uppercase text-torq-100 text-[15px] tracking-[0.125em] font-semibold hover:underline hover:underline-offset-[4.4px]">
                   {Email}
                 </p>
@@ -79,7 +79,7 @@ const AuthorIntro = async ({ author }: { author: string }) => {
                   className="flex flex-row items-center group"
                   target="_blank"
                 >
-                  <X />
+                  <X height="20" width="20" className="fill-[#3CFFD0]" />
                   <p className="ml-[12px] font-mono uppercase text-torq-100 text-[15px] tracking-[0.125em] font-semibold hover:underline hover:underline-offset-[4.4px]">
                     Twitter
                   </p>
@@ -92,7 +92,7 @@ const AuthorIntro = async ({ author }: { author: string }) => {
                   className="flex flex-row items-center group"
                   target="_blank"
                 >
-                  <In />
+                  <In height="19" width="18" className="fill-[#3CFFD0]" />
                   <p className="ml-[12px] font-mono uppercase text-torq-100 text-[15px] tracking-[0.125em] font-semibold hover:underline hover:underline-offset-[4.4px]">
                     Linkedin
                   </p>
@@ -105,7 +105,7 @@ const AuthorIntro = async ({ author }: { author: string }) => {
                   className="flex flex-row items-center group"
                   target="_blank"
                 >
-                  <Tree />
+                  <Tree height="20" width="20" className="fill-[#3CFFD0]" />
                   <p className="ml-[12px] font-mono uppercase text-torq-100 text-[15px] tracking-[0.125em] font-semibold hover:underline hover:underline-offset-[4.4px]">
                     Linktree
                   </p>

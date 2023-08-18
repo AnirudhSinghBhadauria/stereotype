@@ -3,7 +3,11 @@ import StoryCard from "./story-card";
 import { TopStoryInterface } from "@/utils/interfaces";
 import { getTopStories } from "@/lib/Home/get-top-stories";
 
-const TopStories = async ({ StoryCategory }: { StoryCategory: string | null }) => {
+const TopStories = async ({
+  StoryCategory,
+}: {
+  StoryCategory: string | null;
+}) => {
   const topStories = await getTopStories(StoryCategory);
 
   const topStoriesCollection: TopStoryInterface[] =
@@ -22,6 +26,8 @@ const TopStories = async ({ StoryCategory }: { StoryCategory: string | null }) =
           ThumbImageDescription,
           ThumbTitle,
           Tag,
+          BackgroundColor,
+          Category,
         }) => {
           number++;
 
@@ -35,6 +41,8 @@ const TopStories = async ({ StoryCategory }: { StoryCategory: string | null }) =
               ThumbImageDescription={ThumbImageDescription}
               ThumbTitle={ThumbTitle}
               Tag={Tag}
+              BackgroundColor={BackgroundColor}
+              Category={Category}
             />
           );
         }

@@ -15,6 +15,7 @@ export async function GET(request: Request) {
         Tag: true,
         Slug: true,
         Category: { select: { Category: true } },
+        BackgroundColor: true
       },
     });
 

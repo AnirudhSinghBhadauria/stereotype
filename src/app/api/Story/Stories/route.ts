@@ -29,6 +29,7 @@ export async function GET(request: NextRequest) {
         SummaryHighlighted: true,
         Reads: true,
         Tag: true,
+        BackgroundColor: true,
       },
     });
 

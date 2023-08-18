@@ -69,6 +69,20 @@ export interface TopStoryInterface {
   Tag: string;
   Slug: string;
   Category: { Category: string };
+  BackgroundColor: string;
+}
+
+export interface TopStoryCardInterface {
+  Author: { Name: string; Slug: string };
+  CreatedAt: string;
+  Slug: string;
+  ThumbImage: string;
+  ThumbImageDescription: string;
+  ThumbTitle: string;
+  Tag: string;
+  number: number;
+  BackgroundColor: string;
+  Category: { Category: string };
 }
 
 // GlobalStories ------------------
@@ -88,6 +102,7 @@ export interface MainStoriesThumb {
   SummaryHighlighted: string;
   Reads: number;
   Tag: string;
+  BackgroundColor: string;
 }
 
 export interface SideStoryThumb {

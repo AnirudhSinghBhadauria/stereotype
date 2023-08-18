@@ -3,6 +3,9 @@ export const getTopStories = async (StoryCategory: string | null) => {
     `${process.env.NEXT_PUBLIC_DOMAIN_URL}/api/Story/TopStories/${StoryCategory}`,
     {
       method: "GET",
+      next: {
+        revalidate: 5
+      }
     }
   );
 

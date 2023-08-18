@@ -68,6 +68,22 @@
     @apply max-w-full md:max-w-[560px] lg:max-w-[1100px];
   }
 
+  .bg-repeating-lines-dark {
+    background-image: linear-gradient(
+      transparent calc(100% - 1px),
+      rgba(0, 0, 0, 0.3)
+    );
+    background-image: linear-gradient(
+      transparent calc(100% - 1px),
+      rgba(0, 0, 0, 0.3)
+    );
+    background-size: 1px 1.04em;
+  }
+
+  .word-spacing-single-post {
+    word-spacing: 0.1em;
+  }
+
   .title-shadow {
     filter: drop-shadow(0 35px 35px rgba(0, 0, 0, 0.6));
   }

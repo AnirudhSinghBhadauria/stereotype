@@ -22,7 +22,8 @@ const SideStory = ({ postProps }: { postProps: SideStoryThumb }) => {
     ThumbTitle,
   } = postProps;
 
-  const { primary, secondary, tertiary, quadrple } = getColors(BackgroundColor);
+  const { primary, secondary, tertiary, quadrple, colorSlug } =
+    getColors(BackgroundColor);
 
   const textHoverColor = `${
     BackgroundColor === "ORANGE"
@@ -55,7 +56,7 @@ const SideStory = ({ postProps }: { postProps: SideStoryThumb }) => {
               className={`font-title text-[58px] font-[800] text-black leading-[0.85] mb-[10px] ${textHoverColor} `}
             >
               <Link
-                href="LINK TO THE POST"
+                href={`/Story/${Category.Category}/Side/${Slug}/${colorSlug}`}
                 aria-label={`Link to the post tagged : ${Tag}`}
               >
                 {ThumbTitle}
@@ -78,7 +79,7 @@ const SideStory = ({ postProps }: { postProps: SideStoryThumb }) => {
           <section className="relative -ml-[20px] mb-[28px] h-[182px] w-[275px] md:h-[244px] md:w-[370px] lg:ml-[-45px] lg:h-[235px] lg:w-[352px] overflow-hidden rounded-[4px]">
             <Link
               aria-label={`Link to the post tagged : ${Tag}`}
-              href="LINK TO THE POST"
+              href={`/Story/${Category.Category}/Side/${Slug}/${colorSlug}`}
             >
               <Image
                 src={ThumbImage}
@@ -93,7 +94,7 @@ const SideStory = ({ postProps }: { postProps: SideStoryThumb }) => {
           <li>
             <Link
               aria-label={`Link to the post tagged : ${Tag}`}
-              href="LINK TO THE POST"
+              href={`/Story/${Category.Category}/Side/${Slug}/${colorSlug}`}
               className="flex flex-row items-start gap-[30px]"
             >
               <div
@@ -106,17 +107,17 @@ const SideStory = ({ postProps }: { postProps: SideStoryThumb }) => {
                 >
                   {ThumbDescriptionOne}
                 </p>
-                  <div
-                    style={{ backgroundColor: tertiary }}
-                    className="w-full h-[1px] mt-[13.5px]"
-                  ></div>
+                <div
+                  style={{ backgroundColor: tertiary }}
+                  className="w-full h-[1px] mt-[13.5px]"
+                ></div>
               </section>
             </Link>
           </li>
           <li>
             <Link
               aria-label={`Link to the post tagged : ${Tag}`}
-              href="LINK TO THE POST"
+              href={`/Story/${Category.Category}/Side/${Slug}/${colorSlug}`}
               className="flex flex-row items-start gap-[30px]"
             >
               <div

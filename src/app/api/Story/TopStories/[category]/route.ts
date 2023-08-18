@@ -24,6 +24,7 @@ export async function GET(
         Tag: true,
         Slug: true,
         Category: { select: { Category: true } },
+        BackgroundColor: true
       },
     });
 

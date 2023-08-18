@@ -5,12 +5,12 @@ import AuthorReadsDate from "../ui/author-date-reads";
 import CopyPostLink from "./post-link-copy";
 import { MainStoriesThumb } from "@/utils/interfaces";
 import { getDate } from "@/lib/global/convert-date";
+import { getColors } from "@/lib/global/get-colors";
 
 const MainStory = ({ postProps }: { postProps: MainStoriesThumb }) => {
   const {
     Author,
     Reads,
-    Slug,
     CreatedAt,
     Summary,
     SummaryHighlighted,
@@ -21,7 +21,12 @@ const MainStory = ({ postProps }: { postProps: MainStoriesThumb }) => {
     ThumbImageTwoDescription,
     ThumbTitle,
     Tag,
+    Slug,
+    Category,
+    BackgroundColor,
   } = postProps;
+
+  const color = getColors(BackgroundColor).colorSlug;
 
   return (
     <li className="pb-[44px] last-of-type:pb-[20px] last-of-type:border-b-[0px] last-of-type:mb-[0px] mb-[11.85px] border-b-[8px] border-[#313131] hover:bg-[#181818cf]">
@@ -29,7 +34,7 @@ const MainStory = ({ postProps }: { postProps: MainStoriesThumb }) => {
         <div className="ml-auto mt-[24px] sm:ml-[9.88px] w-[320px] sm:w-[480px]">
           <div className="overflow-hidden relative aspect-five-four w-full h-[319px] rounded-[2px] border border-solid border-[#313131]">
             <Link
-              href="LINK TO THE POST"
+              href={`/Story/${Category.Category}/Main/${Slug}/${color}`}
               aria-label={`Link to the post tagged : ${Tag}`}
             >
               <Image
@@ -44,7 +49,7 @@ const MainStory = ({ postProps }: { postProps: MainStoriesThumb }) => {
         </div>
         <div className="relative z-10 pt-[12px] sm:px-[16px] lg:mb-[8px] mr-[25px] sm:w-[440px] sm:ml-auto sm:mr-[10px] -mt-[30px] pr-[12px]">
           <Link
-            href="LINK TO THE POST"
+            href={`/Story/${Category.Category}/Main/${Slug}/${color}`}
             aria-label={`Link to the post tagged : ${Tag}`}
           >
             <h2
@@ -83,10 +88,12 @@ const MainStory = ({ postProps }: { postProps: MainStoriesThumb }) => {
           <div className="font-poly font-extrabold text-[11px] flex flex-row justify-center items-center w-[24px] h-[24px] rounded-full bg-white text-black uppercase">
             {Reads}
           </div>
-          <CopyPostLink text={`http://localhost:3000/Author/${Author.Slug}`} />
+          <CopyPostLink
+            text={`${process.env.NEXT_PUBLIC_DOMAIN_URL}/Story/${Category.Category}/Main/${Slug}/${color}`}
+          />
         </div>
         <Link
-          href="LINK TO THE POST"
+          href={`/Story/${Category.Category}/Main/${Slug}/${color}`}
           aria-label={`Link to the post tagged : ${Tag}`}
           className="w-full flex flex-col"
         >
@@ -101,7 +108,7 @@ const MainStory = ({ postProps }: { postProps: MainStoriesThumb }) => {
 
       <div className="w-full flex flex-row justify-center items-center">
         <Link
-          href="LINK TO THE POST"
+          href={`/Story/${Category.Category}/Main/${Slug}/${color}`}
           aria-label={`Link to the post tagged : ${Tag}`}
         >
           <div className="w-[443px] h-[296px] overflow-hidden rounded-[2px] border border-solid border-[#313131]">

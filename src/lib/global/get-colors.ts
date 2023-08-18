@@ -1,6 +1,6 @@
 export const getColors = (color: string) => {
   switch (color) {
-    case "ORANGE" || "Ember": {
+    case "ORANGE": {
       return {
         primary: "#ff3d00",
         secondary: "#ff3c00e6",
@@ -9,7 +9,7 @@ export const getColors = (color: string) => {
         colorSlug: "Ember",
       };
     }
-    case "LEAF" || "Zephyr": {
+    case "LEAF": {
       return {
         primary: "#d6f31f",
         secondary: "#d7f31fe7",
@@ -18,7 +18,7 @@ export const getColors = (color: string) => {
         colorSlug: "Zephyr",
       };
     }
-    case "PINK" || "Cotton": {
+    case "PINK": {
       return {
         primary: "#ffc2e7",
         secondary: "#ffc2e7e7",
@@ -27,7 +27,7 @@ export const getColors = (color: string) => {
         colorSlug: "Cotton",
       };
     }
-    case "TORQUISE" || "Aqua": {
+    case "TORQUISE": {
       return {
         primary: "#3cffd0",
         secondary: "#3dffd2e6",
@@ -38,12 +38,32 @@ export const getColors = (color: string) => {
     }
     default: {
       return {
-        primary: "#d6f31f",
-        secondary: "#d7f31fe7",
-        tertiary: "#309875",
-        quadrple: "#b2cb13",
-        colorSlug: "Zephyr",
+        primary: "#ff3d00",
+        secondary: "#ff3c00e6",
+        tertiary: "#ffc2e7",
+        quadrple: "#c83102",
+        colorSlug: "Ember",
       };
+    }
+  }
+};
+
+export const getColorForPost = (color: string) => {
+  switch (color) {
+    case "Ember": {
+      return "#ff3d00";
+    }
+    case "Zephyr": {
+      return "#d6f31f";
+    }
+    case "Cotton": {
+      return "#ffc2e7";
+    }
+    case "Aqua": {
+      return "#3cffd0";
+    }
+    default: {
+      return "#ff3d00";
     }
   }
 };

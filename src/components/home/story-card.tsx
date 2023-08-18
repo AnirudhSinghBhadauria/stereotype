@@ -2,6 +2,8 @@ import Link from "next/link";
 import React from "react";
 import AuthorReadsDate from "../ui/author-date-reads";
 import Image from "next/image";
+import { TopStoryCardInterface } from "@/utils/interfaces";
+import { getColors } from "@/lib/global/get-colors";
 
 const StoryCard = ({
   Author,
@@ -12,16 +14,11 @@ const StoryCard = ({
   ThumbTitle,
   Tag,
   number,
-}: {
-  Author: { Name: string; Slug: string };
-  CreatedAt: string;
-  Slug: string;
-  ThumbImage: string;
-  ThumbImageDescription: string;
-  ThumbTitle: string;
-  Tag: string;
-  number: number;
-}) => {
+  BackgroundColor,
+  Category,
+}: TopStoryCardInterface) => {
+  const color = getColors(BackgroundColor).colorSlug;
+
   return (
     <li className="group relative mx-auto flex flex-row border-b border-[#313131] text-white last-of-type:border-b-0 md:mx-0 md:max-w-full md:border-b-0 [&>div>div]:first-of-type:mt-0 [&>div>div]:first-of-type:pt-0 [&>div>div]:last-of-type:pb-0 [&>div>div]:last-of-type:md:border-b-0 ">
       <div className="flex flex-row w-full items-start">
@@ -34,7 +31,7 @@ const StoryCard = ({
         <div className="flex grow flex-row border-[#313131] py-[16px] md:flex-row-reverse md:justify-between md:border-b">
           <div className="overflow-hidden w-[100px] h-[80px] aspect-five-four rounded-[3px]">
             <Link
-              href="LINK TO THE POST"
+              href={`/Story/${Category.Category}/Headline/${Slug}/${color}`}
               aria-label={`A post written by ${Author.Name} taggeed: ${Tag}`}
             >
               <Image
@@ -50,7 +47,7 @@ const StoryCard = ({
             <div className="md:w-[320px] md:max-w-[320px] lg:w-[240px] lg:max-w-[240px] lg:pr-[10px]">
               <h2 className="font-poly text-[20px] font-bold leading-[1] tracking-[0.01em] md:text-[24px] lg:text-[20.75px]">
                 <Link
-                  href="LINK TO THE POST"
+                  href={`/Story/${Category.Category}/Headline/${Slug}/${color}`}
                   aria-label={`A post written by ${Author.Name} taggeed: ${Tag}`}
                   className="group-hover:underline-on-hover"
                 >
