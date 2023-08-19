@@ -7,7 +7,7 @@ import {
   SideStoryThumb,
   FeedStatus,
 } from "@/utils/interfaces";
-import { getDate } from "@/lib/global/convert-date";
+import { getDateTime } from "@/lib/global/convert-date";
 
 const StroriesContainer = ({
   mainThumb,
@@ -22,7 +22,7 @@ const StroriesContainer = ({
     <li className="flex flex-row last-of-type:mb-[0px] mb-[80px]">
       <div className="flex-1 flex max-w-[560px] flex-col lg:mr-[100px] mx-auto sm:max-w-[500px]">
         <ReaderStoryline
-          date={getDate(mainThumb[0].CreatedAt)}
+          date={getDateTime(mainThumb[0].CreatedAt)}
           message={feedThumb.Message}
         />
         <ul>

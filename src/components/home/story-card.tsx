@@ -4,6 +4,7 @@ import AuthorReadsDate from "../ui/author-date-reads";
 import Image from "next/image";
 import { TopStoryCardInterface } from "@/utils/interfaces";
 import { getColors } from "@/lib/global/get-colors";
+import { getDate } from "@/lib/global/convert-date";
 
 const StoryCard = ({
   Author,
@@ -55,7 +56,7 @@ const StoryCard = ({
                 </Link>
               </h2>
               <AuthorReadsDate
-                date={CreatedAt}
+                date={getDate(CreatedAt)}
                 name={Author.Name}
                 slug={Author.Slug}
                 className="pt-[10px]"

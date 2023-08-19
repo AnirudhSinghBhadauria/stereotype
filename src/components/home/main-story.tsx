@@ -4,7 +4,7 @@ import React from "react";
 import AuthorReadsDate from "../ui/author-date-reads";
 import CopyPostLink from "./post-link-copy";
 import { MainStoriesThumb } from "@/utils/interfaces";
-import { getDate } from "@/lib/global/convert-date";
+import { getDate, getDateTimeZone } from "@/lib/global/convert-date";
 import { getColors } from "@/lib/global/get-colors";
 
 const MainStory = ({ postProps }: { postProps: MainStoriesThumb }) => {
@@ -63,7 +63,7 @@ const MainStory = ({ postProps }: { postProps: MainStoriesThumb }) => {
             </p>
           </Link>
           <AuthorReadsDate
-            date={getDate(CreatedAt)}
+            date={getDateTimeZone(CreatedAt)}
             ifReads={true}
             name={Author.Name}
             reads={Reads}
@@ -79,9 +79,10 @@ const MainStory = ({ postProps }: { postProps: MainStoriesThumb }) => {
       <div className="py-[16px] px-0 lg:py-[24px] md:px-[10px] flex flex-row">
         <div className="mt-[5px] w-[38px] space-y-2 relative flex min-w-[40px] flex-col md:ml-[-3px] md:items-start">
           <Link
+            style={{ backgroundColor: getColors(BackgroundColor).primary }}
             href={`/Author/${Author.Slug}`}
             aria-label={`Link to the Profile Page of Author : ${Author.Name}`}
-            className="transition-all duration-75 ease-linear font-poly font-semibold text-[12px] flex flex-row justify-center items-center w-[24px] h-[24px] rounded-full bg-mustard-100 text-black hover:bg-mustard-100 hover:text-[#000] uppercase"
+            className="transition-all duration-75 ease-linear font-poly font-semibold text-[12px] flex flex-row justify-center items-center w-[24px] h-[24px] rounded-full text-black hover:bg-mustard-100 hover:text-[#000] uppercase"
           >
             {Author.Name.slice(0, 1)}
           </Link>

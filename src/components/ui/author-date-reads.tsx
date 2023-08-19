@@ -29,7 +29,7 @@ const AuthorReadsDate = ({
       {ifReads && (
         <p className="mr-[8px] primary-small-gray-11px">{`${reads} READS`}</p>
       )}
-      <p className="mr-[8px] primary-small-gray-11px">{getDate(date)}</p>
+      <p className="mr-[8px] primary-small-gray-11px">{date}</p>
     </div>
   );
 };

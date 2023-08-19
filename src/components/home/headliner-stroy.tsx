@@ -6,6 +6,7 @@ import StereotypeInclined from "@/misc/logos/StereotypeInclined";
 import { HeadlineInterface } from "@/utils/interfaces";
 import { getHeadlines } from "@/lib/Home/get-headline";
 import { getColors } from "@/lib/global/get-colors";
+import { getDateTimeZone } from "@/lib/global/convert-date";
 
 const Headliner = async ({
   StoryCategory,
@@ -67,7 +68,7 @@ const Headliner = async ({
           name={Author.Name}
           reads={Reads}
           slug={Author.Slug}
-          date={CreatedAt}
+          date={getDateTimeZone(CreatedAt)}
           className="pt-[10px]"
           ifReads={true}
         />
