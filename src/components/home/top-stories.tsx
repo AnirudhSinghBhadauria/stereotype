@@ -6,7 +6,7 @@ import { getTopStories } from "@/lib/Home/get-top-stories";
 const TopStories = async ({
   StoryCategory,
 }: {
-  StoryCategory: string | null;
+  StoryCategory: string;
 }) => {
   const topStories = await getTopStories(StoryCategory);
 

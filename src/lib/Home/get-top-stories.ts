@@ -1,4 +1,4 @@
-export const getTopStories = async (StoryCategory: string | null) => {
+export const getTopStories = async (StoryCategory: string) => {
   const topStories = await fetch(
     `${process.env.NEXT_PUBLIC_DOMAIN_URL}/api/Story/TopStories/${StoryCategory}`,
     {
