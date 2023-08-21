@@ -1,7 +1,7 @@
 export const getStories = async (skip: number, StoryCategory: string | null) => {
-  const storiesForCat = `/${StoryCategory}`;
+  // const storiesForCat = `/${StoryCategory}`;
   const stories = await fetch(
-    `${process.env.NEXT_PUBLIC_DOMAIN_URL}/api/Story/Stories${storiesForCat}?skip=${skip}&take=1`,
+    `${process.env.NEXT_PUBLIC_DOMAIN_URL}/api/Story/Stories/${StoryCategory}?skip=${skip}&take=1`,
     {
       method: "GET",
       next: {
@@ -9,7 +9,7 @@ export const getStories = async (skip: number, StoryCategory: string | null) => 
       },
     }
   );
-
+``
   if (!stories.ok) {
     throw new Error("Error ocurred be aware.");
   }
