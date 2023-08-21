@@ -167,3 +167,12 @@ export interface ArticleBodyInterface {
   ParaEight: string;
   AsideText: string;
 }
+
+export interface MoreStoriesInterface {
+  Image: string;
+  ImageDescription: string;
+  Title: string;
+  Slug: string;
+  BackgroundColor: string;
+  Tag: string;
+}

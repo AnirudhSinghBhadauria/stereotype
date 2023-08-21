@@ -7,7 +7,7 @@ export async function GET(
   { params }: { params: { category: Category | undefined } }
 ) {
   try {
-    const category = params.category;
+    const { category } = params;
 
     const mainStories = await prisma.mainStory.findMany({
       where: {

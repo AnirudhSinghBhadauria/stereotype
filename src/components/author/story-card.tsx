@@ -59,7 +59,7 @@ const StoryCard = async ({
       <Link
         href="LINK TO THE POST"
         aria-label={`A Post made by ${Author.Name} tagged : ${Tag}`}
-        className="w-[198px] h-[132] rounded-[3px] overflow-hidden border-[1px] border-[#313131]"
+        className="w-[198px] h-[132px] rounded-[3px] overflow-hidden border-[1px] border-[#313131]"
       >
         <Image
           src={ThumbImage}

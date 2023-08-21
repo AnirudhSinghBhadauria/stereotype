@@ -1,10 +1,10 @@
-import StoryHeroSection from "@/components/story/hero-section";
-import MoreFromSection from "@/components/story/more-from";
+import StoryHeroSection from "@/components/post/hero-section";
+import MoreFromSection from "@/components/post/more-from";
 import { getColorForPost } from "@/lib/global/get-colors";
-import { getSinglePost } from "@/lib/global/get-single-post";
+import { getSinglePost } from "@/lib/Post/get-single-post";
 import SiteFooter from "@/components/ui/site-footer";
 import React, { Fragment } from "react";
-import ArticleBody from "@/components/story/article-body";
+import ArticleBody from "@/components/post/article-body";
 
 const Story = async ({ params }: { params: { slug: string[] } }) => {
   const category = params.slug[0];
@@ -12,6 +12,7 @@ const Story = async ({ params }: { params: { slug: string[] } }) => {
   const slug = params.slug[2];
   const colorName = params.slug[3];
   const color = getColorForPost(params.slug[3]);
+
   const post = await getSinglePost(params.slug);
 
   // console.log(post.postData);
@@ -74,7 +75,10 @@ const Story = async ({ params }: { params: { slug: string[] } }) => {
           }}
         />
 
-        <MoreFromSection />
+        <MoreFromSection
+          category={category}
+          Author={{ Name: Author.Name, Slug: Author.Slug }}
+        />
       </section>
       <SiteFooter />
     </Fragment>
