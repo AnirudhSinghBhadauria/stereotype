@@ -53,7 +53,7 @@ model HeadlinerStory {
   // Dedicated Page content
 
   Title            String @unique @db.VarChar(90)
-  Description      String @db.VarChar(140)
+  Description      String @db.VarChar(240)
   // Author Relation
   Author           Author @relation(fields: [authorId], references: [id])
   authorId         String
@@ -63,7 +63,7 @@ model HeadlinerStory {
   Slug             String @unique
   Tag              String
   Image            String
-  ImageDescription String @db.VarChar(100)
+  ImageDescription String @db.VarChar(150)
 
   // Miscllaneous Data
 
@@ -303,7 +303,7 @@ model MainStory {
   // Dedicated Page content 
 
   Title            String @db.VarChar(90)
-  Description      String @db.VarChar(140)
+  Description      String @db.VarChar(240)
   // Author Relation 
   Author           Author @relation(fields: [authorId], references: [id])
   authorId         String
@@ -313,7 +313,7 @@ model MainStory {
   Slug             String @unique
   Tag              String
   Image            String
-  ImageDescription String @db.VarChar(100)
+  ImageDescription String @db.VarChar(150)
 
   // Miscllaneous Data 
 
@@ -358,7 +358,7 @@ model SideStory {
   // Dedicated Content 
 
   Title            String @db.VarChar(90)
-  Description      String @db.VarChar(140)
+  Description      String @db.VarChar(240)
   // Author Relation 
   Author           Author @relation(fields: [authorId], references: [id])
   authorId         String
@@ -368,7 +368,7 @@ model SideStory {
   Slug             String @unique
   Tag              String
   Image            String
-  ImageDescription String @db.VarChar(100)
+  ImageDescription String @db.VarChar(150)
 
   // Miscllaneous Data
 

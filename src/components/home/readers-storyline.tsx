@@ -11,11 +11,11 @@ const ReaderStoryline = ({
     <div>
       <section className="relative pl-[38px] font-poly lg:pl-[50px]">
         <div>
-          <h2 className="mb-[10.75px] text-[16.25px] leading-[1.2] tracking-[0.02]  text-white">
+          <h2 className="mb-[8px] text-[16.25px] leading-[1.2] tracking-[0.02]  text-white">
             Reader's Streamline
           </h2>
-          <p className="uppercase primary-small-gray-11px mb-[1.35px]">
-            {`feed as per ${date}`}
+          <p className="uppercase primary-small-gray-11px">
+            {`feed Refreshed as per ${date}`}
           </p>
           <p className="uppercase primary-small-torq-11px pb-[24px]">
             {message}

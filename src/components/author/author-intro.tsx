@@ -7,6 +7,7 @@ import Mail from "@/misc/logos/author/email";
 import In from "@/misc/logos/author/linkedin";
 import { AuthorProfileInterface } from "@/utils/interfaces";
 import { getAuthorProfile } from "@/lib/author/get-author-profiles";
+import LinkTree from "@/misc/logos/author/link-tree";
 
 const AuthorIntro = async ({ author }: { author: string }) => {
   const AuthorData = await getAuthorProfile(author);
@@ -105,7 +106,7 @@ const AuthorIntro = async ({ author }: { author: string }) => {
                   className="flex flex-row items-center group"
                   target="_blank"
                 >
-                  <Tree height="20" width="20" className="fill-[#3CFFD0]" />
+                  <LinkTree height="19" width="18" className="fill-[#3CFFD0]" />
                   <p className="ml-[12px] font-mono uppercase text-torq-100 text-[15px] tracking-[0.125em] font-semibold hover:underline hover:underline-offset-[4.4px]">
                     Linktree
                   </p>

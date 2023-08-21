@@ -80,6 +80,18 @@
     background-size: 1px 1.04em;
   }
 
+  .bg-repeating-lines-dark-post {
+    background-image: linear-gradient(
+      transparent calc(100% - 1px),
+      rgba(0, 0, 0, 0.3)
+    );
+    background-image: linear-gradient(
+      transparent calc(100% - 1px),
+      rgba(0, 0, 0, 0.3)
+    );
+    background-size: 1px 1.2em;
+  }
+
   .word-spacing-single-post {
     word-spacing: 0.1em;
   }
@@ -89,7 +101,7 @@
   }
 
   .marking-border {
-    @apply border border-white border-opacity-30;
+    @apply border border-black border-opacity-30;
   }
 
   .author-gradinet {
@@ -132,5 +144,18 @@
 
   .center-by-margin {
     margin: 0 auto;
+  }
+
+  /* single story */
+
+  .intro-story-para {
+    @apply text-black mb-[20px] font-sans font-[440] text-[17.25px] leading-[1.6] -tracking-[0.013em] first-letter:float-left first-letter:mr-[18px] first-letter:font-gen first-letter:text-[100px] first-letter:font-[555] first-letter:leading-[.72] selection:bg-[#d8fff6];
+
+    word-spacing: 0.05em;
+  }
+  .body-story-para {
+    @apply text-black mb-[20px] font-sans font-[440] text-[17.25px] leading-[1.6] -tracking-[0.013em] selection:bg-[#d8fff6];
+
+    word-spacing: 0.05em;
   }
 }

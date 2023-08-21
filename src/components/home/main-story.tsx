@@ -6,6 +6,7 @@ import CopyPostLink from "./post-link-copy";
 import { MainStoriesThumb } from "@/utils/interfaces";
 import { getDate, getDateTimeZone } from "@/lib/global/convert-date";
 import { getColors } from "@/lib/global/get-colors";
+import LinkSvg from "@/misc/svg/link-svg";
 
 const MainStory = ({ postProps }: { postProps: MainStoriesThumb }) => {
   const {
@@ -91,7 +92,13 @@ const MainStory = ({ postProps }: { postProps: MainStoriesThumb }) => {
           </div>
           <CopyPostLink
             text={`${process.env.NEXT_PUBLIC_DOMAIN_URL}/Story/${Category.Category}/Main/${Slug}/${color}`}
-          />
+          >
+            <div
+              title="Copy Link" className={`flex flex-row justify-center items-center w-[24px] h-[24px] transition-all ease-linear duration-100 rounded-full text-black bg-white hover:bg-mustard-100`}
+            >
+              <LinkSvg />
+            </div>
+          </CopyPostLink>
         </div>
         <Link
           href={`/Story/${Category.Category}/Main/${Slug}/${color}`}

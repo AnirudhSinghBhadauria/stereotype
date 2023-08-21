@@ -130,3 +130,28 @@ export interface StoriesInterface {
   sideThumb: SideStoryThumb[];
   feedThumb: FeedStatus;
 }
+
+// Single Stories
+
+export interface TitleInterface {
+  Author: {
+    DescriptionOne: string;
+    Name: string;
+    Slug: string;
+    Instagram?: string;
+    Linktree?: string;
+    Linkedin?: string;
+    Twitter?: string;
+  };
+  Tag: string;
+  Image: string;
+  ImageDescription: string;
+  Title: string;
+  Description: string;
+  Reads: string;
+  CreatedAt: string;
+  category: string;
+  format: string;
+  slug: string;
+  colorName: string;
+}

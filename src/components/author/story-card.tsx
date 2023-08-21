@@ -48,7 +48,7 @@ const StoryCard = async ({
           </Link>
           <AuthorReadsDate
             name={Author.Name}
-            date={CreatedAt}
+            date={getDate(CreatedAt)}
             reads={Reads}
             slug={Slug}
             ifReads={true}

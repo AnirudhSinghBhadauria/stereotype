@@ -1,13 +1,35 @@
-import Stereotype from "@/misc/logos/Stereotype";
-import Tree from "@/misc/logos/author/link";
 import LinkTree from "@/misc/logos/author/link-tree";
+import Stereotype from "@/misc/logos/Stereotype";
 import In from "@/misc/logos/author/linkedin";
+import Tree from "@/misc/logos/author/link";
 import X from "@/misc/logos/author/twitter";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { TitleInterface } from "@/utils/interfaces";
+import { getDateTime } from "@/lib/global/convert-date";
+import CopyPostLink from "../home/post-link-copy";
 
-const StoryHeroSection = ({ color }: { color: string }) => {
+const StoryHeroSection = ({
+  color,
+  titleData,
+}: {
+  color: string;
+  titleData: TitleInterface;
+}) => {
+  const {
+    Author,
+    CreatedAt,
+    Description,
+    ImageDescription,
+    Reads,
+    Tag,
+    Title,
+    category,
+    format,
+    slug,
+    colorName,
+  } = titleData;
   return (
     <div
       style={{ backgroundColor: color }}
@@ -32,94 +54,114 @@ const StoryHeroSection = ({ color }: { color: string }) => {
           <section className="mb-[18px] md:mb-[24px]">
             <div className="lg:px-0 leading-none mb-[8px]">
               <p className="font-mono uppercase inline text-[14.25px] font-bold tracking-[0.05em]">
-                STREAMING
+                {Tag}
               </p>
             </div>
             <div className="mb-[8px]">
               <h1 className="pb-[8px] font-poly text-[46px] font-bold leading-[1.04] -tracking-[0.02em] lg:text-[66px] bg-repeating-lines-dark">
-                It’s time to rethink our relationships with streaming services
+                {Title}
               </h1>
             </div>
             <h2 className="font-gen word-spacing-single-post text-[22px] font-[450] leading-[1.1] lg:text-[24.9px]">
-              With streaming services across the board raising their prices, you
-              owe it to yourself to have a good deep think about what you want
-              out of all these subscriptions and what you’re actually getting
-              for your money.
+              {Description}
             </h2>
           </section>
           <section>
             <p className="mb-[4px] font-gen text-[13px] font-medium leading-[1.25] text-[#131313]">
               By{" "}
               <span className="font-semibold hover:underline underline-offset-[1.5px] text-black">
-                <Link href="LINK TO THE AUTHOR" aria-label="">
-                  Charles Pulliam-Moore
+                <Link
+                  href={`/Author/$${Author.Slug}`}
+                  aria-label={`Link to the Profile Page of Author : ${Author.Name}`}
+                >
+                  {Author.Name}
                 </Link>
               </span>
-              , a reporter focusing on film, TV, and pop culture. Before The
-              Verge, he wrote about comic books, labor, race, and more at io9
-              and Gizmodo for almost five years.
+              , {`${Author.DescriptionOne}`}
             </p>
             <div className="flex flex-row space-x-[10px] mb-[13px]">
               <p className="font-gen text-[12.75px] font-medium leading-[1.3] text-black word-spacing-single-post">
-                Aug 16, 2023, 12:30 AM GMT+5:30
+                {getDateTime(CreatedAt)}
               </p>
               <p className="font-gen text-[12.75px] font-medium leading-[1.3] text-black">
-                0 Reads
+                {`${Reads} Reads`}
               </p>
             </div>
             <div className="flex flex-row space-x-[8px]">
-              <Link href="" aria-label="">
-                <div className="group transition-all duration-150 ease-in-out h-[30px] w-[30px] flex flex-row justify-center items-center rounded-full bg-white hover:bg-black">
-                  <X
-                    className="fill-black group-hover:fill-white"
-                    height="12.5px"
-                    width="12.5px"
-                  />
-                </div>
-              </Link>
-              <Link href="" aria-label="">
-                <div className="group transition-all duration-150 ease-in-out h-[30px] w-[30px] flex flex-row justify-center items-center rounded-full bg-white hover:bg-black">
-                  <In
-                    className="fill-black group-hover:fill-white"
-                    height="12.5px"
-                    width="12.5px"
-                  />
-                </div>
-              </Link>
-              <Link href="" aria-label="">
-                <div className="group transition-all duration-150 ease-in-out h-[30px] w-[30px] flex flex-row justify-center items-center rounded-full bg-white hover:bg-black">
-                  <LinkTree
-                    className="fill-black group-hover:fill-white"
-                    height="13.75px"
-                    width="11.75px"
-                  />
-                </div>
-              </Link>
-              <Link href="" aria-label="">
-                <div className="group transition-all duration-150 ease-in-out h-[30px] w-[30px] flex flex-row justify-center items-center rounded-full bg-white hover:bg-black">
+              {Author.Twitter && (
+                <Link
+                  href={Author.Twitter}
+                  aria-label={`${Author.Name}'s Twitter Account.`}
+                  target="_blank"
+                >
+                  <div className="group transition-all duration-150 ease-in-out h-[30px] w-[30px] flex flex-row justify-center items-center rounded-full bg-white hover:bg-black">
+                    <X
+                      className="fill-black group-hover:fill-white"
+                      height="12.5px"
+                      width="12.5px"
+                    />
+                  </div>
+                </Link>
+              )}
+              {Author.Linkedin && (
+                <Link
+                  href={Author.Linkedin}
+                  aria-label={`${Author.Name}'s Linkedin Account.`}
+                  target="_blank"
+                >
+                  <div className="group transition-all duration-150 ease-in-out h-[30px] w-[30px] flex flex-row justify-center items-center rounded-full bg-white hover:bg-black">
+                    <In
+                      className="fill-black group-hover:fill-white"
+                      height="12.5px"
+                      width="12.5px"
+                    />
+                  </div>
+                </Link>
+              )}
+              {Author.Linktree && (
+                <Link
+                  href={Author.Linktree}
+                  aria-label={`${Author.Name}'s Linktree.`}
+                  target="_blank"
+                >
+                  <div className="group transition-all duration-150 ease-in-out h-[30px] w-[30px] flex flex-row justify-center items-center rounded-full bg-white hover:bg-black">
+                    <LinkTree
+                      className="fill-black group-hover:fill-white"
+                      height="13.75px"
+                      width="11.75px"
+                    />
+                  </div>
+                </Link>
+              )}
+              <CopyPostLink
+                text={`${process.env.NEXT_PUBLIC_DOMAIN_URL}/Story/${category}/${format}/${slug}/${colorName}`}
+              >
+                <div
+                  title="Copy Link"
+                  className="group transition-all duration-150 ease-in-out h-[30px] w-[30px] flex flex-row justify-center items-center rounded-full bg-white hover:bg-black"
+                >
                   <Tree
                     className="fill-black group-hover:fill-white"
                     height="12.5px"
                     width="12.5px"
                   />
                 </div>
-              </Link>
+              </CopyPostLink>
             </div>
           </section>
         </div>
         <div className="lg:w-1/2">
           <div className="w-[550px] h-[550px] overflow-hidden">
             <Image
-              src="https://cdn.sanity.io/images/aftdl3p2/production/775c8f6cecafd3d76e79b00efd7f4c5c8b6293dd-640x640.jpg"
+              src={titleData.Image}
               height={640}
               width={640}
-              alt=""
+              alt={ImageDescription}
               className="object-cover object-center"
             />
           </div>
           <p className="pt-[6px] font-gen text-[14.5px] font-medium leading-[1.28] text-[#131313]/90">
-            This is the alt text for the image, include text for the image too.
-            This is the alt text for the image, include text for the image too.
+            {ImageDescription}
           </p>
         </div>
       </section>
