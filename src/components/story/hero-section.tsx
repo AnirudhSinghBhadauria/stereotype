@@ -71,7 +71,7 @@ const StoryHeroSection = ({
               By{" "}
               <span className="font-semibold hover:underline underline-offset-[1.5px] text-black">
                 <Link
-                  href={`/Author/$${Author.Slug}`}
+                  href={`/Author/${Author.Slug}`}
                   aria-label={`Link to the Profile Page of Author : ${Author.Name}`}
                 >
                   {Author.Name}

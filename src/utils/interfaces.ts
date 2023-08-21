@@ -155,3 +155,15 @@ export interface TitleInterface {
   slug: string;
   colorName: string;
 }
+
+export interface ArticleBodyInterface {
+  IntroPara: string;
+  ParaTwo: string;
+  ParaThree: string;
+  ParaFour: string;
+  ParaFive?: string;
+  ParaSix?: string;
+  ParaSeven: string;
+  ParaEight: string;
+  AsideText: string;
+}

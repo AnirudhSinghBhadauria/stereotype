@@ -2,7 +2,7 @@ import StoryHeroSection from "@/components/story/hero-section";
 import MoreFromSection from "@/components/story/more-from";
 import { getColorForPost } from "@/lib/global/get-colors";
 import { getSinglePost } from "@/lib/global/get-single-post";
-import SiteFooter from "@/components/ui/site-footer"
+import SiteFooter from "@/components/ui/site-footer";
 import React, { Fragment } from "react";
 import ArticleBody from "@/components/story/article-body";
 
@@ -37,7 +37,7 @@ const Story = async ({ params }: { params: { slug: string[] } }) => {
     ParaSeven,
     ParaEight,
     AsideText,
-  } = post.postData;
+  } = post?.postData;
 
   return (
     <Fragment>
@@ -60,7 +60,19 @@ const Story = async ({ params }: { params: { slug: string[] } }) => {
           color={color}
         />
 
-        <ArticleBody />
+        <ArticleBody
+          bodyData={{
+            IntroPara,
+            ParaTwo,
+            ParaThree,
+            ParaFour,
+            ParaFive,
+            ParaSix,
+            ParaSeven,
+            ParaEight,
+            AsideText,
+          }}
+        />
 
         <MoreFromSection />
       </section>
