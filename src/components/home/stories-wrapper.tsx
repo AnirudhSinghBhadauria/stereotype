@@ -7,7 +7,7 @@ import LoadMore from "./load-more";
 const StoriesWrapper = async ({
   StoryCategory,
 }: {
-  StoryCategory: string | null;
+  StoryCategory: string;
 }) => {
   let storyData: StoriesInterface[] = [];
 

@@ -1,6 +1,6 @@
 export const getStories = async (
   skip: number,
-  StoryCategory: string | null
+  StoryCategory: string
 ) => {
   // const storiesForCat = `/${StoryCategory}`;
   const stories = await fetch(

@@ -16,7 +16,7 @@ const LoadMore = () => {
   const [storiesLength, setStoriesLength] = useState<{
     mainStoriesLength: number;
     sideStoriesLength: number;
-  }>({ mainStoriesLength: 0, sideStoriesLength: 0 });
+  }>();
 
   const { category } = useParams();
   const { ref, inView } = useInView();
