@@ -1,4 +1,7 @@
-export const getStories = async (skip: number, StoryCategory: string) => {
+export const getStories = async (
+  skip: number,
+  StoryCategory: string | null
+) => {
   // const storiesForCat = `/${StoryCategory}`;
   const stories = await fetch(
     `${process.env.NEXT_PUBLIC_DOMAIN_URL}/api/Story/Stories/${StoryCategory}?skip=${skip}&take=1`,
@@ -9,7 +12,7 @@ export const getStories = async (skip: number, StoryCategory: string) => {
       },
     }
   );
-  
+
   if (!stories.ok) {
     throw new Error("Error ocurred be aware.");
   }
