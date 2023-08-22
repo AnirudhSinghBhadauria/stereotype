@@ -1,9 +1,11 @@
-import Link from "next/link";
 import React from "react";
 import MostPopular from "./most-popular";
-import { ArticleBodyInterface } from "@/utils/interfaces";
+import { ArticleBodyInterface, SinglePostInterface } from "@/utils/interfaces";
+import { getSinglePost } from "@/lib/Post/get-single-post";
 
-const ArticleBody = ({ bodyData }: { bodyData: ArticleBodyInterface }) => {
+const ArticleBody = async ({ params }: { params: string[] }) => {
+  const postData: ArticleBodyInterface = await getSinglePost(params);
+
   const {
     AsideText,
     IntroPara,
@@ -14,7 +16,7 @@ const ArticleBody = ({ bodyData }: { bodyData: ArticleBodyInterface }) => {
     ParaSix,
     ParaSeven,
     ParaEight,
-  } = bodyData;
+  } = postData;
 
   return (
     <div className="w-full bg-white flex flex-row">
@@ -26,6 +28,9 @@ const ArticleBody = ({ bodyData }: { bodyData: ArticleBodyInterface }) => {
             </div>
             <div>
               <p className="body-story-para">{ParaTwo}</p>
+            </div>
+            <div>
+              <p className="body-story-para">{ParaThree}</p>
             </div>
             <div>
               <p className="body-story-para">{ParaFour}</p>

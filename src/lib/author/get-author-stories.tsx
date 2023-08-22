@@ -3,6 +3,7 @@ export const getAuthorStories = async (slug: string) => {
     `${process.env.NEXT_PUBLIC_DOMAIN_URL}/api/Author/Stories/${slug}`,
     {
       method: "GET",
+      next: { revalidate: 5 },
     }
   );
 

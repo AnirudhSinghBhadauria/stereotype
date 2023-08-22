@@ -1,24 +1,23 @@
 import { getMoreStories } from "@/lib/Post/get-more-stories";
+import { getSinglePost } from "@/lib/Post/get-single-post";
 import { getColors } from "@/lib/global/get-colors";
-import { MoreStoriesInterface } from "@/utils/interfaces";
+import { MoreStoriesInterface, SinglePostInterface } from "@/utils/interfaces";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const MoreFromSection = async ({
+  params,
   category,
-  Author,
 }: {
+  params: string[];
   category: string;
-  Author: {
-    Name: string;
-    Slug: string;
-  };
 }) => {
   let index: number = -1;
-  let format: string;
-
+  const postData: SinglePostInterface = await getSinglePost(params);
   const moreStories: MoreStoriesInterface[] = await getMoreStories(category);
+
+  const { Author } = postData;
 
   return (
     <div className="bg-torq-100 flex flex-row justify-center items-center px-[20px] pb-[16px] pt-[30px] lg:pb-[36px] lg:pt-[50px]">
@@ -72,7 +71,6 @@ const MoreFromSection = async ({
                         aria-label={`Link to the post tagged : ${post.Tag}`}
                       >
                         {post.Title}
-                        {index}
                       </Link>
                     </h3>
                   </div>

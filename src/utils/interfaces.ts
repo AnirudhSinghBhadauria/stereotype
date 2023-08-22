@@ -13,6 +13,20 @@ export interface AuthorProfileInterface {
   Twitter: string;
 }
 
+export interface AuthorCardInterface {
+  Author: { Name: string; Slug: string };
+  Tag: string;
+  ThumbTitle: string;
+  Reads: number;
+  CreatedAt: string;
+  Slug: string;
+  ThumbImage: string;
+  Alt: string;
+  category: { Category: string };
+  BackgroundColor: string;
+  format: string;
+}
+
 export interface AuthorStoriesInterface {
   MainStory: MainStoriesThumbForAuthor[];
   SideStory: SideStoriesThumbForAuthor[];
@@ -28,6 +42,7 @@ interface MainStoriesThumbForAuthor {
   Category: { Category: string };
   Author: { Name: string; Slug: string };
   Reads: number;
+  BackgroundColor: string;
 }
 
 interface SideStoriesThumbForAuthor {
@@ -40,6 +55,7 @@ interface SideStoriesThumbForAuthor {
   Slug: string;
   CreatedAt: string;
   Reads: number;
+  BackgroundColor: string;
 }
 
 // Headlines---------------------
@@ -133,7 +149,7 @@ export interface StoriesInterface {
 
 // Single Stories
 
-export interface TitleInterface {
+export interface SinglePostInterface {
   Author: {
     DescriptionOne: string;
     Name: string;
@@ -166,6 +182,15 @@ export interface ArticleBodyInterface {
   ParaSeven: string;
   ParaEight: string;
   AsideText: string;
+}
+
+export interface LinkPostDataInterface {
+  color: string;
+  category: string;
+  format: string;
+  slug: string;
+  colorName: string;
+  params: string[];
 }
 
 export interface MoreStoriesInterface {

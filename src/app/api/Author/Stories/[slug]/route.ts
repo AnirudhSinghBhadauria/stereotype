@@ -24,6 +24,7 @@ export async function GET(
             Category: { select: { Category: true } },
             Author: { select: { Name: true, Slug: true } },
             Reads: true,
+            BackgroundColor: true,
           },
           orderBy: {
             PostNumber: "desc",
@@ -41,6 +42,7 @@ export async function GET(
             Slug: true,
             CreatedAt: true,
             Reads: true,
+            BackgroundColor: true,
           },
           orderBy: {
             PostNumber: "desc",

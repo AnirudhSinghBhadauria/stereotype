@@ -6,17 +6,21 @@ import X from "@/misc/logos/author/twitter";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { TitleInterface } from "@/utils/interfaces";
+import { LinkPostDataInterface, SinglePostInterface } from "@/utils/interfaces";
 import { getDateTime } from "@/lib/global/convert-date";
 import CopyPostLink from "../home/post-link-copy";
+import { getSinglePost } from "@/lib/Post/get-single-post";
 
-const StoryHeroSection = ({
-  color,
-  titleData,
+const StoryHeroSection = async ({
+  postLinkData,
 }: {
-  color: string;
-  titleData: TitleInterface;
+  postLinkData: LinkPostDataInterface;
 }) => {
+  const { category, color, colorName, format, slug, params } = postLinkData;
+
+
+  const postData: SinglePostInterface = await getSinglePost(params);
+
   const {
     Author,
     CreatedAt,
@@ -25,11 +29,8 @@ const StoryHeroSection = ({
     Reads,
     Tag,
     Title,
-    category,
-    format,
-    slug,
-    colorName,
-  } = titleData;
+  } = postData;
+
   return (
     <div
       style={{ backgroundColor: color }}
@@ -153,7 +154,7 @@ const StoryHeroSection = ({
         <div className="lg:w-1/2">
           <div className="w-[550px] h-[550px] overflow-hidden">
             <Image
-              src={titleData.Image}
+              src={postData.Image}
               height={640}
               width={640}
               alt={ImageDescription}

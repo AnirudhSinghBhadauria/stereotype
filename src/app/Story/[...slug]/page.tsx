@@ -1,10 +1,11 @@
 import StoryHeroSection from "@/components/post/hero-section";
 import MoreFromSection from "@/components/post/more-from";
 import { getColorForPost } from "@/lib/global/get-colors";
-import { getSinglePost } from "@/lib/Post/get-single-post";
 import SiteFooter from "@/components/ui/site-footer";
-import React, { Fragment } from "react";
+import React, { Fragment, Suspense } from "react";
 import ArticleBody from "@/components/post/article-body";
+import LoadingSpinner from "@/components/home/loading-spinner";
+import { updateReads } from "@/lib/global/update-reads";
 
 const Story = async ({ params }: { params: { slug: string[] } }) => {
   const category = params.slug[0];
@@ -13,73 +14,42 @@ const Story = async ({ params }: { params: { slug: string[] } }) => {
   const colorName = params.slug[3];
   const color = getColorForPost(params.slug[3]);
 
-  const post = await getSinglePost(params.slug);
-
-  // console.log(post.postData);
-
-  // console.log(params);
-
-  const {
-    Author,
-    CreatedAt,
-    Tag,
-    Image,
-    ImageDescription,
-    Title,
-    Description,
-    Reads,
-
-    IntroPara,
-    ParaTwo,
-    ParaThree,
-    ParaFour,
-    ParaFive,
-    ParaSix,
-    ParaSeven,
-    ParaEight,
-    AsideText,
-  } = post?.postData;
+  const incrementReads = updateReads(category, format, slug);
 
   return (
     <Fragment>
       <section className="w-full">
-        <StoryHeroSection
-          titleData={{
-            Author,
-            Tag,
-            Image,
-            ImageDescription,
-            Title,
-            Description,
-            Reads,
-            CreatedAt,
-            category,
-            format,
-            slug,
-            colorName,
-          }}
-          color={color}
-        />
+        <Suspense
+          fallback={
+            <div
+              style={{ backgroundColor: color }}
+              className="h-screen grid place-items-center w-full"
+            >
+              <LoadingSpinner />
+            </div>
+          }
+        >
+          <StoryHeroSection
+            postLinkData={{
+              params: params.slug,
+              category,
+              format,
+              slug,
+              colorName,
+              color,
+            }}
+          />
+        </Suspense>
 
-        <ArticleBody
-          bodyData={{
-            IntroPara,
-            ParaTwo,
-            ParaThree,
-            ParaFour,
-            ParaFive,
-            ParaSix,
-            ParaSeven,
-            ParaEight,
-            AsideText,
-          }}
-        />
+        <Suspense fallback={<LoadingSpinner />}>
+          <ArticleBody params={params.slug} />
+        </Suspense>
 
-        <MoreFromSection
-          category={category}
-          Author={{ Name: Author.Name, Slug: Author.Slug }}
-        />
+        <Suspense fallback={<LoadingSpinner />}>
+          <MoreFromSection params={params.slug} category={category} />
+        </Suspense>
       </section>
+
       <SiteFooter />
     </Fragment>
   );

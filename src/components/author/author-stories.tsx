@@ -1,7 +1,6 @@
 import React, { Fragment, Suspense } from "react";
 import { AuthorStoriesInterface } from "@/utils/interfaces";
 import StoryCard from "./story-card";
-import AuthorStroySkeleton from "./skeleton/author-story-skeleton";
 import { getAuthorStories } from "@/lib/author/get-author-stories";
 
 const AuthorStories = async ({ author }: { author: string }) => {
@@ -25,17 +24,22 @@ const AuthorStories = async ({ author }: { author: string }) => {
             ThumbImageOneDescription,
             ThumbTitle,
             Reads,
+            Category,
+            BackgroundColor,
           }) => (
-              <StoryCard
-                Author={Author}
-                Alt={ThumbImageOneDescription}
-                CreatedAt={CreatedAt}
-                Slug={Slug}
-                Tag={Tag}
-                ThumbTitle={ThumbTitle}
-                Reads={Reads}
-                ThumbImage={ThumbImageOne}
-              />
+            <StoryCard
+              Author={Author}
+              Alt={ThumbImageOneDescription}
+              CreatedAt={CreatedAt}
+              Slug={Slug}
+              Tag={Tag}
+              ThumbTitle={ThumbTitle}
+              Reads={Reads}
+              ThumbImage={ThumbImageOne}
+              category={Category}
+              BackgroundColor={BackgroundColor}
+              format="Main"
+            />
           )
         )}
 
@@ -49,17 +53,22 @@ const AuthorStories = async ({ author }: { author: string }) => {
             ThumbImageDescription,
             ThumbTitle,
             Reads,
+            Category,
+            BackgroundColor,
           }) => (
-              <StoryCard
-                Author={Author}
-                CreatedAt={CreatedAt}
-                Slug={Slug}
-                Reads={Reads}
-                Tag={Tag}
-                ThumbTitle={ThumbTitle}
-                ThumbImage={ThumbImage}
-                Alt={ThumbImageDescription}
-              />
+            <StoryCard
+              Author={Author}
+              CreatedAt={CreatedAt}
+              Slug={Slug}
+              Reads={Reads}
+              Tag={Tag}
+              ThumbTitle={ThumbTitle}
+              ThumbImage={ThumbImage}
+              Alt={ThumbImageDescription}
+              category={Category}
+              BackgroundColor={BackgroundColor}
+              format="Side"
+            />
           )
         )}
       </ul>
