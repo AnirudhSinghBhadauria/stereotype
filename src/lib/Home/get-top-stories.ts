@@ -4,8 +4,8 @@ export const getTopStories = async (StoryCategory: string) => {
     {
       method: "GET",
       next: {
-        revalidate: 5
-      }
+        revalidate: 5,
+      },
     }
   );
 

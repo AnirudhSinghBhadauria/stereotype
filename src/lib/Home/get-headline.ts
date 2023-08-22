@@ -4,8 +4,8 @@ export const getHeadlines = async (StoryCategory: string | null) => {
     {
       method: "GET",
       next: {
-        revalidate: 5
-      }
+        revalidate: 5,
+      },
     }
   );
 
