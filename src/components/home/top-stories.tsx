@@ -1,13 +1,10 @@
+"use client";
 import React from "react";
 import StoryCard from "./story-card";
 import { TopStoryInterface } from "@/utils/interfaces";
 import { getTopStories } from "@/lib/Home/get-top-stories";
 
-const TopStories = async ({
-  StoryCategory,
-}: {
-  StoryCategory: string;
-}) => {
+const TopStories = async ({ StoryCategory }: { StoryCategory: string }) => {
   const topStories = await getTopStories(StoryCategory);
 
   const topStoriesCollection: TopStoryInterface[] =
