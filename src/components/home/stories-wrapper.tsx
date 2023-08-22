@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import StroriesContainer from "./stories-container";
 import { getStories } from "@/lib/Home/get-stories";
