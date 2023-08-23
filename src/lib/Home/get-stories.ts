@@ -1,7 +1,7 @@
 export const getStories = async (skip: number, StoryCategory: string) => {
-  const storiesForCat = `/${StoryCategory}`;
+  // const storiesForCat = `/${StoryCategory}`;
   const stories = await fetch(
-    `${process.env.NEXT_PUBLIC_DOMAIN_URL}/api/Story/Stories${storiesForCat}?skip=${skip}&take=1`,
+    `${process.env.NEXT_PUBLIC_DOMAIN_URL}/api/Story/Stories/${StoryCategory}?skip=${skip}&take=1`,
     {
       method: "GET",
       next: {

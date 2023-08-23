@@ -7,10 +7,10 @@ export async function GET(
   request: NextRequest,
   { params }: { params: { category: Category | undefined } }
 ) {
-  const search = new URL(request.url);
+  // const search = new URL(request.url);
   const category = params.category;
 
-  let skip: any = search.searchParams.get("skip");
+  let skip: any = request.nextUrl.searchParams.get("skip");
 
   let skipForSide = parseInt(skip);
   let skipForMain = skipForSide * 2;
