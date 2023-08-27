@@ -4,9 +4,8 @@ import { Category } from "@prisma/client";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { category: Category | undefined } }
+  { params }: { params: { category: Category } }
 ) {
-
   const category = params.category;
 
   let skip: any = request.nextUrl.searchParams.get("skip");
@@ -35,7 +34,7 @@ export async function GET(
         SummaryHighlighted: true,
         Reads: true,
         Tag: true,
-        BackgroundColor: true
+        BackgroundColor: true,
       },
     });
 

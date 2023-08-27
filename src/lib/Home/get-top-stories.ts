@@ -21,6 +21,7 @@ export const getTopStories = cache(async () => {
         BackgroundColor: true,
       },
     });
+
     return topStories;
   } catch (error) {
     console.error(error);
