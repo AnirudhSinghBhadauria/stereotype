@@ -56,7 +56,7 @@ const StoryCard = ({
                 </Link>
               </h2>
               <AuthorReadsDate
-                date={getDate(CreatedAt)}
+                date={getDate(CreatedAt.toString())}
                 name={Author.Name}
                 slug={Author.Slug}
                 className="pt-[10px]"

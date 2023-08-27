@@ -6,8 +6,8 @@ import React from "react";
 
 const MostPopular = async () => {
   let number = 1;
-  const topStories = await getTopStories("");
-  const topStoriesData: TopStoryInterface[] = topStories.topStoriesThumbData;
+  const topStories = await getTopStories(null);
+  const topStoriesData: TopStoryInterface[] = topStories;
 
   return (
     <ol className="sticky m-auto my-[50px] w-full rounded-[4px] p-[20px] lg:mb-[40px] lg:mt-[0px] bg-white top-[90px] text-black">

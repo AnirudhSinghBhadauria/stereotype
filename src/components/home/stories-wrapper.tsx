@@ -3,11 +3,17 @@ import StroriesContainer from "./stories-container";
 import { getStories } from "@/lib/Home/get-stories";
 import { StoriesInterface } from "@/utils/interfaces";
 import LoadMore from "./load-more";
+import { Category } from "@prisma/client";
 
-const StoriesWrapper = async ({ StoryCategory }: { StoryCategory: string }) => {
+const StoriesWrapper = async ({
+  StoryCategory,
+}: {
+  StoryCategory?: Category | null;
+}) => {
   let storyData: StoriesInterface[] = [];
 
-  const stories: StoriesInterface = await getStories(0, StoryCategory);
+  const ifCategory = StoryCategory ? StoryCategory : null;
+  const stories: StoriesInterface = await getStories(0, ifCategory);
 
   storyData.unshift(stories);
 
@@ -17,7 +23,7 @@ const StoriesWrapper = async ({ StoryCategory }: { StoryCategory: string }) => {
         <StroriesContainer
           mainThumb={mainThumb}
           sideThumb={sideThumb}
-          feedThumb={feedThumb}
+          feedThumb={feedThumb!}
         />
       ))}
       <LoadMore />

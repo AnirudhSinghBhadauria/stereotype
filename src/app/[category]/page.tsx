@@ -4,10 +4,11 @@ import StoriesWrapperSkeleton from "@/components/home/skeleton/stories-wrapper-s
 import TopStoriesSkeleton from "@/components/home/skeleton/top-stories-skeleton";
 import StoriesWrapper from "@/components/home/stories-wrapper";
 import TopStories from "@/components/home/top-stories";
+import { Category } from "@prisma/client";
 import React, { Suspense } from "react";
 
-const Category = ({ params }: { params: { category: string } }) => {
-  const category = params.category;
+const HomeWithCategory = ({ params }: { params: { category: Category } }) => {
+  const category: Category = params.category;
 
   return (
     <section className="w-full flex flex-col justify-center items-center">
@@ -38,4 +39,4 @@ const Category = ({ params }: { params: { category: string } }) => {
   );
 };
 
-export default Category;
+export default HomeWithCategory;

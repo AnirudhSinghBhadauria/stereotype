@@ -1,6 +1,5 @@
 "use client";
 
-import { getStories } from "@/lib/Home/get-stories";
 import { StoriesInterface } from "@/utils/interfaces";
 import React, { Fragment, useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
@@ -9,6 +8,7 @@ import { getStoriesLength } from "@/lib/Home/get-length";
 import SiteFooter from "../ui/site-footer";
 import LoadingSpinner from "./loading-spinner";
 import { useParams } from "next/navigation";
+import { getLoadMoreStories } from "@/lib/global/get-load-more-stories";
 
 const LoadMore = () => {
   const [stories, setStories] = useState<StoriesInterface[]>([]);
@@ -27,7 +27,7 @@ const LoadMore = () => {
 
   const loadMoreStories = async () => {
     const nextPage = pagesLoaded + 1;
-    const newStories = await getStories(nextPage, ifCategory);
+    const newStories = await getLoadMoreStories(nextPage, ifCategory);
     newStoriesContainer.unshift(newStories);
 
     setStories((prevStories: StoriesInterface[]) => [
@@ -58,7 +58,7 @@ const LoadMore = () => {
         <StroriesContainer
           mainThumb={mainThumb}
           sideThumb={sideThumb}
-          feedThumb={feedThumb}
+          feedThumb={feedThumb!}
         />
       ))}
 

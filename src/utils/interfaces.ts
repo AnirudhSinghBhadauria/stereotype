@@ -62,7 +62,7 @@ interface SideStoriesThumbForAuthor {
 
 export interface HeadlineInterface {
   Author: { Name: string; Slug: string };
-  CreatedAt: string;
+  CreatedAt: Date;
   ThumbTitle: string;
   ThumbDescription: string;
   ThumbImage: string;
@@ -78,7 +78,7 @@ export interface HeadlineInterface {
 
 export interface TopStoryInterface {
   Author: { Name: string; Slug: string };
-  CreatedAt: string;
+  CreatedAt: Date;
   ThumbImageDescription: string;
   ThumbImage: string;
   ThumbTitle: string;
@@ -90,7 +90,7 @@ export interface TopStoryInterface {
 
 export interface TopStoryCardInterface {
   Author: { Name: string; Slug: string };
-  CreatedAt: string;
+  CreatedAt: Date;
   Slug: string;
   ThumbImage: string;
   ThumbImageDescription: string;
@@ -107,7 +107,7 @@ export interface MainStoriesThumb {
   Author: { Name: string; Slug: string };
   Category: { Category: string };
   Slug: string;
-  CreatedAt: string;
+  CreatedAt: Date;
   ThumbTitle: string;
   ThumbDescription: string;
   ThumbImageOne: string;
@@ -132,19 +132,19 @@ export interface SideStoryThumb {
   Slug: string;
   Category: { Category: string };
   Author: { Name: string; Slug: string };
-  CreatedAt: string;
+  CreatedAt: Date;
   Tag: string;
 }
 
-export interface FeedStatus {
-  LastRefreshed: string;
+export interface FeedStatusInterface {
+  LastRefreshed: Date;
   Message: string;
 }
 
 export interface StoriesInterface {
   mainThumb: MainStoriesThumb[];
   sideThumb: SideStoryThumb[];
-  feedThumb: FeedStatus;
+  feedThumb: FeedStatusInterface | null;
 }
 
 // Single Stories

@@ -64,7 +64,7 @@ const MainStory = ({ postProps }: { postProps: MainStoriesThumb }) => {
             </p>
           </Link>
           <AuthorReadsDate
-            date={getDateTimeZone(CreatedAt)}
+            date={getDateTimeZone(CreatedAt.toString())}
             ifReads={true}
             name={Author.Name}
             reads={Reads}
@@ -94,7 +94,8 @@ const MainStory = ({ postProps }: { postProps: MainStoriesThumb }) => {
             text={`${process.env.NEXT_PUBLIC_DOMAIN_URL}/Story/${Category.Category}/Main/${Slug}/${color}`}
           >
             <div
-              title="Copy Link" className={`flex flex-row justify-center items-center w-[24px] h-[24px] transition-all ease-linear duration-100 rounded-full text-black bg-white hover:bg-mustard-100`}
+              title="Copy Link"
+              className={`flex flex-row justify-center items-center w-[24px] h-[24px] transition-all ease-linear duration-100 rounded-full text-black bg-white hover:bg-mustard-100`}
             >
               <LinkSvg />
             </div>

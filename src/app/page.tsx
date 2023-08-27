@@ -6,13 +6,15 @@ import TopStoriesSkeleton from "@/components/home/skeleton/top-stories-skeleton"
 import StoriesWrapper from "@/components/home/stories-wrapper";
 import StoriesWrapperSkeleton from "@/components/home/skeleton/stories-wrapper-skeleton";
 
+export const dynamicParams = false;
+
 const Home = () => {
   return (
     <section className="w-full flex flex-col justify-center items-center">
       <div className="primary-cotnainer relative flex flex-row mb-[60px] pl-[10px]">
         <div className="w-full lg:w-[710px] lg:pt-[150px]">
           <Suspense fallback={<HeadlineSkeleton />}>
-            <Headliner StoryCategory="Tech" />
+            <Headliner />
           </Suspense>
         </div>
         <div className="h-full w-full lg:max-h-full lg:w-[380px] lg:pt-[174px]">
@@ -23,14 +25,14 @@ const Home = () => {
             Top Stories
           </h2>
           <Suspense fallback={<TopStoriesSkeleton />}>
-            <TopStories StoryCategory="Tech" />
+            <TopStories />
           </Suspense>
         </div>
       </div>
 
       <div className="pt-[28px] lg:pt-[40px] w-full flex flex-col justify-center items-center">
         <Suspense fallback={<StoriesWrapperSkeleton />}>
-          <StoriesWrapper StoryCategory="Tech" />
+          <StoriesWrapper />
         </Suspense>
       </div>
     </section>

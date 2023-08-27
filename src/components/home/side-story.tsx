@@ -71,7 +71,7 @@ const SideStory = ({ postProps }: { postProps: SideStoryThumb }) => {
                 {Author.Name}
               </Link>
               <p className="uppercase font-poly font-[500] leading-[1.4] tracking-[0.15em] text-[10.78px] text-black">
-                {getDate(CreatedAt)}
+                {getDate(CreatedAt.toString())}
               </p>
             </div>
           </div>

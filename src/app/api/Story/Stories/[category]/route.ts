@@ -1,13 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "../../../../../../prisma/prismaClient";
-import { Category, Prisma } from "@prisma/client";
-import { DefaultArgs } from "@prisma/client/runtime/library";
+import { Category } from "@prisma/client";
 
 export async function GET(
   request: NextRequest,
   { params }: { params: { category: Category | undefined } }
 ) {
-  // const search = new URL(request.url);
+
   const category = params.category;
 
   let skip: any = request.nextUrl.searchParams.get("skip");

@@ -6,6 +6,7 @@ import React, { Fragment, Suspense } from "react";
 import ArticleBody from "@/components/post/article-body";
 import LoadingSpinner from "@/components/home/loading-spinner";
 import { updateReads } from "@/lib/global/update-reads";
+import { Category } from "@prisma/client";
 
 const Story = async ({ params }: { params: { slug: string[] } }) => {
   const category = params.slug[0];
@@ -41,7 +42,13 @@ const Story = async ({ params }: { params: { slug: string[] } }) => {
           />
         </Suspense>
 
-        <Suspense fallback={<LoadingSpinner />}>
+        <Suspense
+          fallback={
+            <div className="h-screen w-full grid place-items-center bg-white">
+              <LoadingSpinner />
+            </div>
+          }
+        >
           <ArticleBody params={params.slug} />
         </Suspense>
 

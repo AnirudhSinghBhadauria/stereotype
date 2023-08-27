@@ -7,13 +7,18 @@ import { HeadlineInterface } from "@/utils/interfaces";
 import { getHeadlines } from "@/lib/Home/get-headline";
 import { getColors } from "@/lib/global/get-colors";
 import { getDateTimeZone } from "@/lib/global/convert-date";
+import { Category } from "@prisma/client";
 
 const Headliner = async ({
   StoryCategory,
 }: {
-  StoryCategory: string | null;
+  StoryCategory?: Category | null;
 }) => {
-  const headline = await getHeadlines(StoryCategory);
+  const ifStoryCategory = StoryCategory ? StoryCategory : null;
+
+  const headline: HeadlineInterface | null = await getHeadlines(
+    ifStoryCategory
+  );
 
   const {
     Author,
@@ -27,7 +32,7 @@ const Headliner = async ({
     Tag,
     Category,
     BackgroundColor,
-  }: HeadlineInterface = headline.headlineThumbData;
+  } = headline!;
 
   const color = getColors(BackgroundColor).colorSlug;
 
@@ -68,7 +73,7 @@ const Headliner = async ({
           name={Author.Name}
           reads={Reads}
           slug={Author.Slug}
-          date={getDateTimeZone(CreatedAt)}
+          date={getDateTimeZone(CreatedAt.toString())}
           className="pt-[10px]"
           ifReads={true}
         />

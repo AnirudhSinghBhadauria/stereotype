@@ -2,18 +2,16 @@ import React from "react";
 import StoryCard from "./story-card";
 import { TopStoryInterface } from "@/utils/interfaces";
 import { getTopStories } from "@/lib/Home/get-top-stories";
+import { Category } from "@prisma/client";
 
-const TopStories = async ({ StoryCategory }: { StoryCategory: string }) => {
-  const topStories = await getTopStories(StoryCategory);
-
-  const topStoriesCollection: TopStoryInterface[] =
-    topStories.topStoriesThumbData;
-
+const TopStories = async ({ StoryCategory }: { StoryCategory?: Category }) => {
+  let ifStoryCategory = StoryCategory ? StoryCategory : null;
+  const topStories: TopStoryInterface[] = await getTopStories(ifStoryCategory);
   let number = 0;
 
   return (
     <ol className="flex flex-col">
-      {topStoriesCollection.map(
+      {topStories.map(
         ({
           Author,
           CreatedAt,
