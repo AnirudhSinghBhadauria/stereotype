@@ -8,14 +8,14 @@ import { Category } from "@prisma/client";
 import React, { Suspense } from "react";
 
 const HomeWithCategory = ({ params }: { params: { category: Category } }) => {
-  const category: Category = params.category;
+  const category = params.category;
 
   return (
     <section className="w-full flex flex-col justify-center items-center">
       <div className="primary-cotnainer relative flex flex-row mb-[60px] pl-[10px]">
         <div className="w-full lg:w-[710px] lg:pt-[150px]">
           <Suspense fallback={<HeadlineSkeleton />}>
-            <Headliner StoryCategory={"Tech"} />
+            <Headliner StoryCategory={category} />
           </Suspense>
         </div>
         <div className="h-full w-full lg:max-h-full lg:w-[380px] lg:pt-[174px]">

@@ -69,6 +69,8 @@ export const getHeadlines = async () => {
       },
     });
 
+    // console.log("this is home");
+
     return headline;
   } catch (error) {
     console.error(error);
@@ -88,6 +90,9 @@ export const getHeadlineForCategory = async (StoryCategory: Category) => {
       },
     }
   );
+
+  // console.log(`this is ${StoryCategory}`);
+
   if (!headlines.ok) {
     throw new Error("this is an Error message, be aware.");
   }

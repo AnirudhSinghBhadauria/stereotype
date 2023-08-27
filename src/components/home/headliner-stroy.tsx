@@ -12,14 +12,14 @@ import { Category } from "@prisma/client";
 const Headliner = async ({
   StoryCategory,
 }: {
-  StoryCategory?: string;
+  StoryCategory?: Category;
   // StoryCategory?: Category | null;
 }) => {
-  const ifStoryCategory = StoryCategory ? StoryCategory : null;
+  // const ifStoryCategory = StoryCategory ? StoryCategory : null;
 
   let headline: HeadlineInterface | null = !StoryCategory
     ? await getHeadlines()
-    : await getHeadlineForCategory("Review");
+    : await getHeadlineForCategory(StoryCategory);
 
   // const headline: HeadlineInterface | null = await getHeadlines();
 

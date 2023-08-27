@@ -44,3 +44,22 @@ export const getTopStories = cache(async (StoryCategory: Category | null) => {
     throw new Error("this is an Error message, be aware.");
   }
 });
+
+// for Category
+
+export const getTopStoriesForCategory = async (StoryCategory: Category) => {
+  const topStories = await fetch(
+    `${process.env.NEXT_PUBLIC_DOMAIN_URL}/api/Story/TopStories/${StoryCategory}`,
+    {
+      method: "GET",
+      next: {
+        revalidate: 5,
+      },
+    }
+  );
+  if (!topStories.ok) {
+    throw new Error("Error ocurred be aware.");
+  }
+  const storiesInJson = await topStories.json();
+  return storiesInJson;
+};

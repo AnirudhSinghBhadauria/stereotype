@@ -11,11 +11,9 @@ export async function GET(
   }
 ) {
   try {
-    const category = params.category;
-
     const headlinerStory = await prisma.headlinerStory.findFirst({
       where: {
-        Category: { Category: category },
+        Category: { Category: params.category },
       },
       select: {
         Author: { select: { Name: true, Slug: true } },

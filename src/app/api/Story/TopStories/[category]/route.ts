@@ -24,20 +24,14 @@ export async function GET(
         Tag: true,
         Slug: true,
         Category: { select: { Category: true } },
-        BackgroundColor: true
+        BackgroundColor: true,
       },
     });
 
-    return NextResponse.json(
-      {
-        topStoriesThumbData: topStories,
-      },
-      {
-        status: 200,
-        statusText:
-          "The resource has been fetched and transmitted to the client",
-      }
-    );
+    return NextResponse.json(topStories, {
+      status: 200,
+      statusText: "The resource has been fetched and transmitted to the client",
+    });
   } catch (error) {
     return NextResponse.json(
       {
