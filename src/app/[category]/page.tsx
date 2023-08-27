@@ -19,10 +19,7 @@ const HomeWithCategory = ({ params }: { params: { category: Category } }) => {
           </Suspense>
         </div>
         <div className="h-full w-full lg:max-h-full lg:w-[380px] lg:pt-[174px]">
-          <h2
-            className="mx-auto max-w-[500px] pb-[20px] font-poly text-[15.75px] leading-[1.2] tracking-[0.005em] 
-          text-torq-100 md:pl-[60px] lg:pl-[40px]"
-          >
+          <h2 className="mx-auto max-w-[500px] pb-[20px] font-poly text-[15.75px] leading-[1.2] tracking-[0.005em] text-torq-100 md:pl-[60px] lg:pl-[40px]">
             Top Stories
           </h2>
           <Suspense fallback={<TopStoriesSkeleton />}>

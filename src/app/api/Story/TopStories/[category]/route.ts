@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 
 export async function GET(
   request: Request,
-  { params }: { params: { category: Category | undefined } }
+  { params }: { params: { category: Category } }
 ) {
   try {
     const category = params.category;

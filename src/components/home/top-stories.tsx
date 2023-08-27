@@ -1,12 +1,16 @@
 import React from "react";
 import StoryCard from "./story-card";
 import { TopStoryInterface } from "@/utils/interfaces";
-import { getTopStories } from "@/lib/Home/get-top-stories";
+import {
+  getTopStories,
+  getTopStoriesForCategory,
+} from "@/lib/Home/get-top-stories";
 import { Category } from "@prisma/client";
 
 const TopStories = async ({ StoryCategory }: { StoryCategory?: Category }) => {
-  let ifStoryCategory = StoryCategory ? StoryCategory : null;
-  const topStories: TopStoryInterface[] = await getTopStories(ifStoryCategory);
+  let topStories: TopStoryInterface[] = !StoryCategory
+    ? await getTopStories()
+    : await getTopStoriesForCategory(StoryCategory);
 
   let number = 0;
 
