@@ -6,7 +6,7 @@ import React from "react";
 
 const MostPopular = async () => {
   let number = 1;
-  const topStories = await getTopStories(null);
+  const topStories = await getTopStories();
   const topStoriesData: TopStoryInterface[] = topStories;
 
   return (
