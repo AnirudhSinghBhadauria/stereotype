@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import { getDate } from "@/lib/global/convert-date";
 
 const AuthorReadsDate = ({
   className,

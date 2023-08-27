@@ -4,7 +4,7 @@ import Link from "next/link";
 import AuthorReadsDate from "../ui/author-date-reads";
 import StereotypeInclined from "@/misc/logos/StereotypeInclined";
 import { HeadlineInterface } from "@/utils/interfaces";
-import { getHeadlines } from "@/lib/Home/get-headline";
+import { getHeadlineForCategory, getHeadlines } from "@/lib/Home/get-headline";
 import { getColors } from "@/lib/global/get-colors";
 import { getDateTimeZone } from "@/lib/global/convert-date";
 import { Category } from "@prisma/client";
@@ -12,13 +12,20 @@ import { Category } from "@prisma/client";
 const Headliner = async ({
   StoryCategory,
 }: {
-  StoryCategory?: Category | null;
+  StoryCategory?: string;
+  // StoryCategory?: Category | null;
 }) => {
   const ifStoryCategory = StoryCategory ? StoryCategory : null;
 
-  const headline: HeadlineInterface | null = await getHeadlines(
-    ifStoryCategory
-  );
+  let headline: HeadlineInterface | null = !StoryCategory
+    ? await getHeadlines()
+    : await getHeadlineForCategory("Review");
+
+  // const headline: HeadlineInterface | null = await getHeadlines();
+
+  // const secHeadline = await getHeadlineForCategory("Tech");
+
+  // console.log(headline);
 
   const {
     Author,

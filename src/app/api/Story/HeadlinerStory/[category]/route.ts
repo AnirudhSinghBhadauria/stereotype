@@ -34,14 +34,10 @@ export async function GET(
       orderBy: { PostNumber: "desc" },
     });
 
-    return NextResponse.json(
-      { headlineThumbData: headlinerStory },
-      {
-        status: 200,
-        statusText:
-          "The resource has been fetched and transmitted to the client",
-      }
-    );
+    return NextResponse.json(headlinerStory, {
+      status: 200,
+      statusText: "The resource has been fetched and transmitted to the client",
+    });
   } catch (error) {
     return NextResponse.json({
       error: error,

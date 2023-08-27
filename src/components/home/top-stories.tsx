@@ -7,6 +7,7 @@ import { Category } from "@prisma/client";
 const TopStories = async ({ StoryCategory }: { StoryCategory?: Category }) => {
   let ifStoryCategory = StoryCategory ? StoryCategory : null;
   const topStories: TopStoryInterface[] = await getTopStories(ifStoryCategory);
+
   let number = 0;
 
   return (

@@ -6,9 +6,6 @@ export const getLoadMoreStories = async (
     `/api/Story/Stories/${StoryCategory}?skip=${skip}&take=1`,
     {
       method: "GET",
-      next: {
-        revalidate: 5,
-      },
     }
   );
   if (!stories.ok) {
