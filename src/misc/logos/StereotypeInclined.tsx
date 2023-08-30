@@ -2,20 +2,14 @@ import React from "react";
 
 const StereotypeInclined = ({
   className,
-  width,
-  height,
   fill,
 }: {
   className?: string;
-  width: string;
-  height: string;
   fill: string;
 }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={width}
-      height={height}
       viewBox="0 0 124 664"
       fill="none"
       className={className}

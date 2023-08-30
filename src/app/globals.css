@@ -101,7 +101,7 @@
   }
 
   .marking-border {
-    @apply border border-black border-opacity-30;
+    @apply border border-white border-opacity-30;
   }
 
   .author-gradinet {

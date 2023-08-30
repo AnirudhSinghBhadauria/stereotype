@@ -44,8 +44,8 @@ const Headliner = async ({
   const color = getColors(BackgroundColor).colorSlug;
 
   return (
-    <div className="group mb-[20px] pt-[28px] md:mb-[50px] lg:top-[150px] lg:mb-0 lg:min-h-[750px] lg:pr-[40px]">
-      <div className="overflow-hidden relative ml-[40px] md:ml-0 lg:ml-[20px] lg:mr-[70px] h-[464px] aspect-five-four">
+    <div className="group mb-[20px] pt-[28px] md:mb-[50px] lg:top-[150px] lg:mb-0 lg:min-h-[750px] lg:pr-[40px] border-b-[#313131] border-b-[1px] lg:border-b-[0px]">
+      <div className="overflow-hidden relative ml-[40px] md:ml-0 lg:ml-[20px] lg:mr-[70px] h-auto lg:h-[464px] aspect-five-four">
         <Link
           href={`/Story/${Category.Category}/Headline/${Slug}/${color}`}
           aria-label={`A post written by ${Author.Name} taggeed: ${Tag}`}
@@ -63,7 +63,7 @@ const Headliner = async ({
       <div className="relative pb-[20px] md:pl-[80px] lg:border-none lg:pl-[165px] -mt-[20px] sm:-mt-[45px]">
         <h2
           style={{ textShadow: "0 0 5px rgba(0, 0, 0, 0.3)" }}
-          className="mb-[14px] font-title text-[65px] font-[750] leading-[0.79] tracking-[-0.013em] text-white md:mb-[18px] md:text-[88px]"
+          className="mb-[14px] font-title text-[91px] lg:text-[88px] font-[750] leading-[0.79] tracking-[-0.013em] text-white md:mb-[18px] "
         >
           <Link
             className="group-hover:shadow-highlight-blurple"
@@ -73,7 +73,7 @@ const Headliner = async ({
             {ThumbTitle}
           </Link>
         </h2>
-        <p className="font-sans text-[#efefef] mb-[6px] text-[20px] leading-[1.2] tracking-[-0.025em] text-gray-ef md:text-[24px] md:leading-[1.1]">
+        <p className="font-sans text-[#efefef] mb-[6px] md:text-[24px] md:leading-[1.1] lg:text-[24px] lg:leading-[1.1] tracking-[-0.025em] ">``
           {ThumbDescription}
         </p>
         <AuthorReadsDate
@@ -87,9 +87,7 @@ const Headliner = async ({
       </div>
       <StereotypeInclined
         fill="#fff"
-        height="588.5"
-        width="110"
-        className="absolute top-[140px] -left-[40px] z-10 title-shadow"
+        className="absolute h-[481.5px] w-[90px] lg:h-[588.5px] lg:w-[110px] top-[165px] -left-[45px] lg:top-[140px] lg:-left-[40px] z-10 title-shadow"
       />
     </div>
   );

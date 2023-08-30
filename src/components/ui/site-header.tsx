@@ -14,7 +14,7 @@ const SiteHeader = () => {
   return (
     <header className="w-full h-[150px] absolute top-0 left-0 right-0">
       <section className="h-[80px] flex flex-row justify-center items-end">
-        <div className="primary-container w-full flex justify-end">
+        <div className="lg:max-w-[1100px] w-full flex justify-end px-[22px] lg:px-0">
           <nav
             style={{ borderColor: color }}
             className="flex flex-row font-gen pb-[6px] md:pb-[8px] border-b-[1px]
