@@ -31,7 +31,7 @@ const MainStory = ({ postProps }: { postProps: MainStoriesThumb }) => {
 
   return (
     <li className="pb-[44px] last-of-type:pb-[20px] last-of-type:border-b-[0px] last-of-type:mb-[0px] mb-[11.85px] border-b-[8px] border-[#313131] hover:bg-[#181818cf]">
-      <div className="full-post relative pb-[10px] lg:py-[10px] sm:max-w-[500px] ">
+      <div className="full-post relative pb-[16px] pt-[8px] lg:pb-[10px] lg:py-[10px] sm:max-w-[500px] ">
         <div className="ml-auto mt-[24px] sm:ml-[9.88px] w-[320px] sm:w-[480px]">
           <div className="overflow-hidden relative aspect-five-four w-full h-[319px] rounded-[2px] border border-solid border-[#313131]">
             <Link

@@ -54,10 +54,10 @@ const Headliner = async ({
           />
         </Link>
       </div>
-      <div className="relative pb-[20px] md:pl-[80px] lg:border-none lg:pl-[165px] -mt-[20px] sm:-mt-[45px]">
+      <div className="relative pb-[20px] md:pl-[80px] lg:border-none lg:pl-[165px] -mt-[20px] sm:-mt-[40px]">
         <h2
           style={{ textShadow: "0 0 5px rgba(0, 0, 0, 0.3)" }}
-          className="mb-[14px] font-title text-[91px] lg:text-[88px] font-[750] leading-[0.79] tracking-[-0.013em] text-white md:mb-[18px] "
+          className="mb-[14px] font-title text-[91px] lg:text-[88px] font-[750] leading-[0.78] tracking-[-0.013em] text-white md:mb-[18px] "
         >
           <Link
             className="group-hover:shadow-highlight-blurple"
@@ -67,7 +67,7 @@ const Headliner = async ({
             {ThumbTitle}
           </Link>
         </h2>
-        <p className="font-sans text-[#efefef] mb-[6px] md:text-[24px] md:leading-[1.1] tracking-[-0.025em] ">
+        <p className="font-sans text-[#efefef] mb-[6px] text-[20px] leading-[1.2] md:text-[24px] md:leading-[1.1] tracking-[-0.025em] ">
           {ThumbDescription}
         </p>
         <AuthorReadsDate

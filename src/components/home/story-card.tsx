@@ -30,7 +30,7 @@ const StoryCard = ({
         </div>
 
         <div className="flex grow flex-row border-[#313131] py-[16px] md:flex-row-reverse md:justify-between md:border-b">
-          <div className="overflow-hidden w-[100px] h-[80px] aspect-five-four rounded-[3px]">
+          <div className="relative overflow-hidden w-[100px] h-[100px] lg:h-[80px] aspect-square lg:aspect-five-four rounded-[3px] border border-[#313131]">
             <Link
               href={`/Story/${Category.Category}/Headline/${Slug}/${color}`}
               aria-label={`A post written by ${Author.Name} taggeed: ${Tag}`}
@@ -38,8 +38,7 @@ const StoryCard = ({
               <Image
                 src={ThumbImage}
                 alt={ThumbImageDescription}
-                width={128}
-                height={102}
+                fill
                 className="object-cover object-center"
               />
             </Link>

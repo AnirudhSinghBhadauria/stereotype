@@ -34,10 +34,10 @@ const SideStory = ({ postProps }: { postProps: SideStoryThumb }) => {
   }`;
 
   return (
-    <div className="full-side-post w-full h-full">
+    <div className="full-side-post w-full h-full flex lg:block justify-center">
       <div
         style={{ backgroundColor: secondary }}
-        className="flex flex-col w-full h-[667.5px] rounded-[20px] sticky top-[40px] mb-20px] lg:min-h-[500px] p-[20px]"
+        className="flex flex-col w-[410px] lg:w-full lg:h-[667.5px] rounded-[4px] lg:rounded-[20px] sticky top-[40px] mr-0 mt-[80px] ml-[65px] lg:mt-0 lg:mr-0 lg:ml-0 lg:mb-[20px] lg:min-h-[500px] p-[20px]"
       >
         <p className="pb-[20px] font-poly font-semibold tracking-[0.15em] uppercase text-black text-[10px]">
           <Link
@@ -132,7 +132,7 @@ const SideStory = ({ postProps }: { postProps: SideStoryThumb }) => {
             </Link>
           </li>
         </ul>
-        <p className="z-20 absolute bottom-0 right-[20px] pb-[20px] font-poly font-semibold tracking-[0.15em] uppercase text-black text-[10px]">
+        <p className="z-20 absolute lg:bottom-0 right-[20px] pb-[20px] font-poly font-semibold tracking-[0.15em] uppercase text-black text-[10px]">
           {`${Reads} reads`}
         </p>
         <Link
@@ -143,7 +143,7 @@ const SideStory = ({ postProps }: { postProps: SideStoryThumb }) => {
           <StereotypeStroked
             height="428"
             width="80"
-            className="z-10 absolute bottom-[6px] right-[6px]"
+            className="z-10 absolute bottom-[6px] right-[6px] hidden lg:block"
             fill={quadrple}
           />
         </Link>
