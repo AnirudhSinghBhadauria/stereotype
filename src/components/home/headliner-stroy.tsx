@@ -21,12 +21,6 @@ const Headliner = async ({
     ? await getHeadlines()
     : await getHeadlineForCategory(StoryCategory);
 
-  // const headline: HeadlineInterface | null = await getHeadlines();
-
-  // const secHeadline = await getHeadlineForCategory("Tech");
-
-  // console.log(headline);
-
   const {
     Author,
     Reads,
