@@ -93,7 +93,7 @@ const SideStory = ({ postProps }: { postProps: SideStoryThumb }) => {
         <ul className="space-y-3">
           <li>
             <Link
-              aria-label={`Link tos the post tagged : ${Tag}`}
+              aria-label={`Link to the post tagged : ${Tag}`}
               href={`/Story/${Category.Category}/Side/${Slug}/${colorSlug}`}
               className="flex flex-row items-start gap-[30px]"
             >
