@@ -12,8 +12,8 @@ const HomeWithCategory = ({ params }: { params: { category: Category } }) => {
 
   return (
     <section className="w-full flex flex-col justify-center items-center">
-      <div className="primary-cotnainer relative flex flex-row mb-[60px] pl-[10px]">
-        <div className="w-full lg:w-[710px] lg:pt-[150px]">
+      <div className="primary-container relative flex flex-col lg:flex-row mb-[60px] px-[10px] lg:pl-[10px]">
+        <div className="w-full lg:w-[710px] pt-[160px] lg:pt-[150px]">
           <Suspense fallback={<HeadlineSkeleton />}>
             <Headliner StoryCategory={category} />
           </Suspense>

@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <section className="w-full flex flex-col justify-center items-center">
       <div className="primary-container relative flex flex-col lg:flex-row mb-[60px] px-[10px] lg:pl-[10px]">
-        <div className="w-full lg:w-[710px] pt-[160px] lg:pt-[150px]">
+        <div className="w-full lg:w-[710px] pt-[63px] md:pt-[160px] lg:pt-[150px]">
           <Suspense fallback={<HeadlineSkeleton />}>
             <Headliner />
           </Suspense>

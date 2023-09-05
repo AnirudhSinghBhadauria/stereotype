@@ -37,7 +37,7 @@ const SideStory = ({ postProps }: { postProps: SideStoryThumb }) => {
     <div className="full-side-post w-full h-full flex lg:block justify-center">
       <div
         style={{ backgroundColor: secondary }}
-        className="flex flex-col w-[410px] lg:w-full lg:h-[667.5px] rounded-[4px] lg:rounded-[20px] sticky top-[40px] mr-0 mt-[80px] ml-[65px] lg:mt-0 lg:mr-0 lg:ml-0 lg:mb-[20px] lg:min-h-[500px] p-[20px]"
+        className="flex flex-col w-[410px] lg:w-full lg:h-[667.5px] rounded-[4px] lg:rounded-[20px] sticky top-[40px] mr-0 mt-[80px] ml-[65px] lg:mt-0 lg:mr-0 lg:ml-0 lg:mb-[20px] lg:min-h-[500px] pb-[25px] lg:pb-[20px] p-[20px]"
       >
         <p className="pb-[20px] font-poly font-semibold tracking-[0.15em] uppercase text-black text-[10px]">
           <Link
@@ -53,7 +53,7 @@ const SideStory = ({ postProps }: { postProps: SideStoryThumb }) => {
             className="flex flex-col border-l-[1px] pl-[10px] mb-[8px]"
           >
             <h2
-              className={`font-title text-[58px] font-[800] text-black leading-[0.85] mb-[10px] ${textHoverColor} `}
+              className={`font-title text-[38px] lg:text-[58px] font-[800] text-black leading-[0.85] mb-[10px] ${textHoverColor} `}
             >
               <Link
                 href={`/Story/${Category.Category}/Side/${Slug}/${colorSlug}`}
@@ -99,7 +99,7 @@ const SideStory = ({ postProps }: { postProps: SideStoryThumb }) => {
             >
               <div
                 style={{ backgroundColor: tertiary }}
-                className="h-[7.25px] w-[7px] rounded-full ml-[7px] mt-[8px]"
+                className="h-[6.75px] w-[7px] lg:h-[7.25px] lg:w-[7px] rounded-full ml-[7px] mt-[8px]"
               ></div>
               <section className="flex flex-col">
                 <p
@@ -122,7 +122,7 @@ const SideStory = ({ postProps }: { postProps: SideStoryThumb }) => {
             >
               <div
                 style={{ backgroundColor: tertiary }}
-                className="h-[7.25px] w-[7px] rounded-full ml-[7px] mt-[8px]"
+                className="h-[7px] w-[7px] lg:h-[7.25px] lg:w-[7px] rounded-full ml-[7px] mt-[8px]"
               ></div>
               <p
                 className={`text-[15px] leading-[1.2] max-w-[290px] font-[550] text-black font-gen ${textHoverColor}`}
@@ -145,6 +145,12 @@ const SideStory = ({ postProps }: { postProps: SideStoryThumb }) => {
             width="80"
             className="z-10 absolute bottom-[6px] right-[6px] hidden lg:block"
             fill={quadrple}
+          />
+          <StereotypeStroked
+            height="347.75"
+            width="65"
+            className="absolute -top-[30px] -left-[75px] block lg:hidden"
+            fill={'#fff'}
           />
         </Link>
       </div>
