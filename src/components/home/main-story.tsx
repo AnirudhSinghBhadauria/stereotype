@@ -33,7 +33,7 @@ const MainStory = ({ postProps }: { postProps: MainStoriesThumb }) => {
     <li className="pb-[44px] last-of-type:pb-[20px] last-of-type:border-b-[0px] last-of-type:mb-[0px] mb-[11.85px] border-b-[8px] border-[#313131] hover:bg-[#181818cf]">
       <div className="full-post relative pb-[16px] pt-[8px] lg:pb-[10px] lg:py-[10px] sm:max-w-[500px] ">
         <div className="ml-auto mt-[24px] sm:ml-[9.88px] w-[320px] sm:w-[480px]">
-          <div className="overflow-hidden relative aspect-five-four w-full h-[319px] rounded-[2px] border border-solid border-[#313131]">
+          <div className="overflow-hidden relative aspect-five-four w-full h-[213.86px] sm:h-[319px] rounded-[2px] border border-solid border-[#313131]">
             <Link
               href={`/Story/${Category.Category}/Main/${Slug}/${color}`}
               aria-label={`Link to the post tagged : ${Tag}`}
@@ -55,7 +55,7 @@ const MainStory = ({ postProps }: { postProps: MainStoriesThumb }) => {
           >
             <h2
               style={{ textShadow: "0 0 40px rgb(0, 0, 0)" }}
-              className="mb-[8px] font-poly text-[30px] font-extrabold leading-none sm:text-[36px]"
+              className="mb-[8px] font-poly text-[31px] font-extrabold leading-none sm:text-[36px]"
             >
               {ThumbTitle}
             </h2>
@@ -77,7 +77,7 @@ const MainStory = ({ postProps }: { postProps: MainStoriesThumb }) => {
         <div className="w-[90%] h-[2px] bg-[#313131] center-by-margin" />
       </div>
 
-      <div className="py-[16px] px-0 lg:py-[24px] md:px-[10px] flex flex-row">
+      <div className="py-[16px] px-[8px] sm:px-[12px] md:px-[20px] lg:px-[20px] lg:py-[24px]  flex flex-row">
         <div className="mt-[5px] w-[38px] space-y-2 relative flex min-w-[40px] flex-col md:ml-[-3px] md:items-start">
           <Link
             style={{ backgroundColor: getColors(BackgroundColor).primary }}
@@ -106,8 +106,8 @@ const MainStory = ({ postProps }: { postProps: MainStoriesThumb }) => {
           aria-label={`Link to the post tagged : ${Tag}`}
           className="w-full flex flex-col"
         >
-          <p className="font-gen text-[17px] font-[450]  leading-[1.3] text-[#efefef]">
-            <span className="font-semibold text-[#fff]">
+          <p className="font-poly text-[17px] font-[450] leading-[1.3] text-[#efefef]">
+            <span className="font-extrabold text-[#fff]">
               {SummaryHighlighted}
             </span>
             &nbsp; {Summary}
@@ -120,7 +120,7 @@ const MainStory = ({ postProps }: { postProps: MainStoriesThumb }) => {
           href={`/Story/${Category.Category}/Main/${Slug}/${color}`}
           aria-label={`Link to the post tagged : ${Tag}`}
         >
-          <div className="w-[443px] h-[296px] overflow-hidden rounded-[2px] border border-solid border-[#313131]">
+          <div className="w-[320px] h-[213.86px] sm:w-[443px] sm:h-[296px] overflow-hidden rounded-[2px] border border-solid border-[#313131]">
             <Image
               src={ThumbImageTwo}
               alt={ThumbImageTwoDescription}
@@ -129,7 +129,7 @@ const MainStory = ({ postProps }: { postProps: MainStoriesThumb }) => {
               className="object-cover object-center"
             />
           </div>
-          <p className="max-w-[443px] mt-[6px] font-gen text-[14px] font-medium leading-[1.3]  text-[#949494]">
+          <p className="max-w-[320px] sm:max-w-[443px] mt-[6px] font-gen text-[14px] font-medium leading-[1.3]  text-[#949494]">
             {ThumbImageTwoDescription}
           </p>
         </Link>

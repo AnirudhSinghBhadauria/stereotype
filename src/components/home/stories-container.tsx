@@ -19,7 +19,7 @@ const StroriesContainer = ({
   feedThumb: FeedStatusInterface;
 }) => {
   return (
-    <li className="flex flex-col lg:flex-row last-of-type:mb-[0px] mb-[65px] lg:mb-[80px]">
+    <li className="flex flex-col lg:flex-row last-of-type:mb-[0px] mb-[65px] lg:mb-[80px] mx-[10px] sm:mx-auto">
       <div className="flex-1 flex max-w-[560px] flex-col lg:mr-[100px] mx-auto sm:max-w-[500px]">
         <ReaderStoryline
           date={getDateTime(mainThumb[0].CreatedAt.toString())}

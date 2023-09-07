@@ -68,7 +68,7 @@ const Headliner = async ({
             {ThumbTitle}
           </Link>
         </h2>
-        <p className="font-sans text-[#efefef] mb-[6px] text-[20px] leading-[1.2] md:text-[24px] md:leading-[1.1] tracking-[-0.025em] ">
+        <p className="font-sans text-[#efefef] mb-[6px] text-[20.25px] leading-[1.2] md:text-[24px] md:leading-[1.1] tracking-[-0.025em] ">
           {ThumbDescription}
         </p>
         <AuthorReadsDate
