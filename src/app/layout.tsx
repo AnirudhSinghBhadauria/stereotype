@@ -8,6 +8,7 @@ import {
   polyFont,
 } from "../misc/fonts/fonts";
 import SiteFooter from "@/components/ui/site-footer";
+import Sidebar from "@/components/ui/sidebar";
 
 export const metadata: Metadata = {
   title: "Stereotype",
@@ -22,10 +23,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${titleFont.variable} ${generalFont.variable} ${sansFont.variable} ${polyFont.variable}`}
+        className={`${titleFont.variable} ${generalFont.variable} ${sansFont.variable} ${polyFont.variable} overflow-x-hidden`}
       >
         <SiteHeader />
-        {children}
+        <aside className="fixed w-full h-screen" id="sidebar-portal-root"></aside>
+        <main>{children}</main>
       </body>
     </html>
   );

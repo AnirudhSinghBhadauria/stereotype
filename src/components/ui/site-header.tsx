@@ -5,16 +5,15 @@ import React, { Fragment, useState } from "react";
 import Link from "next/link";
 import { headerNavbar } from "@/utils/navbar";
 import { usePathname } from "next/navigation";
+import Sidebar from "./sidebar";
 
 const SiteHeader = () => {
   const pathname = usePathname();
-  const [sideBarState, setSideBarState] = useState<boolean>(false);
 
+  const [sideBarState, setSideBarState] = useState<boolean>(false);
   const color = pathname.slice(0, 6) === "/Story" ? "black" : "white";
 
   const sideBarHandeler = () => setSideBarState(!sideBarState ? true : false);
-
-  sideBarState ? console.log('open') : console.log('close');
 
   return (
     <Fragment>
@@ -75,7 +74,10 @@ const SiteHeader = () => {
 
       <header className="block md:hidden absolute top-0 left-0 right-0 w-full h-[48px] px-[20px]">
         <nav className="w-full h-full flex items-end justify-end">
-          <button onClick={sideBarHandeler} className="group pb-[6px] border-b-[1px] border-white flex items-center cursor-pointer z-10">
+          <button
+            onClick={sideBarHandeler}
+            className="group pb-[6px] border-b-[1px] border-white flex items-center cursor-pointer z-10"
+          >
             <p className="text-[15px] font-poly group-hover:opacity-50 group-hover:transition-all group-hover:ease-in-out">
               Menu
             </p>
@@ -92,6 +94,8 @@ const SiteHeader = () => {
           </button>
         </nav>
       </header>
+
+      <Sidebar onSideBarClose={sideBarHandeler} sideBarState={sideBarState} />
     </Fragment>
   );
 };
