@@ -76,7 +76,7 @@ const SideStory = ({ postProps }: { postProps: SideStoryThumb }) => {
             </div>
           </div>
 
-          <section className="relative -ml-[20px] mb-[28px] h-[182px] w-[275px] md:h-[244px] md:w-[370px] lg:ml-[-45px] lg:h-[235px] lg:w-[352px] overflow-hidden rounded-[4px]">
+          <section className="relative -ml-[20px] mb-[28px] h-[182px] w-[275px] sm:h-[230px] sm:w-[345px] md:h-[244px] md:w-[370px] lg:ml-[-45px] lg:h-[235px] lg:w-[352px] overflow-hidden rounded-[4px]">
             <Link
               aria-label={`Link to the post tagged : ${Tag}`}
               href={`/Story/${Category.Category}/Side/${Slug}/${colorSlug}`}
@@ -99,7 +99,7 @@ const SideStory = ({ postProps }: { postProps: SideStoryThumb }) => {
             >
               <div
                 style={{ backgroundColor: tertiary }}
-                className="h-[6.75px] w-[7px] lg:h-[7.25px] lg:w-[7px] rounded-full ml-[7px] mt-[8px]"
+                className="sm:h-[7.25px] sm:w-[7.25px] md:h-[7px] md:w-[7.25px] lg:h-[7.25px] lg:w-[7px] rounded-full ml-[7px] mt-[8px]"
               ></div>
               <section className="flex flex-col">
                 <p
@@ -122,7 +122,7 @@ const SideStory = ({ postProps }: { postProps: SideStoryThumb }) => {
             >
               <div
                 style={{ backgroundColor: tertiary }}
-                className="h-[7px] w-[7px] lg:h-[7.25px] lg:w-[7px] rounded-full ml-[7px] mt-[8px]"
+                className="sm:h-[7px] sm:w-[7.25px] md:h-[7px] md:w-[7.25px] lg:h-[7.25px] lg:w-[7px] rounded-full ml-[7px] mt-[8px]"
               ></div>
               <p
                 className={`text-[15px] leading-[1.2] max-w-[290px] font-[550] text-black font-gen ${textHoverColor}`}
@@ -149,11 +149,17 @@ const SideStory = ({ postProps }: { postProps: SideStoryThumb }) => {
           <StereotypeStroked
             height="347.75"
             width="65"
-            className="absolute -top-[30px] -left-[75px] block lg:hidden"
+            className="absolute sm:-left-[75px] sm:-top-[30px]  hidden sm:block lg:hidden"
             fill={'#fff'}
           />
         </Link>
       </div>
+      <StereotypeStroked
+        height="347.75"
+        width="65"
+        className="-z-[50] absolute top-[50px] left-[15px] block sm:hidden"
+        fill={"#fff"}
+      />
     </div>
   );
 };

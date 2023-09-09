@@ -39,6 +39,10 @@
     box-sizing: border-box;
   }
 
+  *:focus {
+    outline-width: 0px;
+  }
+
   html {
     text-rendering: optimizeSpeed;
     scroll-behavior: smooth;

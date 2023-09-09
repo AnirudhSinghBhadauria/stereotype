@@ -61,7 +61,7 @@ const Headliner = async ({
           className="mb-[14px] font-title text-[65px] md:text-[91px] lg:text-[88px] font-[750] leading-[0.78] tracking-[-0.013em] text-white md:mb-[18px]"
         >
           <Link
-            className="group-hover:shadow-highlight-blurple"
+            className="sm:group-hover:shadow-highlight-blurple"
             aria-label={`A post written by ${Author.Name} taggeed: ${Tag}`}
             href={`/Story/${Category.Category}/Headline/${Slug}/${color}`}
           >

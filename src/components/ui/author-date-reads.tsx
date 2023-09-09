@@ -26,9 +26,11 @@ const AuthorReadsDate = ({
         {name}
       </Link>
       {ifReads && (
-        <p className="mr-[8px] primary-small-gray-11px">{`${reads} READS`}</p>
+        <p className="mr-[8px] primary-small-gray-11px hidden sm:inline">
+          {`${reads} READS`}
+        </p>
       )}
-      <p className="mr-[8px] primary-small-gray-11px">{date}</p>
+      <p className="primary-small-gray-11px">{date}</p>
     </div>
   );
 };
