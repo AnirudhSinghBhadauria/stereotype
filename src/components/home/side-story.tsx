@@ -37,7 +37,7 @@ const SideStory = ({ postProps }: { postProps: SideStoryThumb }) => {
     <div className="full-side-post w-full h-full flex lg:block justify-center">
       <div
         style={{ backgroundColor: secondary }}
-        className="flex flex-col w-[410px] lg:w-full lg:h-[667.5px] rounded-[4px] lg:rounded-[20px] sticky top-[40px] mr-0 mt-[80px] ml-[65px] lg:mt-0 lg:mr-0 lg:ml-0 lg:mb-[20px] lg:min-h-[500px] pb-[25px] lg:pb-[20px] p-[20px]"
+        className="flex flex-col w-[300px] sm:w-[410px] lg:w-full lg:h-[667.5px] rounded-[4px] lg:rounded-[20px] sticky top-[40px] mr-0 mt-[80px] ml-[65px] lg:mt-0 lg:mr-0 lg:ml-0 lg:mb-[20px] lg:min-h-[500px] pb-[25px] lg:pb-[20px] p-[20px]"
       >
         <p className="pb-[20px] font-poly font-semibold tracking-[0.15em] uppercase text-black text-[10px]">
           <Link
@@ -157,7 +157,7 @@ const SideStory = ({ postProps }: { postProps: SideStoryThumb }) => {
       <StereotypeStroked
         height="347.75"
         width="65"
-        className="-z-[50] absolute top-[50px] left-[15px] block sm:hidden"
+        className="-z-[50] absolute top-[50px] left-[17px] block sm:hidden"
         fill={"#fff"}
       />
     </div>
