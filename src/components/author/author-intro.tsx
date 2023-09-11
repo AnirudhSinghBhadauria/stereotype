@@ -29,7 +29,7 @@ const AuthorIntro = async ({ author }: { author: string }) => {
   return (
     <Fragment>
       <section className="w-full bg-purple-100 pt-[10px]">
-        <div className="mx-auto grid primary-container auto-cols-max grid-flow-col grid-cols-4 gap-[20px] sm:grid-rows-1 md:grid-cols-7 md:gap-[32px] lg:px-0 pt-[20px] bg-purple-100">
+        <div className="mx-auto grid max-w-[1100px] auto-cols-max grid-flow-col grid-cols-4 gap-[20px] sm:grid-rows-1 md:grid-cols-7 md:gap-[32px] lg:px-0 pt-[20px] px-[20px] bg-purple-100">
           <div className="col-start-1 col-end-8 row-start-1 w-full lg:col-start-2 lg:row-start-1 z-10">
             <p className="font-mono uppercase text-torq-100 text-[15px] tracking-[0.1em] font-[550] mb-[6px]">
               more Stories by:
@@ -40,10 +40,12 @@ const AuthorIntro = async ({ author }: { author: string }) => {
           </div>
         </div>
       </section>
+
       <div className="h-[60px] w-full author-gradinet"></div>
-      <section className="w-full">
-        <div className="mx-auto grid primary-container auto-cols-max grid-flow-col grid-cols-4 gap-[20px] sm:grid-rows-1 md:grid-cols-7 md:gap-[32px] lg:px-0 border-b-[1px] border-[#4a4a4a]">
-          <section className="self-end sm:row-start-1 sm:mt-[20px] md:self-start w-[130px] h-[130px] rounded-full overflow-hidden">
+
+      <section className="w-full -mt-[40px]">
+        <div className="mx-auto grid max-w-[1100px] auto-cols-max grid-flow-col grid-cols-4 gap-[20px] sm:grid-rows-1 md:grid-cols-7 md:gap-[32px] p-[20px] lg:px-0 border-b-[1px] border-[#4a4a4a]">
+          <section className="self-end sm:row-start-1 sm:mt-[20px] md:self-start w-full h-auto rounded-full overflow-hidden">
             <Image src={ProfilePicture} alt={Name} width={512} height={512} />
           </section>
           <section className="col-start-1 col-end-8 w-full md:col-start-2 md:row-start-1">
@@ -61,7 +63,7 @@ const AuthorIntro = async ({ author }: { author: string }) => {
               )}
             </div>
 
-            <section className="flex flex-row space-x-[24px] mb-[45px]">
+            <section className="flex flex-row space-x-[24px] mb-[20px] w-full">
               <Link
                 href={`https://mail.google.com/mail/u/0/?hl=en&tf=cm&fs=1&to=${Email}`}
                 aria-label={`Write an Email for ${Name}`}

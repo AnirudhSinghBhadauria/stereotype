@@ -96,6 +96,10 @@
     background-size: 1px 1.2em;
   }
 
+  .sidebar-classes {
+    @apply sm:mr-[16px];
+  }
+
   .word-spacing-single-post {
     word-spacing: 0.1em;
   }
