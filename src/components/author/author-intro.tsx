@@ -34,7 +34,7 @@ const AuthorIntro = async ({ author }: { author: string }) => {
             <p className="font-mono uppercase text-torq-100 text-[15px] tracking-[0.1em] font-[550] mb-[6px]">
               more Stories by:
             </p>
-            <h1 className="font-title font-bold text-[100px] leading-80 tracking-[0.01em] leading-[0.8] text-white md:text-[160px]">
+            <h1 className="font-title font-bold text-[100px] leading-80 tracking-[0.01em] leading-[0.8] text-white md:text-[130px] lg:text-[160px]">
               {Name}
             </h1>
           </div>
@@ -71,7 +71,7 @@ const AuthorIntro = async ({ author }: { author: string }) => {
                 target="_blank"
               >
                 <Mail height="20" width="20" className="fill-[#3CFFD0]" />
-                <p className="ml-[12px] font-mono uppercase text-torq-100 text-[15px] tracking-[0.125em] font-semibold hover:underline hover:underline-offset-[4.4px]">
+                <p className="ml-[12px] font-mono uppercase text-torq-100 text-[15px] tracking-[0.125em] font-semibold hover:underline hover:underline-offset-[4.4px] hidden lg:block">
                   {Email}
                 </p>
               </Link>
@@ -83,11 +83,12 @@ const AuthorIntro = async ({ author }: { author: string }) => {
                   target="_blank"
                 >
                   <X height="20" width="20" className="fill-[#3CFFD0]" />
-                  <p className="ml-[12px] font-mono uppercase text-torq-100 text-[15px] tracking-[0.125em] font-semibold hover:underline hover:underline-offset-[4.4px]">
+                  <p className="ml-[12px] font-mono uppercase text-torq-100 text-[15px] tracking-[0.125em] font-semibold hover:underline hover:underline-offset-[4.4px] hidden lg:block">
                     Twitter
                   </p>
                 </Link>
               )}
+
               {Linkedin && (
                 <Link
                   href={Linkedin}
@@ -96,7 +97,7 @@ const AuthorIntro = async ({ author }: { author: string }) => {
                   target="_blank"
                 >
                   <In height="19" width="18" className="fill-[#3CFFD0]" />
-                  <p className="ml-[12px] font-mono uppercase text-torq-100 text-[15px] tracking-[0.125em] font-semibold hover:underline hover:underline-offset-[4.4px]">
+                  <p className="ml-[12px] font-mono uppercase text-torq-100 text-[15px] tracking-[0.125em] font-semibold hover:underline hover:underline-offset-[4.4px] hidden lg:block">
                     Linkedin
                   </p>
                 </Link>
@@ -109,7 +110,7 @@ const AuthorIntro = async ({ author }: { author: string }) => {
                   target="_blank"
                 >
                   <LinkTree height="19" width="18" className="fill-[#3CFFD0]" />
-                  <p className="ml-[12px] font-mono uppercase text-torq-100 text-[15px] tracking-[0.125em] font-semibold hover:underline hover:underline-offset-[4.4px]">
+                  <p className="ml-[12px] font-mono uppercase text-torq-100 text-[15px] tracking-[0.125em] font-semibold hover:underline hover:underline-offset-[4.4px] hidden lg:block">
                     Linktree
                   </p>
                 </Link>

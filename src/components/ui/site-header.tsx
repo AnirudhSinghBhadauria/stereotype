@@ -31,10 +31,8 @@ const SiteHeader = () => {
                 className="flex flex-row items-center"
               >
                 <Stereotype
-                  width={107.8}
-                  height={20}
                   fill={color}
-                  className="hover:opacity-60 hover:transition-all hover:ease-in-out"
+                  className="w-[107.8px] h-[20px] hover:opacity-60 hover:transition-all hover:ease-in-out"
                 />
               </Link>
               <ul className="flex flex-row">
@@ -72,7 +70,7 @@ const SiteHeader = () => {
         </section>
       </header>
 
-      <header className="block md:hidden absolute top-0 left-0 right-0 w-full h-[48px] px-[20px]">
+      <header className="z-50 block md:hidden absolute top-0 left-0 right-0 w-full h-[48px] px-[20px]">
         <nav className="w-full h-full flex items-end justify-end">
           <button
             onClick={sideBarHandeler}

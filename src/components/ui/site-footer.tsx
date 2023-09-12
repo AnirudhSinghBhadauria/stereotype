@@ -5,11 +5,11 @@ import React from "react";
 
 const SiteFooter = () => {
   return (
-    <footer className="pb-[90px] pt-[20px] font-gen text-[10px] uppercase leading-[19px] tracking-[0.1em] text-white md:pt-[120px] lg:text-left lg:text-[12px] lg:leading-[21.6px] font-medium flex flex-row justify-center">
-      <section className="primary-container w-full flex flex-col">
-        <Stereotype fill="white" width={431.1} height={80} className="mb-12" />
-        <nav className="max-w-[610px] flex flex-row items-center">
-          <ul className="flex flex-row flex-wrap">
+    <footer className="md:ml-[30px] lg:ml-[0px] font-gen text-[10px] uppercase leading-[19px] tracking-[0.1em] text-white pt-[80px] pb-[85px] lg:text-left lg:text-[12px] lg:leading-[21.6px] font-medium flex flex-row justify-center">
+      <section className="mx-auto max-w-[1100px] w-full flex flex-col items-center md:items-start">
+        <Stereotype fill="white" className="mb-[34px] lg:mb-12 h-[46.6px] md:h-[80px] w-[250px] md:w-[431.1px]" />
+        <nav className="max-w-[615px] flex flex-row items-center">
+          <ul className="flex flex-row flex-wrap pl-[18px] justify-center md:justify-start">
             <li>
               <Link
                 href="/Contact"

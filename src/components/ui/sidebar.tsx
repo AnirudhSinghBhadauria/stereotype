@@ -57,10 +57,8 @@ const Modal = ({
 
         <div className="flex flex-row items-center justify-between mb-[16px]">
           <Stereotype
-            width={161.3}
-            height={30}
             fill="white"
-            className="sm:hover:opacity-60 hover:transition-all hover:ease-in-out"
+            className="w-[161.3px] h-[30px] sm:hover:opacity-60 hover:transition-all hover:ease-in-out"
           />
 
           <button

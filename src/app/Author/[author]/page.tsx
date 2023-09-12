@@ -10,18 +10,14 @@ import SiteFooter from "@/components/ui/site-footer";
 const Author = async ({ params }: { params: { author: string } }) => {
   return (
     <Fragment>
-      <section className="relative pt-[174px] z-30">
+      <section className="relative pt-[150px] lg:pt-[174px] z-30">
         <div className="absolute top-0 bg-purple-100 w-full pb-[30px]">
           <Link
             href="/"
             aria-label="home button for stereotype"
             title="Stereotype Home"
           >
-            <Stereotype
-              width={781.5}
-              height={145}
-              className="fill-purple-400 z-40 pl-[9px]"
-            />
+            <Stereotype className="fill-purple-400 z-40 pl-[9px] h-[50px] w-[270px] md:w-[645.6px] lg:w-[781.5px] md:h-[120px] lg:h-[145px]" />
           </Link>
         </div>
 
@@ -33,8 +29,8 @@ const Author = async ({ params }: { params: { author: string } }) => {
           </div>
         </section>
 
-        <section className="w-full pt-[40px] flex flex-row justify-center">
-          <div className="primary-container w-full">
+        <section className="w-full pt-[28px] lg:pt-[40px] flex flex-row justify-center">
+          <div className="max-w-[1100px] mx-[10px] lg:m-0 w-full">
             <Suspense fallback={<AuthorStroySkeleton />}>
               <AuthorStories author={params.author} />
             </Suspense>

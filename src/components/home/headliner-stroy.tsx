@@ -84,7 +84,7 @@ const Headliner = async ({
         fill="#fff"
         className="hidden md:block absolute h-[481.5px] w-[90px] lg:h-[588.5px] lg:w-[110px] top-[165px] -left-[45px] lg:top-[140px] lg:-left-[40px] z-10 title-shadow"
       />
-      <Stereotype height={50} width={269.5} fill="white" className="absolute top-[55px] left-[10px] title-shadow md:hidden"/>
+      <Stereotype fill="white" className="absolute h-[50px] w-[269.5px] top-[55px] left-[10px] title-shadow md:hidden"/>
     </div>
   );
 };
