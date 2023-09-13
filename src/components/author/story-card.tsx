@@ -24,8 +24,8 @@ const StoryCard = async ({
   }/${format}/${Slug}/${getColors(BackgroundColor).colorSlug}`;
 
   return (
-    <li className="border-b-[1px] border-b-[#313131] max-w-[700px] group flex flex-row items-center justify-between py-[16px] last-of-type:border-b-0 max-w-container-md sm:pl-[20px] sm:pr-[60px] lg:py-[40px] hover:bg-[#181818]">
-      <div className="flex flex-row items-center">
+    <li className="border-b-[1px] border-b-[#313131] max-w-[700px] group flex flex-row items-center justify-between py-[16px] last-of-type:border-b-0 max-w-container-md sm:pl-[20px] sm:pr-[60px] lg:py-[40px] md:hover:bg-[#181818]">
+      <div className="flex flex-col md:flex-row items-start md:items-center">
         <Link
           href={connect}
           aria-label={`A Post made by ${Author.Name} tagged : ${Tag}`}
@@ -38,7 +38,15 @@ const StoryCard = async ({
           {Tag}
         </Link>
 
-        <div className="max-w-[360px] w-[360px] flex flex-col space-y-4">
+        <Link
+          href={connect}
+          aria-label={`A Post made by ${Author.Name} tagged : ${Tag}`}
+          className="h-fit z-10 font-poly text-[10.76px] tracking-[0.15em] uppercase leading-[1.2] relative mr-[20px] mb-[6px] pb-[4px] block md:hidden border-b border-b-torq-400 text-[#bdbdbd] font-[530]"
+        >
+          {Tag}
+        </Link>
+
+        <div className="max-w-[260px] sm:max-w-[360px]  flex flex-col space-y-4">
           <Link
             href={connect}
             aria-label={`A Post made by ${Author.Name} tagged : ${Tag}`}
@@ -59,14 +67,13 @@ const StoryCard = async ({
       <Link
         href={connect}
         aria-label={`A Post made by ${Author.Name} tagged : ${Tag}`}
-        className="w-[198px] h-[132px] rounded-[3px] overflow-hidden border-[1px] border-[#313131]"
+        className="relative w-[73.4px] h-[73.4px] sm:w-[198px] sm:h-[132px] rounded-[3px] overflow-hidden border-[1px] border-[#313131]"
       >
         <Image
           src={ThumbImage}
-          width={480}
-          height={320}
+          fill
           alt={Alt}
-          className="bg-cover object-fill rounded-[3px]"
+          className=" rounded-[3px]"
         />
       </Link>
     </li>

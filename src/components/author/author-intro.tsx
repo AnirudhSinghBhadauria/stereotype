@@ -34,7 +34,7 @@ const AuthorIntro = async ({ author }: { author: string }) => {
             <p className="font-mono uppercase text-torq-100 text-[15px] tracking-[0.1em] font-[550] mb-[6px]">
               more Stories by:
             </p>
-            <h1 className="font-title font-bold text-[100px] leading-80 tracking-[0.01em] leading-[0.8] text-white md:text-[130px] lg:text-[160px]">
+            <h1 className="font-title font-extrabold text-[90px] leading-80 tracking-[0em] leading-[0.8] text-white md:text-[140px] lg:text-[150px]">
               {Name}
             </h1>
           </div>
@@ -44,12 +44,25 @@ const AuthorIntro = async ({ author }: { author: string }) => {
       <div className="h-[60px] w-full author-gradinet"></div>
 
       <section className="w-full -mt-[40px]">
-        <div className="mx-auto grid max-w-[1100px] auto-cols-max grid-flow-col grid-cols-4 gap-[20px] sm:grid-rows-1 md:grid-cols-7 md:gap-[32px] p-[20px] lg:px-0 border-b-[1px] border-[#4a4a4a]">
-          <section className="self-end sm:row-start-1 sm:mt-[20px] md:self-start w-full h-auto rounded-full overflow-hidden">
+        <div className="overflow-hidden w-full grid md:hidden grid-cols-4 gap-[20px] pl-[20px] pr-[80px] pt-[10px]">
+          <section className="col-start-1 w-full h-full overflow-hidden rounded-full">
+            <Image src={ProfilePicture} alt={Name} width={512} height={512} />
+          </section>
+          <section className="col-span-3 col-start-2 flex items-end">
+            <p className="min-w-[400px] font-mono uppercase text-torq-100 text-[15px] tracking-[0.1em] font-[550]">
+              {Designation}
+            </p>
+          </section>
+        </div>
+
+        <div className="mt-[20px] w-[90%] mx-auto h-[1px] bg-[#4a4a4a] md:hidden"></div>
+
+        <div className="mx-auto grid max-w-[1100px] auto-cols-max grid-flow-col grid-cols-4 sm:grid-rows-1 md:grid-cols-7 md:gap-[32px] p-[20px] lg:px-0 md:border-b-[1px] border-[#4a4a4a]">
+          <section className="hidden md:block self-end sm:row-start-1 sm:mt-[20px] md:self-start w-full h-auto rounded-full overflow-hidden">
             <Image src={ProfilePicture} alt={Name} width={512} height={512} />
           </section>
           <section className="col-start-1 col-end-8 w-full md:col-start-2 md:row-start-1">
-            <p className="font-mono uppercase text-torq-100 text-[15px] tracking-[0.1em] font-[550] mb-[15px]">
+            <p className="hidden md:block font-mono uppercase text-torq-100 text-[15px] tracking-[0.1em] font-[550] mb-[15px]">
               {Designation}
             </p>
             <div className="mb-[20px]">
@@ -63,7 +76,7 @@ const AuthorIntro = async ({ author }: { author: string }) => {
               )}
             </div>
 
-            <section className="flex flex-row space-x-[24px] mb-[20px] w-full">
+            <section className="flex flex-row space-x-[24px] md:mb-[20px] w-full py-[16px] border-b-[1px] border-t-[1px] border-[#4a4a4a] md:py-0 md:border-t-0 md:border-b-0">
               <Link
                 href={`https://mail.google.com/mail/u/0/?hl=en&tf=cm&fs=1&to=${Email}`}
                 aria-label={`Write an Email for ${Name}`}

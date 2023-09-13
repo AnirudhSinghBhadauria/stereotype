@@ -10,7 +10,7 @@ import SiteFooter from "@/components/ui/site-footer";
 const Author = async ({ params }: { params: { author: string } }) => {
   return (
     <Fragment>
-      <section className="relative pt-[150px] lg:pt-[174px] z-30">
+      <section className="relative pt-[60px] md:pt-[150px] lg:pt-[174px] z-30">
         <div className="absolute top-0 bg-purple-100 w-full pb-[30px]">
           <Link
             href="/"

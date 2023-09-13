@@ -9,7 +9,7 @@ const SiteFooter = () => {
       <section className="mx-auto max-w-[1100px] w-full flex flex-col items-center md:items-start">
         <Stereotype fill="white" className="mb-[34px] lg:mb-12 h-[46.6px] md:h-[80px] w-[250px] md:w-[431.1px]" />
         <nav className="max-w-[615px] flex flex-row items-center">
-          <ul className="flex flex-row flex-wrap pl-[18px] justify-center md:justify-start">
+          <ul className="flex flex-row flex-wrap px-[10px] sm:pl-[18px] sm:pr-0 justify-center md:justify-start">
             <li>
               <Link
                 href="/Contact"

@@ -18,7 +18,6 @@ const StoryHeroSection = async ({
 }) => {
   const { category, color, colorName, format, slug, params } = postLinkData;
 
-
   const postData: SinglePostInterface = await getSinglePost(params);
 
   const {
@@ -42,11 +41,7 @@ const StoryHeroSection = async ({
           aria-label="home button for stereotype"
           title="Stereotype Home"
         >
-          <Stereotype
-            width={781.5}
-            height={145}
-            className="fill-white/50 z-40 pl-[9px]"
-          />
+          <Stereotype className="h-[50px] w-[270px] md:w-[645.6px] lg:w-[781.5px] md:h-[120px] lg:h-[145px] fill-white/50 z-40 pl-[9px] " />
         </Link>
       </div>
 
