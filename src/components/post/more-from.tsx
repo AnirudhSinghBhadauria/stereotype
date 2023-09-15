@@ -21,7 +21,7 @@ const MoreFromSection = async ({
 
   return (
     <div className="bg-torq-100 flex flex-row justify-center items-center px-[20px] pb-[16px] pt-[30px] lg:pb-[36px] lg:pt-[50px]">
-      <div className="primary-container w-full">
+      <div className="max-w-[700px] lg:max-w-[1100px] w-full">
         <p className="font-poly text-[18px] font-medium text-black mb-[16px]">
           More stories from{" "}
           <span>
@@ -47,7 +47,7 @@ const MoreFromSection = async ({
               }/${getColors(post.BackgroundColor).colorSlug}`;
 
               return (
-                <li className="group last-of-type:border-b-0 flex flex-row items-center py-[16px] border-b-[1px] border-[#000]/30">
+                <li className="group last-of-type:border-b-0 flex flex-row items-start lg:items-center py-[16px] border-b-[1px] border-[#000]/30">
                   <div className="ml-[10px] mr-[20px] aspect-square">
                     <div className="w-[60px] h-[60px] rounded-[2px] overflow-hidden">
                       <Link
@@ -65,7 +65,7 @@ const MoreFromSection = async ({
                     </div>
                   </div>
                   <div className="flex flex-col">
-                    <h3 className="group-hover:underline underline-offset-[6px] story-more-underline font-poly text-[22px] font-semibold leading-[1.08] text-black -tracking-[0.01em] lg:text-[34px]">
+                    <h3 className="group-hover:underline underline-offset-[4px] lg:underline-offset-[6px] story-more-underline font-poly text-[22px] font-semibold leading-[1.08] text-black -tracking-[0.01em] lg:text-[34px]">
                       <Link
                         href={connect}
                         aria-label={`Link to the post tagged : ${post.Tag}`}

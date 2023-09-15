@@ -70,7 +70,7 @@ const SiteHeader = () => {
         </section>
       </header>
 
-      <header className="z-50 block md:hidden absolute top-0 left-0 right-0 w-full h-[48px] px-[20px]">
+      <header className="block md:hidden absolute top-0 right-0 w-fit h-[48px] px-[20px]">
         <nav className="w-full h-full flex items-end justify-end">
           <button
             style={{ borderColor: color }}

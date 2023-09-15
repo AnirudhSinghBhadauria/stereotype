@@ -40,12 +40,13 @@ const StoryHeroSection = async ({
           href="/"
           aria-label="home button for stereotype"
           title="Stereotype Home"
+          className="z-[100] w-fit block"
         >
-          <Stereotype className="h-[50px] w-[270px] md:w-[645.6px] lg:w-[781.5px] md:h-[120px] lg:h-[145px] fill-white/50 z-40 pl-[9px] " />
+          <Stereotype className="h-[50px] w-[270px] md:w-[645.6px] lg:w-[781.5px] md:h-[120px] lg:h-[145px] fill-white md:fill-white/50 pl-[9px]" />
         </Link>
       </div>
 
-      <section className="pt-[159px] lg:pt-[174px] max-w-[700px] lg:max-w-[1100px] w-full mx-auto flex flex-col pb-[60px] lg:pb-[80px] lg:flex-row">
+      <section className="pt-[70px] md:pt-[159px] lg:pt-[174px] px-[20px] md:px-0 max-w-[700px] lg:max-w-[1100px] w-full mx-auto flex flex-col pb-[30px] md:pb-[60px] lg:pb-[80px] lg:flex-row">
         <div className="lg:w-1/2 mb-[24px] lg:mb-0 lg:pr-[40px] h-auto flex flex-col text-black">
           <section className="mb-[18px] md:mb-[24px]">
             <div className="lg:px-0 leading-none mb-[8px]">
@@ -147,7 +148,7 @@ const StoryHeroSection = async ({
           </section>
         </div>
         <div className="lg:w-1/2">
-          <div className="h-[700px] w-[700px] lg:w-[550px] lg:h-[550px] overflow-hidden">
+          <div className="w-full h-auto md:h-[700px] md:w-[700px] lg:w-[550px] lg:h-[550px] overflow-hidden">
             <Image
               src={postData.Image}
               height={700}
