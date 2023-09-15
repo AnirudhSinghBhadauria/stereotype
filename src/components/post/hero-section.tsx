@@ -45,8 +45,8 @@ const StoryHeroSection = async ({
         </Link>
       </div>
 
-      <section className="pt-[174px] primary-container w-full mx-auto flex flex-col md:max-w-container-md md:pb-[80px] lg:flex-row">
-        <div className="lg:w-1/2 lg:pr-[40px] h-auto flex flex-col text-black">
+      <section className="pt-[159px] lg:pt-[174px] max-w-[700px] lg:max-w-[1100px] w-full mx-auto flex flex-col pb-[60px] lg:pb-[80px] lg:flex-row">
+        <div className="lg:w-1/2 mb-[24px] lg:mb-0 lg:pr-[40px] h-auto flex flex-col text-black">
           <section className="mb-[18px] md:mb-[24px]">
             <div className="lg:px-0 leading-none mb-[8px]">
               <p className="font-mono uppercase inline text-[14.25px] font-bold tracking-[0.05em]">
@@ -54,11 +54,11 @@ const StoryHeroSection = async ({
               </p>
             </div>
             <div className="mb-[8px]">
-              <h1 className="pb-[8px] font-poly text-[46px] font-bold leading-[1.04] -tracking-[0.02em] lg:text-[66px] bg-repeating-lines-dark">
+              <h1 className="pb-[8px] font-poly text-[45.5px] font-bold leading-[1.04] -tracking-[0.02em] lg:text-[66px] bg-repeating-lines-dark">
                 {Title}
               </h1>
             </div>
-            <h2 className="font-gen word-spacing-single-post text-[22px] font-[450] leading-[1.1] lg:text-[24.9px]">
+            <h2 className="font-gen word-spacing-single-post text-[21px] font-[450] leading-[1.1] lg:text-[24.9px]">
               {Description}
             </h2>
           </section>
@@ -147,11 +147,11 @@ const StoryHeroSection = async ({
           </section>
         </div>
         <div className="lg:w-1/2">
-          <div className="w-[550px] h-[550px] overflow-hidden">
+          <div className="h-[700px] w-[700px] lg:w-[550px] lg:h-[550px] overflow-hidden">
             <Image
               src={postData.Image}
-              height={640}
-              width={640}
+              height={700}
+              width={700}
               alt={ImageDescription}
               className="object-cover object-center"
             />

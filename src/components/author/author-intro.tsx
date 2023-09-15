@@ -31,7 +31,7 @@ const AuthorIntro = async ({ author }: { author: string }) => {
       <section className="w-full bg-purple-100 pt-[10px]">
         <div className="mx-auto grid max-w-[1100px] auto-cols-max grid-flow-col grid-cols-4 gap-[20px] sm:grid-rows-1 md:grid-cols-7 md:gap-[32px] lg:px-0 pt-[20px] px-[20px] bg-purple-100">
           <div className="col-start-1 col-end-8 row-start-1 w-full lg:col-start-2 lg:row-start-1 z-10">
-            <p className="font-mono uppercase text-torq-100 text-[15px] tracking-[0.1em] font-[550] mb-[6px]">
+            <p className="font-mono uppercase text-torq-100 text-[15px] tracking-[0.1em] font-[700] sm:font-[550] mb-[6px]">
               more Stories by:
             </p>
             <h1 className="font-title font-extrabold text-[90px] leading-80 tracking-[0em] leading-[0.8] text-white md:text-[140px] lg:text-[150px]">
@@ -49,7 +49,7 @@ const AuthorIntro = async ({ author }: { author: string }) => {
             <Image src={ProfilePicture} alt={Name} width={512} height={512} />
           </section>
           <section className="col-span-3 col-start-2 flex items-end">
-            <p className="min-w-[400px] font-mono uppercase text-torq-100 text-[15px] tracking-[0.1em] font-[550]">
+            <p className="min-w-[400px] font-mono uppercase text-torq-100 text-[15px] tracking-[0.1em] font-[700] sm:font-[550]">
               {Designation}
             </p>
           </section>

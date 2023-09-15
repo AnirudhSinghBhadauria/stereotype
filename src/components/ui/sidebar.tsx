@@ -13,6 +13,7 @@ const Modal = ({
   sideBarCloseInvoker: () => void;
   sideBarState: boolean;
 }) => {
+  
   const navLinks = [
     {
       name: "Home",

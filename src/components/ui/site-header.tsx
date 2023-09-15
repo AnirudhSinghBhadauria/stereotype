@@ -73,18 +73,23 @@ const SiteHeader = () => {
       <header className="z-50 block md:hidden absolute top-0 left-0 right-0 w-full h-[48px] px-[20px]">
         <nav className="w-full h-full flex items-end justify-end">
           <button
+            style={{ borderColor: color }}
             onClick={sideBarHandeler}
-            className="group pb-[6px] border-b-[1px] border-white flex items-center cursor-pointer z-10"
+            className="group pb-[6px] border-b-[1px] flex items-center cursor-pointer z-10"
           >
-            <p className="text-[15px] font-poly group-hover:opacity-50 group-hover:transition-all group-hover:ease-in-out">
+            <p
+              style={{ color: color }}
+              className="text-[15px] font-poly group-hover:opacity-50 group-hover:transition-all group-hover:ease-in-out"
+            >
               Menu
             </p>
             <svg
+              fill={color}
               width="100%"
               height="100%"
               viewBox="0 0 28 28"
               xmlns="http://www.w3.org/2000/svg"
-              className="ml-[8px] inline-block h-[18px] w-[18px] fill-white group-hover:opacity-50 group-hover:transition-all group-hover:ease-in-out"
+              className="ml-[8px] inline-block h-[18px] w-[18px] group-hover:opacity-50 group-hover:transition-all group-hover:ease-in-out"
             >
               <title>Expand</title>
               <path d="M28 11.76H16.24V0h-4.48v11.76H0v4.48h11.76V28h4.48V16.24H28v-4.48Z"></path>
