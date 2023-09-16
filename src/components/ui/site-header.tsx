@@ -8,20 +8,48 @@ import { usePathname } from "next/navigation";
 import Sidebar from "./sidebar";
 
 const SiteHeader = () => {
+  let config: { color: string; position: string } = {
+    color: "white",
+    position: "flex-end",
+  };
   const pathname = usePathname();
 
   const [sideBarState, setSideBarState] = useState<boolean>(false);
-  const color = pathname.slice(0, 6) === "/Story" ? "black" : "white";
+  // const color =
+  //   pathname.slice(0, 6) === "/Story" || pathname.slice(0, 6) === "/About"
+  //     ? "black"
+  //     : "white";
+
+  if (pathname.slice(0, 6) === "/About") {
+    config = {
+      color: "black",
+      position: "flex-start",
+    };
+  } else if (pathname.slice(0, 6) === "/Story") {
+    config = {
+      color: "black",
+      position: "flex-end",
+    };
+  } else {
+    config = {
+      color: "white",
+      position: "flex-end",
+    };
+  }
 
   const sideBarHandeler = () => setSideBarState(!sideBarState ? true : false);
-
   return (
     <Fragment>
       <header className="hidden md:block w-full h-[150px] absolute top-0 left-0 right-0">
-        <section className="h-[80px] flex flex-row justify-center items-end">
-          <div className="lg:max-w-[1100px] w-full flex justify-end px-[22px] lg:px-0">
+        <section
+          className="h-[80px] flex flex-row justify-center items-end"
+        >
+          <div
+            style={{ justifyContent: config.position }}
+            className="lg:max-w-[1100px] w-full flex justify-end px-[22px] lg:px-0"
+          >
             <nav
-              style={{ borderColor: color }}
+              style={{ borderColor: config.color }}
               className="flex flex-row font-gen pb-[6px] md:pb-[8px] border-b-[1px]
           text-[15px] md:text-[19.25px] font-[450] tracking-[-0.015em] z-50"
             >
@@ -31,7 +59,7 @@ const SiteHeader = () => {
                 className="flex flex-row items-center"
               >
                 <Stereotype
-                  fill={color}
+                  fill={config.color}
                   className="w-[107.8px] h-[20px] hover:opacity-60 hover:transition-all hover:ease-in-out"
                 />
               </Link>
@@ -48,13 +76,13 @@ const SiteHeader = () => {
                   }) => (
                     <li key={text}>
                       <span
-                        style={{ color: color }}
+                        style={{ color: config.color }}
                         className="px-[16px] font-normal"
                       >
                         /
                       </span>
                       <Link
-                        style={{ color: color }}
+                        style={{ color: config.color }}
                         href={link}
                         aria-label={aria}
                         className="hover:opacity-50 hover:transition-all hover:ease-in-out"
@@ -73,18 +101,18 @@ const SiteHeader = () => {
       <header className="block md:hidden absolute top-0 right-0 w-fit h-[48px] px-[20px]">
         <nav className="w-full h-full flex items-end justify-end">
           <button
-            style={{ borderColor: color }}
+            style={{ borderColor: config.color }}
             onClick={sideBarHandeler}
             className="group pb-[6px] border-b-[1px] flex items-center cursor-pointer z-10"
           >
             <p
-              style={{ color: color }}
+              style={{ color: config.color }}
               className="text-[15px] font-poly group-hover:opacity-50 group-hover:transition-all group-hover:ease-in-out"
             >
               Menu
             </p>
             <svg
-              fill={color}
+              fill={config.color}
               width="100%"
               height="100%"
               viewBox="0 0 28 28"
