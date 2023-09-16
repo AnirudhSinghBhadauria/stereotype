@@ -18,7 +18,7 @@ const About = () => {
 
       <article className="relative w-full h-screen bg-white">
         <div className="pt-[130px] px-[20px]">
-          <section className="mx-auto text-black my-[24px] w-full max-w-[1100px] md:mt-[16px] lg:mt-[45px]">
+          <section className="mx-auto text-black my-[24px] w-full max-w-[1100px] md:mt-[16px] lg:mt-[35px]">
             <div className="mb-[40px] max-w-[900px] md:ml-[100px]">
               <h1 className="mb-[12px] font-poly text-[40px] font-black leading-[-1] md:text-[55px] lg:block">
                 About Stereotype
