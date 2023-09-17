@@ -33,9 +33,9 @@ export const footerNavbar = [
     aria: "Give us a tip for a story.",
   },
   {
-    text: "community guidelines",
-    link: "",
-    aria: "Community Guidelines of Stereotype",
+    text: "see our codebase",
+    link: "https://github.com/AnirudhSinghBhadauria/stereotype",
+    aria: "Codebase of Stereotype",
   },
   {
     text: "ethics Statment",

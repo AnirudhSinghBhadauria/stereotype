@@ -20,7 +20,7 @@ const SiteHeader = () => {
   //     ? "black"
   //     : "white";
 
-  if (pathname.slice(0, 6) === "/About") {
+  if (pathname.slice(0, 6) === "/About" || pathname.slice(0, 6) === "/Ethic" ) {
     config = {
       color: "black",
       position: "flex-start",

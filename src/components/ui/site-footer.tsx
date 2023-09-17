@@ -12,11 +12,11 @@ const SiteFooter = () => {
           <ul className="flex flex-row flex-wrap px-[10px] sm:pl-[18px] sm:pr-0 justify-center md:justify-start">
             <li>
               <Link
-                href="/Contact"
-                aria-label="contact us for more information."
+                href="/About"
+                aria-label="About us for more information."
                 className="hover:underline hover:transition-all hover:ease-in-out underline-offset-2 pr-[8px]"
               >
-                contact
+                About
               </Link>
             </li>
             {footerNavbar.map(({ text, aria, link }) => (
