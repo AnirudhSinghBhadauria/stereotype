@@ -20,7 +20,11 @@ const SiteHeader = () => {
   //     ? "black"
   //     : "white";
 
-  if (pathname.slice(0, 6) === "/About" || pathname.slice(0, 6) === "/Ethic" ) {
+  if (
+    pathname.slice(0, 6) === "/About" ||
+    pathname.slice(0, 6) === "/Ethic" ||
+    pathname.slice(0, 6) === "/Feedb"
+  ) {
     config = {
       color: "black",
       position: "flex-start",
@@ -41,9 +45,7 @@ const SiteHeader = () => {
   return (
     <Fragment>
       <header className="hidden md:block w-full h-[150px] absolute top-0 left-0 right-0">
-        <section
-          className="h-[80px] flex flex-row justify-center items-end"
-        >
+        <section className="h-[80px] flex flex-row justify-center items-end">
           <div
             style={{ justifyContent: config.position }}
             className="lg:max-w-[1100px] w-full flex justify-end px-[22px] lg:px-0"

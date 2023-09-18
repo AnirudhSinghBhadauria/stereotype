@@ -47,14 +47,6 @@ const EthicsStatement = () => {
                   trustworthy content, built on a foundation of honesty.
                 </p>
                 <p className="font-poly mb-[20px] text-[17.5px] leading-[1.6] -tracking-[0.01em] selection:bg-[#3cffd033] text-wrap">
-                  Stereotype is more than content; it's a community of
-                  knowledge, entertainment, and enthusiasts. We encourage open
-                  dialogue and value feedback. Our commitment to honesty extends
-                  to interactions with our community. We aim to foster a
-                  respectful environment where trust and authenticity reign,
-                  ensuring every member feels valued and heard.
-                </p>
-                <p className="font-poly mb-[20px] text-[17.5px] leading-[1.6] -tracking-[0.01em] selection:bg-[#3cffd033] text-wrap">
                   We believe in showcasing diverse perspectives to empower
                   informed choices. Stereotype is your platform for a wide range
                   of voices, ensuring you have access to multifaceted
@@ -62,6 +54,14 @@ const EthicsStatement = () => {
                   content that resonates with your unique interests and helps
                   you make well-rounded decisions. Trust Stereotype as your
                   source for varied, informed content.
+                </p>
+                <p className="font-poly mb-[20px] text-[17.5px] leading-[1.6] -tracking-[0.01em] selection:bg-[#3cffd033] text-wrap">
+                  Stereotype is more than content; it's a community of
+                  knowledge, entertainment, and enthusiasts. We encourage open
+                  dialogue and value feedback. Our commitment to honesty extends
+                  to interactions with our community. We aim to foster a
+                  respectful environment where trust and authenticity reign,
+                  ensuring every member feels valued and heard.
                 </p>
                 <p className="font-poly mb-[20px] text-[17.5px] leading-[1.6] -tracking-[0.01em] selection:bg-[#3cffd033] text-wrap">
                   Want to give us feedback? &nbsp;

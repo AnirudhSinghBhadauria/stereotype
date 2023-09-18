@@ -56,7 +56,7 @@ const About = () => {
                   Got a tip for us? &nbsp;
                   <Link
                     className="underline underline-offset-4 hover:underline-about-on-hover"
-                    href="/got-a-tip"
+                    href="/Tip-us"
                     aria-label="Got a Tip"
                   >
                     Here's how to send it securely.

@@ -7,8 +7,6 @@ import {
   sansFont,
   polyFont,
 } from "../misc/fonts/fonts";
-import SiteFooter from "@/components/ui/site-footer";
-import Sidebar from "@/components/ui/sidebar";
 
 export const metadata: Metadata = {
   title: "Stereotype",

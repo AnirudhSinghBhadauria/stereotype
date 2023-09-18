@@ -29,7 +29,7 @@ export const headerNavbar = [
 export const footerNavbar = [
   {
     text: "tip us",
-    link: "",
+    link: "Tip-us",
     aria: "Give us a tip for a story.",
   },
   {
@@ -39,7 +39,7 @@ export const footerNavbar = [
   },
   {
     text: "ethics Statment",
-    link: "",
+    link: "/Ethics-Statement",
     aria: "ethics statment",
   },
   {
@@ -64,7 +64,7 @@ export const footerNavbar = [
   },
   {
     text: "feedback",
-    link: "",
+    link: "/Feedback",
     aria: "provide us a feedback",
   },
 ];
