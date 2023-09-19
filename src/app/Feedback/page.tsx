@@ -21,17 +21,17 @@ const Feedback = () => {
       <article className="relative w-full bg-white">
         <div className="pt-[40px] md:pt-[130px] pb-[40px] px-[20px]">
           <section className="mx-auto text-black my-[24px] w-full max-w-[1100px] md:mt-[16px] lg:mt-[15px]">
-            <div className="max-w-[900px]">
+            <div className="max-w-[900px] ml-[15px]">
               <h1
                 style={{ textShadow: "0.25px 0.25px 0px black" }}
-                className="font-poly text-[40px] text-[#424242] font-black leading-[-1] md:text-[55px] lg:block"
+                className="font-poly text-[40px] text-[#424242] font-black leading-[-1] md:text-[44px] lg:block selection:bg-[#B4D5FF]"
               >
                 Feedback
               </h1>
             </div>
 
             <div className="w-full">
-              <h2 className="text-[#424242] font-[900] text-[28px] font-poly tracking-[0.02em] mt-[40px] mb-[16px]">
+              <h2 className="text-[#424242] font-[900] text-[28px] font-poly tracking-[0.02em] mt-[54px] mb-[16px] ml-[15px] selection:bg-[#B4D5FF]">
                 Inviting your valuable feedback
               </h2>
             </div>

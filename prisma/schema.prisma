@@ -15,8 +15,8 @@ model FeedStatus {
 }
 
 model Author {
-  id             String   @id @unique @default(uuid())
-  
+  id String @id @unique @default(uuid())
+
   Name           String   @db.VarChar(18)
   Slug           String   @unique
   ProfilePicture String   @unique
@@ -444,6 +444,27 @@ model Genre {
   EntertainmentHeadliner EntertainmentHeadliner[]
   ReviewHeadliner        ReviewHeadliner[]
   TopStories             TopStories[]
+}
+
+// Feedback
+
+model Feedback {
+  id        String   @id @unique @default(uuid())
+  Name      String
+  Email     String   @unique
+  Feedback  String
+  CreatedAt DateTime @unique @default(now())
+}
+
+// Tip-us
+
+model Tipus {
+  id        String   @id @unique @default(uuid())
+  Detail   String
+  Sentence  String
+  Name      String
+  Email     String   @unique
+  CreatedAt DateTime @unique @default(now())
 }
 
 //  ENUMS
