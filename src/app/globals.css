@@ -146,6 +146,10 @@
     box-shadow: var(--purple-100) 0px 0px 4.5px 0px;
   }
 
+  .input-shadow-invalid {
+    box-shadow: rgb(254, 202, 202) 0px 0px 4.5px 0px;
+  }
+
   .story-more-underline {
     text-decoration-thickness: 1.19px;
   }

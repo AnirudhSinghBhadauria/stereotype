@@ -68,8 +68,8 @@ const EthicsStatement = () => {
                   <span>
                     <Link
                       className="underline underline-offset-4 hover:underline-about-on-hover"
-                      href="/got-a-tip"
-                      aria-label="Got a Tip"
+                      href="/Feedback"
+                      aria-label="Send us feedback"
                     >
                       Here's how to send it.
                     </Link>

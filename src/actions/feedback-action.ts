@@ -18,10 +18,12 @@ export const feedbackSumbit = async (formData: FormData) => {
 
     return {
       status: true,
+      error: false,
     };
   } catch (error) {
     return {
       status: false,
+      error: true,
     };
   }
 };
