@@ -19,11 +19,11 @@ export const headerNavbar = [
     link: "/Entertainment",
     aria: "Entertainment stories",
   },
-  {
-    text: "About",
-    link: "/About",
-    aria: "About Stereotype",
-  },
+  // {
+  //   text: "About",
+  //   link: "/About",
+  //   aria: "About Stereotype",
+  // },
 ];
 
 export const footerNavbar = [

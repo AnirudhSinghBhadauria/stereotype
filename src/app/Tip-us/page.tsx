@@ -1,10 +1,10 @@
-import FeedbackForm from "@/components/feedback/feedback-form";
-import SiteFooter from "@/components/ui/site-footer";
-import Stereotype from "@/misc/logos/Stereotype";
-import Link from "next/link";
 import React, { Fragment } from "react";
+import Link from "next/link";
+import Stereotype from "@/misc/logos/Stereotype";
+import SiteFooter from "@/components/ui/site-footer";
+import TipUsForm from "@/components/tip-us/tip-form";
 
-const Feedback = () => {
+const TipUs = () => {
   return (
     <Fragment>
       <div className="z-40 absolute top-0 md:right-[0px] pb-[30px]">
@@ -26,15 +26,10 @@ const Feedback = () => {
                 style={{ textShadow: "0.25px 0.25px 0px black" }}
                 className="font-poly text-[40px] text-[#424242] font-black leading-[-1] md:text-[44px] lg:block selection:bg-[#B4D5FF]"
               >
-                Feedback
+                Give us a tip
               </h1>
             </div>
-            <div className="w-full lg:ml-[15px]">
-              <h2 className="text-[#424242] font-[900] text-[29.35px] font-poly tracking-[0.02em] mt-[54px] mb-[16px] selection:bg-[#B4D5FF] leading-[1.35] sm:leading-normal">
-                Inviting your valuable feedback
-              </h2>
-            </div>
-            <FeedbackForm />
+            <TipUsForm />
           </section>
         </div>
       </article>
@@ -44,4 +39,4 @@ const Feedback = () => {
   );
 };
 
-export default Feedback;
+export default TipUs;

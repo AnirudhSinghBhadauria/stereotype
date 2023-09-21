@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${titleFont.variable} ${generalFont.variable} ${sansFont.variable} ${polyFont.variable} overflow-x-hidden`}
+        className={`${titleFont.variable} ${generalFont.variable} ${sansFont.variable} ${polyFont.variable} relative overflow-x-hidden`}
       >
         <SiteHeader />
         <aside className="fixed w-full h-screen" id="sidebar-portal-root"></aside>

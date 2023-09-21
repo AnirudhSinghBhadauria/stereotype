@@ -451,7 +451,7 @@ model Genre {
 model Feedback {
   id        String   @id @unique @default(uuid())
   Name      String
-  Email     String   @unique
+  Email     String   
   Feedback  String
   CreatedAt DateTime @unique @default(now())
 }
@@ -463,7 +463,7 @@ model Tipus {
   Detail   String
   Sentence  String
   Name      String
-  Email     String   @unique
+  Email     String   
   CreatedAt DateTime @unique @default(now())
 }
 

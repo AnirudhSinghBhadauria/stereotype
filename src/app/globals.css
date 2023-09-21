@@ -98,6 +98,12 @@
   .sidebar-classes {
     @apply sm:mr-[16px];
   }
+  .navbar-classes {
+    @apply md:mr-[0px] lg:mr-[0px];
+  }
+  .header-classes {
+    @apply lg:mr-[0px]
+  }
 
   .word-spacing-single-post {
     word-spacing: 0.1em;

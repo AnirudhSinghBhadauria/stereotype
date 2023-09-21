@@ -13,8 +13,7 @@ const Modal = ({
   sideBarCloseInvoker: () => void;
   sideBarState: boolean;
 }) => {
-  
-  const navLinks = [
+  const mobileNav = [
     {
       name: "Home",
       path: "/",
@@ -36,10 +35,50 @@ const Modal = ({
       path: "/News",
     },
     {
-      name: 'About',
-      path: '/About'
-    }
+      name: "About",
+      path: "/About",
+    },
+    {
+      name: "Feedback",
+      path: "/Feedback",
+    },
   ];
+
+  const deskNav = [
+    {
+      name: "Tech",
+      path: "/Tech",
+    },
+    {
+      name: "Entertainment",
+      path: "/Entertainment",
+    },
+    {
+      name: "Review",
+      path: "/Review",
+    },
+    {
+      name: "News",
+      path: "/News",
+    },
+    {
+      name: "About",
+      path: "/About",
+    },
+    {
+      name: "Feedback",
+      path: "/Feedback",
+    },
+    {
+      name: "Tip us",
+      path: "/Tip-us",
+    },
+    {
+      name: "Ethics Statement",
+      path: "/Ethics-Statement",
+    },
+  ];
+
 
   return (
     <aside
@@ -79,9 +118,24 @@ const Modal = ({
         </div>
 
         <nav>
-          <ul className="mr-[24px]">
-            {navLinks.map(({ name, path }) => (
-              <li onClick={sideBarCloseInvoker} className="w-full font-medium border-b border-[#3D00BF] px-[8px] py-[12px] text-[33px] text-white hover:opacity-60 hover:transition-all hover:ease-in-out">
+          <ul className="mr-[24px] block md:hidden">
+            {mobileNav.map(({ name, path }) => (
+              <li
+                onClick={sideBarCloseInvoker}
+                className="w-full font-medium border-b border-[#3D00BF] px-[8px] py-[12px] text-[33px] text-white hover:opacity-60 hover:transition-all hover:ease-in-out"
+              >
+                <Link href={path} aria-label={name}>
+                  {name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <ul className="mr-[24px] hidden md:block">
+            {deskNav.map(({ name, path }) => (
+              <li
+                onClick={sideBarCloseInvoker}
+                className="w-full font-medium border-b border-[#3D00BF] px-[8px] py-[12px] text-[33px] text-white hover:opacity-60 hover:transition-all hover:ease-in-out"
+              >
                 <Link href={path} aria-label={name}>
                   {name}
                 </Link>
@@ -131,7 +185,7 @@ const Sidebar: ({
     setTimeout(() => {
       sideBarRootElement.style.zIndex = "-50";
     }, 350);
-
+    
     document.body.style.overflow = "auto";
     document.body.classList.remove("sidebar-classes");
   }
@@ -139,7 +193,9 @@ const Sidebar: ({
   return createPortal(
     <Fragment>
       <div
-        style={{ display: `${sideBarState ? "block" : "none"}` }}
+        style={{
+          display: `${sideBarState ? "block" : "none"}`,
+        }}
         className="w-full h-screen bg-black/40 transition-all duration-1000 ease-in-out"
       ></div>
       <Modal

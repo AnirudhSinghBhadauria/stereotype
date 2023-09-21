@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import { feedbackSumbit } from "@/actions/feedback-action";
-import FeedbackSubmitButton from "./feedback-submit-button";
+import { tipusSumbit } from "@/actions/tipus-action";
+import TipSubmitButton from "./tipus-submit-form";
 
-const FeedbackForm = () => {
+const TipUsForm = () => {
   const ref = useRef<HTMLFormElement>(null);
   const [status, setStatus] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
@@ -18,7 +18,7 @@ const FeedbackForm = () => {
       ref={ref}
       className="lg:ml-[15px] sm:mr-[163px] md:mr-[230px]"
       action={async (formData) => {
-        const { status, error } = await feedbackSumbit(formData);
+        const { status, error } = await tipusSumbit(formData);
 
         if (!error) {
           setStatus(status);
@@ -29,6 +29,45 @@ const FeedbackForm = () => {
       }}
     >
       <section className="flex flex-col max-w-[800px]">
+        <div className="w-full">
+          <h2 className="text-[#424242] font-[900] text-[29.35px] font-poly tracking-[0.02em] mt-[54px] mb-[16px] selection:bg-[#B4D5FF] leading-[1.35] sm:leading-normal">
+            Pitch us your story
+          </h2>
+        </div>
+        <label
+          htmlFor="summarize"
+          className="font-mono text-[15.75px] sm:text-[17px] md:text-[18px] lg:text-[18.25px] text-[#424242] opacity-80 selection:bg-[#B4D5FF]"
+        >
+          Summarize your story in one sentence :
+        </label>
+        <input
+          autoComplete="off"
+          className="w-full mb-[16px] bg-white border-[1px] border-[#e7e7e8] p-[8px] font-gen text-black text-[14px] tracking-wide font-medium focus:border-purple-200 focus:input-shadow selection:bg-[#B4D5FF]"
+          type="text"
+          id="summarize"
+          name="summarize"
+          required
+        />
+        <label
+          htmlFor="explain"
+          className="font-mono text-[15.75px] sm:text-[17px] md:text-[18px] lg:text-[18.25px] text-[#424242] opacity-80 selection:bg-[#B4D5FF]"
+        >
+          Explain your story in detail :
+        </label>
+        <textarea
+          id="explain"
+          name="explain"
+          autoComplete="off"
+          required
+          className="w-full bg-white p-[10px] border-[1px] border-[#e7e7e8] font-gen text-black text-[14px] tracking-wide font-medium focus:border-purple-200 focus:input-shadow selection:bg-[#B4D5FF]"
+          rows={2}
+        ></textarea>
+
+        <div className="w-full">
+          <h2 className="text-[#424242] font-[900] text-[29.35px] font-poly tracking-[0.02em] mt-[54px] mb-[16px] selection:bg-[#B4D5FF] leading-[1.35] sm:leading-normal">
+            Tell us about you
+          </h2>
+        </div>
         <label
           htmlFor="name"
           className="font-mono text-[15.75px] sm:text-[17px] md:text-[18px] lg:text-[18.25px] text-[#424242] opacity-80 selection:bg-[#B4D5FF]"
@@ -57,25 +96,10 @@ const FeedbackForm = () => {
           name="email"
           required
         />
-
-        <label
-          htmlFor="feedback"
-          className="font-mono text-[15.75px] sm:text-[17px] md:text-[18px] lg:text-[18.25px] text-[#424242] opacity-80 selection:bg-[#B4D5FF]"
-        >
-          Your feedback :
-        </label>
-        <textarea
-          id="feedback"
-          name="feedback"
-          autoComplete="off"
-          required
-          className="w-full bg-white p-[10px] border-[1px] border-[#e7e7e8] font-gen text-black text-[14px] tracking-wide font-medium focus:border-purple-200 focus:input-shadow selection:bg-[#B4D5FF]"
-          rows={4}
-        ></textarea>
       </section>
 
       {!error ? (
-        <FeedbackSubmitButton
+        <TipSubmitButton
           formStatus={status}
           onFormStatusHandeler={formStatusHandeler}
         />
@@ -95,4 +119,4 @@ const FeedbackForm = () => {
   );
 };
 
-export default FeedbackForm;
+export default TipUsForm;
