@@ -14,10 +14,7 @@ const Headliner = async ({
   StoryCategory,
 }: {
   StoryCategory?: Category;
-  // StoryCategory?: Category | null;
 }) => {
-  // const ifStoryCategory = StoryCategory ? StoryCategory : null;
-
   let headline: HeadlineInterface | null = !StoryCategory
     ? await getHeadlines()
     : await getHeadlineForCategory(StoryCategory);

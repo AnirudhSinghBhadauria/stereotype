@@ -187,3 +187,19 @@
     word-spacing: 0.05em;
   }
 }
+
+
+/* Skeleton loading */ 
+
+.skeleton-black-loading { 
+  animation: skeleton-black 300ms linear infinite alternate;
+}
+
+@keyframes skeleton-black {
+  0% {
+    background-color: rgba(32, 32, 32, 0.7);
+  }
+  100% {
+    background-color: rgba(32, 32, 32, 0.95);
+  }
+}
