@@ -1,7 +1,7 @@
 import Headliner from "@/components/home/headliner-stroy";
 import HeadlineSkeleton from "@/components/home/skeleton/headline-skeleton";
 import StoriesWrapperSkeleton from "@/components/home/skeleton/stories-wrapper-skeleton";
-import TopStoriesSkeleton from "@/components/home/skeleton/top-stories-skeleton";
+import TopStoriesSkellyWrapper from "@/components/home/skeleton/top-stories-skeleton-wraper";
 import StoriesWrapper from "@/components/home/stories-wrapper";
 import TopStories from "@/components/home/top-stories";
 import { Category } from "@prisma/client";
@@ -12,7 +12,7 @@ const HomeWithCategory = ({ params }: { params: { category: Category } }) => {
 
   return (
     <section className="w-full flex flex-col justify-center items-center">
-      <div className="primary-container relative flex flex-col lg:flex-row mb-[60px] px-[10px] lg:pl-[10px]">
+      <div className="w-full primary-container relative flex flex-col lg:flex-row mb-[60px] px-[10px] lg:pl-[10px]">
         <div className="w-full lg:w-[710px] pt-[63px] md:pt-[160px] lg:pt-[150px]">
           <Suspense fallback={<HeadlineSkeleton />}>
             <Headliner StoryCategory={category} />
@@ -22,7 +22,7 @@ const HomeWithCategory = ({ params }: { params: { category: Category } }) => {
           <h2 className="mx-auto max-w-[500px] pb-[20px] font-poly text-[15.75px] leading-[1.2] tracking-[0.005em] text-torq-100 md:pl-[60px] lg:pl-[40px]">
             Top Stories
           </h2>
-          <Suspense fallback={<TopStoriesSkeleton />}>
+          <Suspense fallback={<TopStoriesSkellyWrapper />}>
             <TopStories StoryCategory={category} />
           </Suspense>
         </div>

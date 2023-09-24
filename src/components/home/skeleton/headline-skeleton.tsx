@@ -12,15 +12,15 @@ const HeadlineSkeleton = () => {
 
       <div className="relative mr-[15px] md:mr-0 pb-[20px] md:pl-[80px] lg:border-none lg:pl-[165px] sm:-mt-[40px]">
         {/* Heading */}
-        <h2 className="mb-[8px] h-[8px] sm:h-[45px] md:h-[50px] w-full bg-transparent rounded-[8px]"></h2>
-        <h2 className="mb-[8px] sm:mb-[18px] md:mb-[10px] h-[35px] sm:h-[35px] md:h-[50px] w-full skeleton-black-loading rounded-[5px] md:rounded-[8px]"></h2>
+        <h2 className="mb-[8px] h-[0px] sm:h-[45px] md:h-[42px] w-full bg-transparent rounded-[8px]"></h2>
+        <h2 className="mb-[8px] sm:mb-[18px] md:mb-[10px] h-[35px] sm:h-[35px] md:h-[50px] w-[98%] skeleton-black-loading rounded-[5px] md:rounded-[8px]"></h2>
         <h2 className="block sm:hidden md:block mb-[8px] sm:mb-[18px] h-[35px] sm:h-[35px] md:h-[50px] md:mb-[10px] lg:mb-[18px] w-[80%] sm:w-[70%] md:w-[85%] skeleton-black-loading rounded-[5px] md:rounded-[8px]"></h2>
 
         <h2 className="block sm:hidden md:block lg:hidden mb-[18px] h-[35px] md:h-[50px] w-[50%] sm:w-[75%] skeleton-black-loading rounded-[5px] md:rounded-[8px]"></h2>
         {/* Heading */}
 
         {/* Description */}
-        <p className="mb-[8px] md:mb-[10px] h-[25px] md:h-[35px] w-[85%] md:w-[93%] skeleton-black-loading rounded-[5px] md:rounded-[8px]"></p>
+        <p className="mb-[8px] md:mb-[10px] h-[25px] md:h-[35px] w-[85%] md:w-[91.5%] skeleton-black-loading rounded-[5px] md:rounded-[8px]"></p>
         <p className="mb-[18px] h-[25px] md:h-[35px] w-[60%] md:w-[70%] skeleton-black-loading rounded-[5px] md:rounded-[8px]"></p>
         {/* Description */}
 

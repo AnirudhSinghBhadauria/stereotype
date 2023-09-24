@@ -2,9 +2,9 @@ import React, { Suspense } from "react";
 import Headliner from "@/components/home/headliner-stroy";
 import TopStories from "@/components/home/top-stories";
 import HeadlineSkeleton from "@/components/home/skeleton/headline-skeleton";
-import TopStoriesSkeleton from "@/components/home/skeleton/top-stories-skeleton";
 import StoriesWrapper from "@/components/home/stories-wrapper";
 import StoriesWrapperSkeleton from "@/components/home/skeleton/stories-wrapper-skeleton";
+import TopStoriesSkellyWrapper from "@/components/home/skeleton/top-stories-skeleton-wraper";
 
 export const dynamicParams = false;
 
@@ -24,7 +24,7 @@ const Home = () => {
           >
             Top Stories
           </h2>
-          <Suspense fallback={<TopStoriesSkeleton />}>
+          <Suspense fallback={<TopStoriesSkellyWrapper />}>
             <TopStories />
           </Suspense>
         </div>
