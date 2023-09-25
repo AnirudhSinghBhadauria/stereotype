@@ -12,6 +12,7 @@ const StoriesWrapper = async ({
 }) => {
   let storyData: StoriesInterface[] = [];
 
+  // await new Promise((resolve) => setTimeout(resolve, 10000));
   const stories: StoriesInterface = !StoryCategory
     ? await getStories(0)
     : await getStoriesForCategory(0, StoryCategory);

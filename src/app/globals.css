@@ -102,7 +102,7 @@
     @apply md:mr-[0px] lg:mr-[0px];
   }
   .header-classes {
-    @apply lg:mr-[0px]
+    @apply lg:mr-[0px];
   }
 
   .word-spacing-single-post {
@@ -188,11 +188,14 @@
   }
 }
 
+/* Skeleton loading */
 
-/* Skeleton loading */ 
-
-.skeleton-black-loading { 
+.skeleton-black-loading {
   animation: skeleton-black 300ms linear infinite alternate;
+}
+
+.skeleton-black-fill-loading {
+  animation: skeleton-black-fill 300ms linear infinite alternate;
 }
 
 @keyframes skeleton-black {
@@ -203,3 +206,12 @@
     background-color: rgba(32, 32, 32, 0.95);
   }
 }
+@keyframes skeleton-black-fill {
+  0% {
+    fill: rgba(32, 32, 32, 0.7);
+  }
+  100% {
+    fill: rgba(32, 32, 32, 0.95);
+  }
+}
+

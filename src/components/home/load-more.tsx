@@ -9,6 +9,7 @@ import SiteFooter from "../ui/site-footer";
 import LoadingSpinner from "./loading-spinner";
 import { useParams } from "next/navigation";
 import { getLoadMoreStories } from "@/lib/global/get-load-more-stories";
+import StoriesWrapperSkeleton from "./skeleton/stories-wrapper-skeleton";
 
 const LoadMore = () => {
   const [stories, setStories] = useState<StoriesInterface[]>([]);
@@ -52,7 +53,7 @@ const LoadMore = () => {
     storiesLength && Math.floor(storiesLength.mainStoriesLength / 2) - 1;
   const sideLimit = storiesLength && storiesLength.sideStoriesLength - 1;
 
-   return (
+  return (
     <Fragment>
       {stories.map(({ mainThumb, sideThumb, feedThumb }) => (
         <StroriesContainer
@@ -69,6 +70,11 @@ const LoadMore = () => {
         >
           <LoadingSpinner />
         </div>
+        // <div ref={ref}>
+        //   <StoriesWrapperSkeleton
+        //     className="mt-[65px] lg:mt-[80px]"
+        //   />
+        // </div>
       ) : (
         <SiteFooter />
       )}

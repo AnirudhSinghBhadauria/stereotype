@@ -10,7 +10,7 @@ const ReaderStoryline = ({
   return (
     <div>
       <section className="relative pl-[38px] font-poly lg:pl-[50px]">
-        <div>
+        <div> 
           <h2 className="mb-[8px] text-[16.25px] leading-[1.2] tracking-[0.02]  text-white">
             Reader's Streamline
           </h2>
