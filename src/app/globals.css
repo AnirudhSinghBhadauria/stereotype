@@ -194,6 +194,14 @@
   animation: skeleton-black 300ms linear infinite alternate;
 }
 
+.skeleton-white-loading {
+  animation: skeleton-white 300ms linear infinite alternate;
+}
+
+.skeleton-white-loading-bg {
+  animation: skeleton-white-bg 300ms linear infinite alternate;
+}
+
 .skeleton-black-fill-loading {
   animation: skeleton-black-fill 300ms linear infinite alternate;
 }
@@ -206,6 +214,25 @@
     background-color: rgba(32, 32, 32, 0.95);
   }
 }
+
+@keyframes skeleton-white {
+  0% {
+    background-color: rgba(255, 255, 255, 0.35);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+@keyframes skeleton-white-bg {
+  0% {
+    background-color: hsl(202, 22%, 91%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
+
 @keyframes skeleton-black-fill {
   0% {
     fill: rgba(32, 32, 32, 0.7);
@@ -214,4 +241,3 @@
     fill: rgba(32, 32, 32, 0.95);
   }
 }
-

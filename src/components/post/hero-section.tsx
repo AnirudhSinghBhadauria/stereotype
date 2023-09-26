@@ -10,6 +10,7 @@ import { LinkPostDataInterface, SinglePostInterface } from "@/utils/interfaces";
 import { getDateTime } from "@/lib/global/convert-date";
 import CopyPostLink from "../home/post-link-copy";
 import { getSinglePost } from "@/lib/Post/get-single-post";
+import { resolve } from "path";
 
 const StoryHeroSection = async ({
   postLinkData,
@@ -18,6 +19,7 @@ const StoryHeroSection = async ({
 }) => {
   const { category, color, colorName, format, slug, params } = postLinkData;
 
+  // await new Promise((resolve) => setTimeout(resolve, 10000));
   const postData: SinglePostInterface = await getSinglePost(params);
 
   const {

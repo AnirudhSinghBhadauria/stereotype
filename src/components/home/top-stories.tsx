@@ -8,7 +8,6 @@ import {
 import { Category } from "@prisma/client";
 
 const TopStories = async ({ StoryCategory }: { StoryCategory?: Category }) => {
-  // await new Promise((resolve) => setTimeout(resolve, 10000))
   let topStories: TopStoryInterface[] = !StoryCategory
     ? await getTopStories()
     : await getTopStoriesForCategory(StoryCategory);

@@ -5,7 +5,7 @@ const SideStoriesSkeleton = () => {
   return (
     <div className="full-side-post w-full h-full flex lg:block justify-center mb-[20px] mb:mb-0">
       <div
-        className="bg-[rgba(32,32,32,0.2)] lg:bg-transparent flex flex-col w-[300px] sm:w-[410px] lg:w-full lg:h-[667.5px] rounded-[4px] lg:rounded-[20px] sticky top-[40px] mr-0 mt-[80px] ml-[65px] lg:mt-0 lg:mr-0 lg:ml-0 lg:mb-[20px] lg:min-h-[500px] pb-[25px] lg:pb-[20px] p-[20px]"
+        className="bg-[rgba(32,32,32,0.25)] lg:bg-transparent flex flex-col w-[300px] sm:w-[410px] lg:w-full lg:h-[667.5px] rounded-[4px] lg:rounded-[20px] sticky top-[40px] mr-0 mt-[80px] ml-[65px] lg:mt-0 lg:mr-0 lg:ml-0 lg:mb-[20px] lg:min-h-[500px] pb-[25px] lg:pb-[20px] p-[20px]"
       >
         {/* Category */}
         <p className="mb-[20px] w-[100px] h-[13px] skeleton-black-loading rounded-[2px]"></p>
@@ -95,3 +95,6 @@ const SideStoriesSkeleton = () => {
 };
 
 export default SideStoriesSkeleton;
+
+
+// https://discord.com/invite/RR9yaw8

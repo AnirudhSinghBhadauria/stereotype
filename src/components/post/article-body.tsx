@@ -4,6 +4,7 @@ import { ArticleBodyInterface, SinglePostInterface } from "@/utils/interfaces";
 import { getSinglePost } from "@/lib/Post/get-single-post";
 
 const ArticleBody = async ({ params }: { params: string[] }) => {
+  // await new Promise((resolve) => setTimeout(resolve, 10000));
   const postData: ArticleBodyInterface = await getSinglePost(params);
 
   const {

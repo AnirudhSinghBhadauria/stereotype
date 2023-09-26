@@ -7,7 +7,7 @@ const LoadingSpinner = () => {
     <section className="flex flex-row items-center justify-center space-x-[6px]">
       {/* <Stere className="fill-[#313131] h-[28px] w-[62.16px]" /> */}
       <div
-        className="h-[32px] w-[32px] inline-block border-[#31313180] border-r-blue-500 rounded-full border-[5px] border-solid animate-spin"
+        className="h-[26px] w-[26px] inline-block border-[#31313180] border-r-blue-500 rounded-full border-[3.25px] border-solid animate-spin"
         role="status"
       ></div>
       {/* <Type className="fill-[#313131] h-[28px] w-[58.1px] translate-x-[-3px]" /> */}

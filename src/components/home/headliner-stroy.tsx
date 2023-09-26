@@ -15,7 +15,6 @@ const Headliner = async ({
 }: {
   StoryCategory?: Category;
 }) => {
-  // await new Promise((resolve) => setTimeout(resolve, 10000))
   let headline: HeadlineInterface | null = !StoryCategory
     ? await getHeadlines()
     : await getHeadlineForCategory(StoryCategory);

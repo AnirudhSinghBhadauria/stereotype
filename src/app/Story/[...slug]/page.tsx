@@ -7,6 +7,9 @@ import ArticleBody from "@/components/post/article-body";
 import LoadingSpinner from "@/components/home/loading-spinner";
 import { updateReads } from "@/lib/global/update-reads";
 import { Category } from "@prisma/client";
+import StorySkeleton from "@/components/post/skeleton/story-skeleton";
+import ArticleBodySkeleton from "@/components/post/skeleton/article-body-skeleton";
+import MoreFromSkeletonSection from "@/components/post/skeleton/more-from-skeleton";
 
 const Story = async ({ params }: { params: { slug: string[] } }) => {
   const category = params.slug[0];
@@ -24,9 +27,9 @@ const Story = async ({ params }: { params: { slug: string[] } }) => {
           fallback={
             <div
               style={{ backgroundColor: color }}
-              className="h-screen grid place-items-center w-full"
+              className="relative w-full flex flex-row justify-center"
             >
-              <LoadingSpinner />
+              <StorySkeleton />
             </div>
           }
         >
@@ -42,17 +45,11 @@ const Story = async ({ params }: { params: { slug: string[] } }) => {
           />
         </Suspense>
 
-        <Suspense
-          fallback={
-            <div className="h-screen w-full grid place-items-center bg-white">
-              <LoadingSpinner />
-            </div>
-          }
-        >
+        <Suspense fallback={<ArticleBodySkeleton />}>
           <ArticleBody params={params.slug} />
         </Suspense>
 
-        <Suspense fallback={<LoadingSpinner />}>
+        <Suspense fallback={<MoreFromSkeletonSection />}>
           <MoreFromSection params={params.slug} category={category} />
         </Suspense>
       </section>

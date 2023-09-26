@@ -4,6 +4,7 @@ import { getColors } from "@/lib/global/get-colors";
 import { MoreStoriesInterface, SinglePostInterface } from "@/utils/interfaces";
 import Image from "next/image";
 import Link from "next/link";
+import { resolve } from "path";
 import React from "react";
 
 const MoreFromSection = async ({
@@ -14,6 +15,7 @@ const MoreFromSection = async ({
   category: string;
 }) => {
   let index: number = -1;
+  // await new Promise((resolve) => setTimeout(resolve, 10000));
   const postData: SinglePostInterface = await getSinglePost(params);
   const moreStories: MoreStoriesInterface[] = await getMoreStories(category);
 
