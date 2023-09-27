@@ -4,6 +4,7 @@ import StoryCard from "./story-card";
 import { getAuthorStories } from "@/lib/author/get-author-stories";
 
 const AuthorStories = async ({ author }: { author: string }) => {
+  await new Promise((resolve) => setTimeout(resolve, 10000));
   const AuthorData = await getAuthorStories(author);
 
   const AuthorStories: AuthorStoriesInterface = AuthorData.AuthorStories;

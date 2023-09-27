@@ -19,7 +19,6 @@ const StoryHeroSection = async ({
 }) => {
   const { category, color, colorName, format, slug, params } = postLinkData;
 
-  // await new Promise((resolve) => setTimeout(resolve, 10000));
   const postData: SinglePostInterface = await getSinglePost(params);
 
   const {
