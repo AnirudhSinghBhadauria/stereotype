@@ -132,19 +132,12 @@ const StoryHeroSection = async ({
                 </Link>
               )}
               <CopyPostLink
+                height="30px"
+                width="30px"
+                className="fill-black group-hover:fill-white"
+                buttonClasses="group flex flex-row justify-center items-center transition-all ease-linear duration-100 rounded-full text-black bg-white hover:bg-black"
                 text={`${process.env.NEXT_PUBLIC_DOMAIN_URL}/Story/${category}/${format}/${slug}/${colorName}`}
-              >
-                <div
-                  title="Copy Link"
-                  className="group transition-all duration-150 ease-in-out h-[30px] w-[30px] flex flex-row justify-center items-center rounded-full bg-white hover:bg-black"
-                >
-                  <Tree
-                    className="fill-black group-hover:fill-white"
-                    height="12.5px"
-                    width="12.5px"
-                  />
-                </div>
-              </CopyPostLink>
+              />
             </div>
           </section>
         </div>

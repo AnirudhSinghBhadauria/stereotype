@@ -2,6 +2,7 @@ import React from "react";
 import MostPopular from "./most-popular";
 import { ArticleBodyInterface, SinglePostInterface } from "@/utils/interfaces";
 import { getSinglePost } from "@/lib/Post/get-single-post";
+import { resolve } from "path";
 
 const ArticleBody = async ({ params }: { params: string[] }) => {
   const postData: ArticleBodyInterface = await getSinglePost(params);

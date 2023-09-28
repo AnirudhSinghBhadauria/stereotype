@@ -7,7 +7,7 @@ const Tree = ({
 }: {
   width: string;
   height: string;
-  className: string;
+  className?: string;
 }) => {
   return (
     <svg

@@ -34,7 +34,10 @@ const SideStory = ({ postProps }: { postProps: SideStoryThumb }) => {
   }`;
 
   return (
-    <div className="full-side-post w-full h-full flex lg:block justify-center">
+    <div
+      key={Slug}
+      className="full-side-post w-full h-full flex lg:block justify-center"
+    >
       <div
         style={{ backgroundColor: secondary }}
         className="flex flex-col w-[300px] sm:w-[410px] lg:w-full lg:h-[667.5px] rounded-[4px] lg:rounded-[20px] sticky top-[40px] mr-0 mt-[80px] ml-[65px] lg:mt-0 lg:mr-0 lg:ml-0 lg:mb-[20px] lg:min-h-[500px] pb-[25px] lg:pb-[20px] p-[20px]"
@@ -150,7 +153,7 @@ const SideStory = ({ postProps }: { postProps: SideStoryThumb }) => {
             height="347.75"
             width="65"
             className="absolute sm:-left-[75px] sm:-top-[30px]  hidden sm:block lg:hidden"
-            fill={'#fff'}
+            fill={"#fff"}
           />
         </Link>
       </div>

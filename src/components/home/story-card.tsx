@@ -21,7 +21,10 @@ const StoryCard = ({
   const color = getColors(BackgroundColor).colorSlug;
 
   return (
-    <li className="group relative mx-auto flex flex-row border-b border-[#313131] text-white last-of-type:border-b-0 md:mx-0 w-full max-w-[500px] md:max-w-full md:border-b-0 [&>div>div]:first-of-type:mt-0 [&>div>div]:first-of-type:pt-0 [&>div>div]:last-of-type:pb-0 [&>div>div]:last-of-type:md:border-b-0 ">
+    <li
+      key={Slug}
+      className="group relative mx-auto flex flex-row border-b border-[#313131] text-white last-of-type:border-b-0 md:mx-0 w-full max-w-[500px] md:max-w-full md:border-b-0 [&>div>div]:first-of-type:mt-0 [&>div>div]:first-of-type:pt-0 [&>div>div]:last-of-type:pb-0 [&>div>div]:last-of-type:md:border-b-0 "
+    >
       <div className="flex flex-row w-full items-start">
         <div className="my-[16px] ml-[20px] mr-[40px] hidden justify-center h-full items-start self-stretch md:flex lg:ml-0 lg:mr-[20px]">
           <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#313131E6] font-poly text-[10px] text-torq-100">
@@ -39,6 +42,7 @@ const StoryCard = ({
                 src={ThumbImage}
                 alt={ThumbImageDescription}
                 fill
+                priority
                 className="object-cover object-center"
               />
             </Link>

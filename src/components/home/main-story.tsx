@@ -30,7 +30,10 @@ const MainStory = ({ postProps }: { postProps: MainStoriesThumb }) => {
   const color = getColors(BackgroundColor).colorSlug;
 
   return (
-    <li className="pb-[44px] last-of-type:pb-[20px] last-of-type:border-b-[0px] last-of-type:mb-[0px] mb-[11.85px] border-b-[8px] border-[#313131] sm:hover:bg-[#181818cf]">
+    <li
+      key={Slug}
+      className="pb-[44px] last-of-type:pb-[20px] last-of-type:border-b-[0px] last-of-type:mb-[0px] mb-[11.85px] border-b-[8px] border-[#313131] sm:hover:bg-[#181818cf]"
+    >
       <div className="full-post relative pb-[16px] pt-[8px] lg:pb-[10px] lg:py-[10px] sm:max-w-[500px] ">
         <div className="ml-auto mt-[24px] sm:ml-[9.88px] w-[320px] sm:w-[480px]">
           <div className="overflow-hidden relative aspect-five-four w-full h-[213.86px] sm:h-[319px] rounded-[2px] border border-solid border-[#313131]">
@@ -91,15 +94,11 @@ const MainStory = ({ postProps }: { postProps: MainStoriesThumb }) => {
             {Reads}
           </div>
           <CopyPostLink
+            height="24px"
+            width="24px"
+            buttonClasses="group flex flex-row justify-center items-center transition-all ease-linear duration-100 rounded-full text-black bg-white"
             text={`${process.env.NEXT_PUBLIC_DOMAIN_URL}/Story/${Category.Category}/Main/${Slug}/${color}`}
-          >
-            <div
-              title="Copy Link"
-              className={`flex flex-row justify-center items-center w-[24px] h-[24px] transition-all ease-linear duration-100 rounded-full text-black bg-white hover:bg-mustard-100`}
-            >
-              <LinkSvg />
-            </div>
-          </CopyPostLink>
+          />
         </div>
         <Link
           href={`/Story/${Category.Category}/Main/${Slug}/${color}`}

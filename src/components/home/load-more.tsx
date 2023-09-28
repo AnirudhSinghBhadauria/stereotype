@@ -57,6 +57,7 @@ const LoadMore = () => {
     <Fragment>
       {stories.map(({ mainThumb, sideThumb, feedThumb }) => (
         <StroriesContainer
+          key={mainThumb[0].Slug}
           mainThumb={mainThumb}
           sideThumb={sideThumb}
           feedThumb={feedThumb!}

@@ -22,6 +22,7 @@ const StoriesWrapper = async ({
     <ul className="flex flex-col primary-container w-full">
       {storyData.map(({ mainThumb, sideThumb, feedThumb }) => (
         <StroriesContainer
+          key={mainThumb[0].Slug}
           mainThumb={mainThumb}
           sideThumb={sideThumb}
           feedThumb={feedThumb!}

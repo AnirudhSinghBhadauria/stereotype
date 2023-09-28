@@ -79,7 +79,6 @@ const Modal = ({
     },
   ];
 
-
   return (
     <aside
       style={{
@@ -121,6 +120,7 @@ const Modal = ({
           <ul className="mr-[24px] block md:hidden">
             {mobileNav.map(({ name, path }) => (
               <li
+                key={name}
                 onClick={sideBarCloseInvoker}
                 className="w-full font-medium border-b border-[#3D00BF] px-[8px] py-[12px] text-[33px] text-white hover:opacity-60 hover:transition-all hover:ease-in-out"
               >
@@ -133,6 +133,7 @@ const Modal = ({
           <ul className="mr-[24px] hidden md:block">
             {deskNav.map(({ name, path }) => (
               <li
+                key={name}
                 onClick={sideBarCloseInvoker}
                 className="w-full font-medium border-b border-[#3D00BF] px-[8px] py-[12px] text-[33px] text-white hover:opacity-60 hover:transition-all hover:ease-in-out"
               >
@@ -185,7 +186,7 @@ const Sidebar: ({
     setTimeout(() => {
       sideBarRootElement.style.zIndex = "-50";
     }, 350);
-    
+
     document.body.style.overflow = "auto";
     document.body.classList.remove("sidebar-classes");
   }
