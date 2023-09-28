@@ -70,11 +70,6 @@ const LoadMore = () => {
         >
           <LoadingSpinner />
         </div>
-        // <div ref={ref}>
-        //   <StoriesWrapperSkeleton
-        //     className="mt-[65px] lg:mt-[80px]"
-        //   />
-        // </div>
       ) : (
         <SiteFooter />
       )}

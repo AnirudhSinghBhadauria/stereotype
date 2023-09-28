@@ -10,7 +10,6 @@ import { getAuthorProfile } from "@/lib/author/get-author-profiles";
 import LinkTree from "@/misc/logos/author/link-tree";
 
 const AuthorIntro = async ({ author }: { author: string }) => {
-  await new Promise((resolve) => setTimeout(resolve, 10000));
   const AuthorData = await getAuthorProfile(author);
 
   const Author: AuthorProfileInterface = AuthorData.AuthorProfile;
