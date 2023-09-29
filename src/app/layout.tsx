@@ -11,7 +11,6 @@ import {
 export const metadata = {
   generator: "Next.js",
   applicationName: "Stereotype",
-  referrer: "origin-when-cross-origin",
   keywords: ["Stereotype", "stereotype", "blog", "tech blog"],
   authors: [
     { name: "Anirudh Singh Bhadauria" },
@@ -22,6 +21,11 @@ export const metadata = {
   ],
   creator: "Anirudh Singh Bhadauria",
   publisher: "Anirudh Singh Bhadauria",
+  metadataBase: new URL("https://breakingstereotypes.vercel.app/"),
+  icons: {
+    icon: [{ url: "/favicon.ico" }],
+    apple: [{ url: "/apple-icon.png" }],
+  },
 };
 
 export default function RootLayout({

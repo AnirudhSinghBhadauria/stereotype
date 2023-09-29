@@ -12,7 +12,6 @@ export const constructMetadata = ({
   return {
     title: title,
     description: description,
-    icons: "/favicon.ico",
     openGraph: {
       url: site,
       title: imgTitle,
@@ -32,6 +31,5 @@ export const constructMetadata = ({
       site: site,
     },
     themeColor: theme,
-    metadataBase: new URL("https://breakingstereotypes.vercel.app/"),
   };
 };
