@@ -3,12 +3,10 @@ import Link from "next/link";
 import Stereotype from "@/misc/logos/Stereotype";
 import SiteFooter from "@/components/ui/site-footer";
 import TipUsForm from "@/components/tip-us/tip-form";
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 import { constructMetadata } from "@/lib/global/metadata-constructor";
 
-export async function generateMetadata(
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   const metadata = constructMetadata({
     title: "Tip us - Stereotype",
     description:

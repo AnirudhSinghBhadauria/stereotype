@@ -1,13 +1,11 @@
 import SiteFooter from "@/components/ui/site-footer";
 import { constructMetadata } from "@/lib/global/metadata-constructor";
 import Stereotype from "@/misc/logos/Stereotype";
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 import Link from "next/link";
 import React, { Fragment } from "react";
 
-export async function generateMetadata(
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   const metadata = constructMetadata({
     title: "About Stereotype",
     description:

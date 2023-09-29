@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 import SiteHeader from "@/components/ui/site-header";
 import {
   titleFont,
@@ -9,9 +9,7 @@ import {
 } from "../misc/fonts/fonts";
 import { constructMetadata } from "@/lib/global/metadata-constructor";
 
-export async function generateMetadata(
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   const metadata = constructMetadata({
     title: "Stereotype",
     description:
