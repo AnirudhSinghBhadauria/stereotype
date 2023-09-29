@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
     imgDesc:
       "Share your valuable feedback with Stereotype. Help us enhance your content experience in tech, reviews, entertainment, and news.",
     imgUrl:
-      "https://cdn.sanity.io/images/aftdl3p2/production/6be92cc3f60e23a4f023a03b92adeb53cd2243c1-1200x630.jpg",
+      "https://cdn.sanity.io/images/aftdl3p2/production/7bd46d28b822c6ea8178324c7c21ba556a9afccf-1200x630.jpg",
     site: "https://breakingstereotypes.vercel.app/Feedback",
     theme: "#FFF",
   });

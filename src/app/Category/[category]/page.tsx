@@ -41,7 +41,7 @@ export async function generateMetadata(
   const metadata = constructMetadata({
     title: `${params.category} - Stereotype`,
     description: `Discover captivating and engaging ${params.category} stories beyond the stereotypes.`,
-    imgTitle: `${params.category}`,
+    imgTitle: `Get ${params.category} updates from Stereotype.`,
     imgDesc: `Discover captivating and engaging ${params.category} stories beyond the stereotypes.`,
     imgUrl: imgUrl,
     site: `https://breakingstereotypes.vercel.app/Category/${params.category}`,

@@ -14,6 +14,7 @@ export const constructMetadata = ({
     description: description,
     icons: "/favicon.ico",
     openGraph: {
+      url: site,
       title: imgTitle,
       description: imgDesc,
       images: [
@@ -31,6 +32,6 @@ export const constructMetadata = ({
       site: site,
     },
     themeColor: theme,
-    metadataBase: new URL('https://breakingstereotypes.vercel.app'),
+    metadataBase: new URL("https://breakingstereotypes.vercel.app/"),
   };
 };

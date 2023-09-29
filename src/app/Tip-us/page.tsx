@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
     imgDesc:
       "Have a tip or story to share? Connect with Stereotype's tip line and contribute to our coverage of tech, reviews, entertainment, and news.",
     imgUrl:
-      "https://cdn.sanity.io/images/aftdl3p2/production/6be92cc3f60e23a4f023a03b92adeb53cd2243c1-1200x630.jpg",
+      "https://cdn.sanity.io/images/aftdl3p2/production/91dafaea31fc738aa6006b2579bd50517aed906c-1200x627.jpg",
     site: "https://breakingstereotypes.vercel.app/Tip-us",
     theme: "#FFF",
   });
