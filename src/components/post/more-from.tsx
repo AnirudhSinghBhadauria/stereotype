@@ -48,7 +48,7 @@ const MoreFromSection = async ({
               }/${getColors(post.BackgroundColor).colorSlug}`;
 
               return (
-                <li className="group last-of-type:border-b-0 flex flex-row items-start lg:items-center py-[16px] border-b-[1px] border-[#000]/30">
+                <li key={post.Slug} className="group last-of-type:border-b-0 flex flex-row items-start lg:items-center py-[16px] border-b-[1px] border-[#000]/30">
                   <div className="ml-[10px] mr-[20px] aspect-square">
                     <div className="w-[60px] h-[60px] rounded-[2px] overflow-hidden">
                       <Link

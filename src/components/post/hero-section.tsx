@@ -149,6 +149,7 @@ const StoryHeroSection = async ({
               width={700}
               alt={ImageDescription}
               className="object-cover object-center"
+              priority
             />
           </div>
           <p className="pt-[6px] font-gen text-[14.5px] font-medium leading-[1.28] text-[#131313]/90">

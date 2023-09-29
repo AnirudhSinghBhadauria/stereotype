@@ -1,22 +1,22 @@
 export const headerNavbar = [
   {
     text: "Tech",
-    link: "/Tech",
+    link: "/Category/Tech",
     aria: "Technology stories",
   },
   {
     text: "Reviews",
-    link: "/Review",
+    link: "/Category/Review",
     aria: "Product reviews",
   },
   {
     text: "News",
-    link: "/News",
+    link: "/Category/News",
     aria: "News stories",
   },
   {
     text: "Entertainment",
-    link: "/Entertainment",
+    link: "/Category/Entertainment",
     aria: "Entertainment stories",
   },
   // {

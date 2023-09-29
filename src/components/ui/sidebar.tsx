@@ -20,19 +20,19 @@ const Modal = ({
     },
     {
       name: "Tech",
-      path: "/Tech",
+      path: "/Category/Tech",
     },
     {
       name: "Entertainment",
-      path: "/Entertainment",
+      path: "/Category/Entertainment",
     },
     {
       name: "Review",
-      path: "/Review",
+      path: "/Category/Review",
     },
     {
       name: "News",
-      path: "/News",
+      path: "/Category/News",
     },
     {
       name: "About",
@@ -47,19 +47,19 @@ const Modal = ({
   const deskNav = [
     {
       name: "Tech",
-      path: "/Tech",
+      path: "/Category/Tech",
     },
     {
       name: "Entertainment",
-      path: "/Entertainment",
+      path: "/Category/Entertainment",
     },
     {
       name: "Review",
-      path: "/Review",
+      path: "/Category/Review",
     },
     {
       name: "News",
-      path: "/News",
+      path: "/Category/News",
     },
     {
       name: "About",

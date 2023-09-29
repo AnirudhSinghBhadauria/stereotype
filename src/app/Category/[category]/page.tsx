@@ -7,6 +7,15 @@ import TopStories from "@/components/home/top-stories";
 import { Category } from "@prisma/client";
 import React, { Suspense } from "react";
 
+export async function generateStaticParams() {
+  return [
+    { category: "Tech" },
+    { category: "Review" },
+    { category: "Entertainment" },
+    { category: "News" },
+  ];
+}
+
 const HomeWithCategory = ({ params }: { params: { category: Category } }) => {
   const category = params.category;
 
