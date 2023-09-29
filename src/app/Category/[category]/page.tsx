@@ -24,10 +24,28 @@ export async function generateMetadata(
   return {
     title: `${params.category} - Stereotype`,
     description: `Discover captivating and engaging ${params.category} stories beyond the stereotypes.`,
-    // icons: '/favicon.ico'
-    // openGraph: {
-    //   images: [{ url: "" }],
-    // },
+    icons: "/favicon.ico",
+    openGraph: {
+      title: `${params.category}`,
+      description: `Discover captivating and engaging ${params.category} stories beyond the stereotypes.`,
+      images: [
+        {
+          url: "https://cdn.sanity.io/images/aftdl3p2/production/edfeb55e27f61212b819954868f4816a8f0e6a9b-1920x1010.jpg",
+        },
+      ],
+    },
+    twitter: {
+      title: `${params.category}`,
+      description: `Discover captivating and engaging ${params.category} stories beyond the stereotypes.`,
+      card: "summary_large_image",
+      images: [
+        "https://cdn.sanity.io/images/aftdl3p2/production/edfeb55e27f61212b819954868f4816a8f0e6a9b-1920x1010.jpg",
+      ],
+      creator: "@LieCheatSteal_",
+      site: "https://breakingstereotypes.vercel.app/",
+    },
+    themeColor: "#131313cc",
+    metadataBase: new URL("https://breakingstereotypes.vercel.app/"),
   };
 }
 
