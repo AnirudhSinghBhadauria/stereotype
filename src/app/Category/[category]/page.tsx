@@ -30,7 +30,7 @@ export async function generateMetadata(
       description: `Discover captivating and engaging ${params.category} stories beyond the stereotypes.`,
       images: [
         {
-          url: "https://cdn.sanity.io/images/aftdl3p2/production/edfeb55e27f61212b819954868f4816a8f0e6a9b-1920x1010.jpg",
+          url: "https://cdn.sanity.io/images/aftdl3p2/production/2628431bcbe783aca493977595217b30949eaf01-1200x630.png",
         },
       ],
     },
@@ -39,7 +39,7 @@ export async function generateMetadata(
       description: `Discover captivating and engaging ${params.category} stories beyond the stereotypes.`,
       card: "summary_large_image",
       images: [
-        "https://cdn.sanity.io/images/aftdl3p2/production/edfeb55e27f61212b819954868f4816a8f0e6a9b-1920x1010.jpg",
+        "https://cdn.sanity.io/images/aftdl3p2/production/2628431bcbe783aca493977595217b30949eaf01-1200x630.png",
       ],
       creator: "@LieCheatSteal_",
       site: "https://breakingstereotypes.vercel.app/",
