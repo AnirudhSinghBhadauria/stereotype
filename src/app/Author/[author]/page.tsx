@@ -6,6 +6,46 @@ import AuthorIntroSkeleton from "@/components/author/skeleton/author-intro-skele
 import AuthorStories from "@/components/author/author-stories";
 import AuthorStroySkeleton from "@/components/author/skeleton/author-story-skeleton";
 import SiteFooter from "@/components/ui/site-footer";
+import { getAllAuthors } from "@/lib/author/get-all-authors";
+import { constructMetadata } from "@/lib/global/metadata-constructor";
+import { Metadata, ResolvingMetadata } from "next";
+import { getAuthorProfile } from "@/lib/author/get-author-profiles";
+import { AuthorProfileInterface } from "@/utils/interfaces";
+
+export async function generateStaticParams() {
+  const authors = await getAllAuthors();
+
+  return authors.map(({ Slug }) => ({
+    author: Slug,
+  }));
+}
+
+export async function generateMetadata(
+  { params }: { params: { author: string } },
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const author = await getAuthorProfile(params.author);
+  const { Name, Designation }: AuthorProfileInterface = author.AuthorProfile;
+
+  const metadata = constructMetadata({
+    title: `${Name} - Author's Stereotype`,
+    description: `Meet ${Name}, ${Designation}, one of our talented author behind Stereotype. Explore ${
+      Name.split(" ")[0]
+    }'s diverse perspectives and contributions to Stereotype.`,
+    imgTitle: `Meet ${Name}, ${Designation}, one of our talented author behind Stereotype.`,
+    imgDesc: `Explore ${
+      Name.split(" ")[0]
+    }'s diverse perspectives and contributions to Stereotype.`,
+    imgUrl:
+      "https://cdn.sanity.io/images/aftdl3p2/production/87387d5bdc7235f33c05a4e5e4ec60602248a6bb-1200x630.jpg",
+    site: `https://breakingstereotypes.vercel.app/Author/${Name.split(
+      " "
+    ).join('')}`,
+    theme: "#131313cc",
+  });
+
+  return metadata;
+}
 
 const Author = async ({ params }: { params: { author: string } }) => {
   return (
@@ -43,5 +83,3 @@ const Author = async ({ params }: { params: { author: string } }) => {
 };
 
 export default Author;
-
-// Meet the talented authors behind Stereotype. Explore their diverse perspectives and contributions in tech, reviews, entertainment, and news.

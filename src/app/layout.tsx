@@ -9,7 +9,6 @@ import {
 } from "../misc/fonts/fonts";
 
 export const metadata = {
-  generator: "Next.js",
   applicationName: "Stereotype",
   keywords: ["Stereotype", "stereotype", "blog", "tech blog"],
   authors: [
