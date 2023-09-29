@@ -3,6 +3,27 @@ import Link from "next/link";
 import Stereotype from "@/misc/logos/Stereotype";
 import SiteFooter from "@/components/ui/site-footer";
 import TipUsForm from "@/components/tip-us/tip-form";
+import { Metadata, ResolvingMetadata } from "next";
+import { constructMetadata } from "@/lib/global/metadata-constructor";
+
+export async function generateMetadata(
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const metadata = constructMetadata({
+    title: "Tip us - Stereotype",
+    description:
+      "Have a tip or story to share? Connect with Stereotype's tip line and contribute to our coverage of tech, reviews, entertainment, and news.",
+    imgTitle: "Stereotype Tip Line: Share Your Stories with Us!",
+    imgDesc:
+      "Have a tip or story to share? Connect with Stereotype's tip line and contribute to our coverage of tech, reviews, entertainment, and news.",
+    imgUrl:
+      "https://cdn.sanity.io/images/aftdl3p2/production/6be92cc3f60e23a4f023a03b92adeb53cd2243c1-1200x630.jpg",
+    site: "https://breakingstereotypes.vercel.app/Tip-us",
+    theme: "#FFF",
+  });
+
+  return metadata;
+}
 
 const TipUs = () => {
   return (

@@ -43,3 +43,5 @@ const Author = async ({ params }: { params: { author: string } }) => {
 };
 
 export default Author;
+
+// Meet the talented authors behind Stereotype. Explore their diverse perspectives and contributions in tech, reviews, entertainment, and news.

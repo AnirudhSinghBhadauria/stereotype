@@ -201,3 +201,13 @@ export interface MoreStoriesInterface {
   BackgroundColor: string;
   Tag: string;
 }
+
+export interface Metadata {
+  title: string;
+  description: string;
+  imgTitle: string;
+  imgDesc: string;
+  imgUrl: string;
+  site: string;
+  theme: string;
+}

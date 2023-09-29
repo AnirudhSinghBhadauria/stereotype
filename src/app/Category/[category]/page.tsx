@@ -4,6 +4,7 @@ import StoriesWrapperSkeleton from "@/components/home/skeleton/stories-wrapper-s
 import TopStoriesSkellyWrapper from "@/components/home/skeleton/top-stories-skeleton-wraper";
 import StoriesWrapper from "@/components/home/stories-wrapper";
 import TopStories from "@/components/home/top-stories";
+import { constructMetadata } from "@/lib/global/metadata-constructor";
 import { Category } from "@prisma/client";
 import { Metadata, ResolvingMetadata } from "next";
 import React, { Suspense } from "react";
@@ -21,32 +22,33 @@ export async function generateMetadata(
   { params }: { params: { category: string } },
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  return {
+  let imgUrl: string;
+
+  if (params.category === "Tech") {
+    imgUrl =
+      "https://cdn.sanity.io/images/aftdl3p2/production/2628431bcbe783aca493977595217b30949eaf01-1200x630.png";
+  } else if (params.category === "Entertainment") {
+    imgUrl =
+      "https://cdn.sanity.io/images/aftdl3p2/production/49ed43f169d797b3877876bd429df7341e8aa20d-1208x632.jpg";
+  } else if (params.category === "News") {
+    imgUrl =
+      "https://cdn.sanity.io/images/aftdl3p2/production/86154b271cd334398748cb90c48729450c2c18d9-1200x630.jpg";
+  } else {
+    imgUrl =
+      "https://cdn.sanity.io/images/aftdl3p2/production/907347e42d4d6e78efe8600c6f6b3617324fd7bd-1200x630.jpg";
+  }
+
+  const metadata = constructMetadata({
     title: `${params.category} - Stereotype`,
     description: `Discover captivating and engaging ${params.category} stories beyond the stereotypes.`,
-    icons: "/favicon.ico",
-    openGraph: {
-      title: `${params.category}`,
-      description: `Discover captivating and engaging ${params.category} stories beyond the stereotypes.`,
-      images: [
-        {
-          url: "https://cdn.sanity.io/images/aftdl3p2/production/2628431bcbe783aca493977595217b30949eaf01-1200x630.png",
-        },
-      ],
-    },
-    twitter: {
-      title: `${params.category}`,
-      description: `Discover captivating and engaging ${params.category} stories beyond the stereotypes.`,
-      card: "summary_large_image",
-      images: [
-        "https://cdn.sanity.io/images/aftdl3p2/production/2628431bcbe783aca493977595217b30949eaf01-1200x630.png",
-      ],
-      creator: "@LieCheatSteal_",
-      site: "https://breakingstereotypes.vercel.app/",
-    },
-    themeColor: "#131313cc",
-    metadataBase: new URL("https://breakingstereotypes.vercel.app/"),
-  };
+    imgTitle: `${params.category}`,
+    imgDesc: `Discover captivating and engaging ${params.category} stories beyond the stereotypes.`,
+    imgUrl: imgUrl,
+    site: `https://breakingstereotypes.vercel.app/Category/${params.category}`,
+    theme: "#131313cc",
+  });
+
+  return metadata;
 }
 
 const HomeWithCategory = ({ params }: { params: { category: Category } }) => {

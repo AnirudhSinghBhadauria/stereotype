@@ -1,7 +1,28 @@
 import SiteFooter from "@/components/ui/site-footer";
+import { constructMetadata } from "@/lib/global/metadata-constructor";
 import Stereotype from "@/misc/logos/Stereotype";
+import { Metadata, ResolvingMetadata } from "next";
 import Link from "next/link";
 import React, { Fragment } from "react";
+
+export async function generateMetadata(
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const metadata = constructMetadata({
+    title: "About Stereotype",
+    description:
+      "Explore the vision, founder, and commitment of Stereotype, where diversity meets innovation in tech, reviews, entertainment, and news.",
+    imgTitle: "Don't live upto your Stereotypes.",
+    imgDesc:
+      "Explore the vision, founder, and commitment of Stereotype, where diversity meets innovation in tech, reviews, entertainment, and news.",
+    imgUrl:
+      "https://cdn.sanity.io/images/aftdl3p2/production/6be92cc3f60e23a4f023a03b92adeb53cd2243c1-1200x630.jpg",
+    site: "https://breakingstereotypes.vercel.app/About",
+    theme: "#FFF",
+  });
+
+  return metadata;
+}
 
 const About = () => {
   return (
@@ -40,17 +61,17 @@ const About = () => {
                   and uncover hidden gems in these fields.
                 </p>
                 <p className="font-poly mb-[20px] text-[17.5px] leading-[1.6] -tracking-[0.01em] selection:bg-[#3cffd033]">
-                  Here at Stereotype, founded in 2023, We believe that a tapestry
-                  of perspectives enriches our content and fosters a more
-                  inclusive online community. We're committed to providing a
-                  platform where voices from all walks of life can be heard,
+                  Here at Stereotype, founded in 2023, We believe that a
+                  tapestry of perspectives enriches our content and fosters a
+                  more inclusive online community. We're committed to providing
+                  a platform where voices from all walks of life can be heard,
                   where stereotypes are challenged.
                 </p>
                 <p className="font-poly mb-[20px] text-[17.5px] leading-[1.6] -tracking-[0.01em] selection:bg-[#3cffd033]">
                   We invite you to explore and engage with our content. Whether
                   you're looking for tech advice, entertainment recommendations,
-                  in-depth reviews, or a fresh take on the news and stories, Stereotype has
-                  something for everyone. Welcome to Stereotype.
+                  in-depth reviews, or a fresh take on the news and stories,
+                  Stereotype has something for everyone. Welcome to Stereotype.
                 </p>
                 <p className="font-poly mb-[20px] text-[17.5px] leading-[1.6] -tracking-[0.01em] selection:bg-[#3cffd033]">
                   Got a tip for us? &nbsp;

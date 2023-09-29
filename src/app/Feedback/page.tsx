@@ -1,8 +1,29 @@
 import FeedbackForm from "@/components/feedback/feedback-form";
 import SiteFooter from "@/components/ui/site-footer";
+import { constructMetadata } from "@/lib/global/metadata-constructor";
 import Stereotype from "@/misc/logos/Stereotype";
+import { Metadata, ResolvingMetadata } from "next";
 import Link from "next/link";
 import React, { Fragment } from "react";
+
+export async function generateMetadata(
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const metadata = constructMetadata({
+    title: "Feedback - Stereotype",
+    description:
+      "Share your valuable feedback with Stereotype. Help us enhance your content experience in tech, reviews, entertainment, and news.",
+    imgTitle: "Give us your Feedback: Your Voice Matters!",
+    imgDesc:
+      "Share your valuable feedback with Stereotype. Help us enhance your content experience in tech, reviews, entertainment, and news.",
+    imgUrl:
+      "https://cdn.sanity.io/images/aftdl3p2/production/6be92cc3f60e23a4f023a03b92adeb53cd2243c1-1200x630.jpg",
+    site: "https://breakingstereotypes.vercel.app/Feedback",
+    theme: "#FFF",
+  });
+
+  return metadata;
+}
 
 const Feedback = () => {
   return (
