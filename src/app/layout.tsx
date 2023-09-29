@@ -22,11 +22,6 @@ export const metadata = {
   ],
   creator: "Anirudh Singh Bhadauria",
   publisher: "Anirudh Singh Bhadauria",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
 };
 
 export default function RootLayout({
