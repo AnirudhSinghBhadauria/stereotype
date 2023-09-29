@@ -5,6 +5,7 @@ import TopStoriesSkellyWrapper from "@/components/home/skeleton/top-stories-skel
 import StoriesWrapper from "@/components/home/stories-wrapper";
 import TopStories from "@/components/home/top-stories";
 import { Category } from "@prisma/client";
+import { Metadata, ResolvingMetadata } from "next";
 import React, { Suspense } from "react";
 
 export async function generateStaticParams() {
@@ -14,6 +15,20 @@ export async function generateStaticParams() {
     { category: "Entertainment" },
     { category: "News" },
   ];
+}
+
+export async function generateMetadata(
+  { params }: { params: { category: string } },
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  return {
+    title: `${params.category} - Stereotype`,
+    description: `Discover captivating and engaging ${params.category} stories beyond the stereotypes.`,
+    // icons: '/favicon.ico'
+    // openGraph: {
+    //   images: [{ url: "" }],
+    // },
+  };
 }
 
 const HomeWithCategory = ({ params }: { params: { category: Category } }) => {
