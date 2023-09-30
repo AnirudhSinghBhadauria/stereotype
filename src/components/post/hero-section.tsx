@@ -95,8 +95,8 @@ const StoryHeroSection = async ({
                   <div className="group transition-all duration-150 ease-in-out h-[30px] w-[30px] flex flex-row justify-center items-center rounded-full bg-white hover:bg-black">
                     <X
                       className="fill-black group-hover:fill-white"
-                      height="12.5px"
-                      width="12.5px"
+                      height="12.75px"
+                      width="12.75px"
                     />
                   </div>
                 </Link>

@@ -97,9 +97,9 @@ const AuthorIntro = async ({ author }: { author: string }) => {
                   className="flex flex-row items-center group"
                   target="_blank"
                 >
-                  <X height="20" width="20" className="fill-[#3CFFD0]" />
+                  <X height="19.5" width="19.5" className="fill-[#3CFFD0]" />
                   <p className="ml-[12px] font-mono uppercase text-torq-100 text-[15px] tracking-[0.125em] font-semibold hover:underline hover:underline-offset-[4.4px] hidden lg:block">
-                    Twitter
+                    Twitter-X
                   </p>
                 </Link>
               )}
@@ -124,7 +124,7 @@ const AuthorIntro = async ({ author }: { author: string }) => {
                   className="flex flex-row items-center group"
                   target="_blank"
                 >
-                  <LinkTree height="19" width="18" className="fill-[#3CFFD0]" />
+                  <LinkTree height="18.65" width="18" className="fill-[#3CFFD0]" />
                   <p className="ml-[12px] font-mono uppercase text-torq-100 text-[15px] tracking-[0.125em] font-semibold hover:underline hover:underline-offset-[4.4px] hidden lg:block">
                     Linktree
                   </p>
