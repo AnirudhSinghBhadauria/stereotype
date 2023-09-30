@@ -210,4 +210,5 @@ export interface Metadata {
   imgUrl: string;
   site: string;
   theme: string;
+  authorData?: [{ name: string; url?: string }];
 }

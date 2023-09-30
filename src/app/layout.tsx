@@ -11,16 +11,9 @@ import {
 export const metadata = {
   applicationName: "Stereotype",
   keywords: ["Stereotype", "stereotype", "blog", "tech blog"],
-  authors: [
-    { name: "Anirudh Singh Bhadauria" },
-    {
-      name: "Anirudh Singh Bhadauria",
-      url: "https://breakingstereotypes.vercel.app/",
-    },
-  ],
-  creator: "Anirudh Singh Bhadauria",
-  publisher: "Anirudh Singh Bhadauria",
-  metadataBase: new URL("https://breakingstereotypes.vercel.app/"),
+  creator: "Anirudh Bhadauria",
+  publisher: "Anirudh Bhadauria",
+  metadataBase: new URL("https://breakingstereotypes.vercel.app"),
   icons: {
     icon: [{ url: "/favicon.ico" }],
     apple: [{ url: "/apple-icon.png" }],

@@ -8,10 +8,12 @@ export const constructMetadata = ({
   imgUrl,
   site,
   theme,
+  authorData,
 }: Metadata) => {
   return {
     title: title,
     description: description,
+    authors: authorData,
     openGraph: {
       url: site,
       title: imgTitle,

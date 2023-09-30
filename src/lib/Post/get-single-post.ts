@@ -17,4 +17,3 @@ export const getSinglePost = async (params: string[]) => {
   return sanitizedPost.postData;
 };
 
-// "http://localhost:3000/api/Global/Post/category/format/slug"

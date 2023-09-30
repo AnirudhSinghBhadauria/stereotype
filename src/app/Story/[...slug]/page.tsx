@@ -8,6 +8,32 @@ import { updateReads } from "@/lib/global/update-reads";
 import StorySkeleton from "@/components/post/skeleton/story-skeleton";
 import ArticleBodySkeleton from "@/components/post/skeleton/article-body-skeleton";
 import MoreFromSkeletonSection from "@/components/post/skeleton/more-from-skeleton";
+import { constructMetadata } from "@/lib/global/metadata-constructor";
+import { Metadata } from "next";
+import { getSinglePost } from "@/lib/Post/get-single-post";
+import { SinglePostInterface } from "@/utils/interfaces";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string[] };
+}): Promise<Metadata> {
+  const { Image, Title, Description, Author, CreatedAt }: SinglePostInterface =
+    await getSinglePost(params.slug);
+
+  const metadata = constructMetadata({
+    title: `${Title} - Stereotype`,
+    description: Description,
+    imgTitle: Title,
+    imgDesc: "Read full story on Stereotype.",
+    imgUrl: Image,
+    site: `https://breakingstereotypes.vercel.app/Story/${params.slug[0]}/${params.slug[1]}/${params.slug[2]}/${params.slug[3]}`,
+    theme: getColorForPost(params.slug[3]),
+    authorData: [{ name: Author.Name, url: Author.Linkedin }],
+  });
+
+  return metadata;
+}
 
 const Story = async ({ params }: { params: { slug: string[] } }) => {
   const category = params.slug[0];
@@ -58,4 +84,3 @@ const Story = async ({ params }: { params: { slug: string[] } }) => {
 };
 
 export default Story;
-
