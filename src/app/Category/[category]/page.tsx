@@ -44,7 +44,7 @@ export async function generateMetadata(
     imgTitle: `Get ${params.category} updates from Stereotype.`,
     imgDesc: `Discover captivating and engaging ${params.category} stories beyond the stereotypes.`,
     imgUrl: imgUrl,
-    site: `https://breakingstereotypes.vercel.app/Category/${params.category}`,
+    site: `${process.env.NEXT_PUBLIC_DOMAIN_URL}/Category/${params.category}`,
     theme: "#131313cc",
   });
 

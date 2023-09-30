@@ -37,14 +37,9 @@ model Author {
 
   // Stroy Relation
 
-  HeadlinerStory         HeadlinerStory[]
-  SideStory              SideStory[]
-  MainStory              MainStory[]
-  TechHeadliner          TechHeadliner[]
-  NewsHeadliner          NewsHeadliner[]
-  EntertainmentHeadliner EntertainmentHeadliner[]
-  ReviewHeadliner        ReviewHeadliner[]
-  TopStories             TopStories[]
+  HeadlinerStory HeadlinerStory[]
+  SideStory      SideStory[]
+  MainStory      MainStory[]
 }
 
 model HeadlinerStory {
@@ -64,6 +59,7 @@ model HeadlinerStory {
   Tag              String
   Image            String
   ImageDescription String @db.VarChar(150)
+  format           String @default("Headline")
 
   // Miscllaneous Data
 
@@ -77,206 +73,6 @@ model HeadlinerStory {
 
   ThumbTitle            String @unique @db.VarChar(70)
   ThumbDescription      String @db.VarChar(120)
-  ThumbImage            String
-  ThumbImageDescription String @db.VarChar(100)
-
-  // Story Content 
-
-  IntroPara String  @db.VarChar(450)
-  ParaTwo   String  @db.VarChar(450)
-  ParaThree String  @db.VarChar(450)
-  ParaFour  String  @db.VarChar(450)
-  ParaFive  String? @db.VarChar(450)
-  ParaSix   String? @db.VarChar(450)
-  ParaSeven String  @db.VarChar(400)
-  ParaEight String  @db.VarChar(450)
-
-  AsideText String @db.VarChar(120)
-
-  @@index([authorId])
-  @@index([genreId])
-}
-
-model TechHeadliner {
-  id String @id @unique @default(uuid())
-
-  // Dedicated Page content
-
-  Title            String @unique @db.VarChar(60)
-  Description      String @db.VarChar(140)
-  // Author Relation
-  Author           Author @relation(fields: [authorId], references: [id])
-  authorId         String
-  // Category Relation 
-  Category         Genre  @relation(fields: [genreId], references: [id])
-  genreId          String
-  Slug             String @unique
-  Tag              String
-  Image            String
-  ImageDescription String @db.VarChar(100)
-
-  // Miscllaneous Data
-
-  BackgroundColor Colors   @default(LEAF)
-  PostNumber      Int      @unique @default(autoincrement())
-  Reads           Int      @default(0)
-  CreatedAt       DateTime @default(now())
-  UpdatedAt       DateTime @updatedAt
-
-  // Thumb Contnet
-
-  ThumbTitle            String @unique @db.VarChar(60)
-  ThumbDescription      String @db.VarChar(105)
-  ThumbImage            String
-  ThumbImageDescription String @db.VarChar(100)
-
-  // Story Content 
-
-  IntroPara String  @db.VarChar(450)
-  ParaTwo   String  @db.VarChar(450)
-  ParaThree String  @db.VarChar(450)
-  ParaFour  String  @db.VarChar(450)
-  ParaFive  String? @db.VarChar(450)
-  ParaSix   String? @db.VarChar(450)
-  ParaSeven String  @db.VarChar(400)
-  ParaEight String  @db.VarChar(450)
-
-  AsideText String @db.VarChar(120)
-
-  @@index([authorId])
-  @@index([genreId])
-}
-
-model NewsHeadliner {
-  id String @id @unique @default(uuid())
-
-  // Dedicated Page content
-
-  Title            String @unique @db.VarChar(60)
-  Description      String @db.VarChar(140)
-  // Author Relation
-  Author           Author @relation(fields: [authorId], references: [id])
-  authorId         String
-  // Category Relation 
-  Category         Genre  @relation(fields: [genreId], references: [id])
-  genreId          String
-  Slug             String @unique
-  Tag              String
-  Image            String
-  ImageDescription String @db.VarChar(100)
-
-  // Miscllaneous Data
-
-  BackgroundColor Colors   @default(LEAF)
-  PostNumber      Int      @unique @default(autoincrement())
-  Reads           Int      @default(0)
-  CreatedAt       DateTime @default(now())
-  UpdatedAt       DateTime @updatedAt
-
-  // Thumb Contnet
-
-  ThumbTitle            String @unique @db.VarChar(60)
-  ThumbDescription      String @db.VarChar(105)
-  ThumbImage            String
-  ThumbImageDescription String @db.VarChar(100)
-
-  // Story Content 
-
-  IntroPara String  @db.VarChar(450)
-  ParaTwo   String  @db.VarChar(450)
-  ParaThree String  @db.VarChar(450)
-  ParaFour  String  @db.VarChar(450)
-  ParaFive  String? @db.VarChar(450)
-  ParaSix   String? @db.VarChar(450)
-  ParaSeven String  @db.VarChar(400)
-  ParaEight String  @db.VarChar(450)
-
-  AsideText String @db.VarChar(120)
-
-  @@index([authorId])
-  @@index([genreId])
-}
-
-model EntertainmentHeadliner {
-  id String @id @unique @default(uuid())
-
-  // Dedicated Page content
-
-  Title            String @unique @db.VarChar(60)
-  Description      String @db.VarChar(140)
-  // Author Relation
-  Author           Author @relation(fields: [authorId], references: [id])
-  authorId         String
-  // Category Relation 
-  Category         Genre  @relation(fields: [genreId], references: [id])
-  genreId          String
-  Slug             String @unique
-  Tag              String
-  Image            String
-  ImageDescription String @db.VarChar(100)
-
-  // Miscllaneous Data
-
-  BackgroundColor Colors   @default(LEAF)
-  PostNumber      Int      @unique @default(autoincrement())
-  Reads           Int      @default(0)
-  CreatedAt       DateTime @default(now())
-  UpdatedAt       DateTime @updatedAt
-
-  // Thumb Contnet
-
-  ThumbTitle            String @unique @db.VarChar(60)
-  ThumbDescription      String @db.VarChar(105)
-  ThumbImage            String
-  ThumbImageDescription String @db.VarChar(100)
-
-  // Story Content 
-
-  IntroPara String  @db.VarChar(450)
-  ParaTwo   String  @db.VarChar(450)
-  ParaThree String  @db.VarChar(450)
-  ParaFour  String  @db.VarChar(450)
-  ParaFive  String? @db.VarChar(450)
-  ParaSix   String? @db.VarChar(450)
-  ParaSeven String  @db.VarChar(400)
-  ParaEight String  @db.VarChar(450)
-
-  AsideText String @db.VarChar(120)
-
-  @@index([authorId])
-  @@index([genreId])
-}
-
-model ReviewHeadliner {
-  id String @id @unique @default(uuid())
-
-  // Dedicated Page content
-
-  Title            String @unique @db.VarChar(60)
-  Description      String @db.VarChar(140)
-  // Author Relation
-  Author           Author @relation(fields: [authorId], references: [id])
-  authorId         String
-  // Category Relation 
-  Category         Genre  @relation(fields: [genreId], references: [id])
-  genreId          String
-  Slug             String @unique
-  Tag              String
-  Image            String
-  ImageDescription String @db.VarChar(100)
-
-  // Miscllaneous Data
-
-  BackgroundColor Colors   @default(LEAF)
-  PostNumber      Int      @unique @default(autoincrement())
-  Reads           Int      @default(0)
-  CreatedAt       DateTime @default(now())
-  UpdatedAt       DateTime @updatedAt
-
-  // Thumb Contnet
-
-  ThumbTitle            String @unique @db.VarChar(60)
-  ThumbDescription      String @db.VarChar(105)
   ThumbImage            String
   ThumbImageDescription String @db.VarChar(100)
 
@@ -314,6 +110,7 @@ model MainStory {
   Tag              String
   Image            String
   ImageDescription String @db.VarChar(150)
+  format           String @default("Main")
 
   // Miscllaneous Data 
 
@@ -369,6 +166,7 @@ model SideStory {
   Tag              String
   Image            String
   ImageDescription String @db.VarChar(150)
+  format           String @default("Side")
 
   // Miscllaneous Data
 
@@ -403,31 +201,6 @@ model SideStory {
   @@index([genreId])
 }
 
-// Top Stories
-
-model TopStories {
-  id    String @id @unique @default(uuid())
-  Title String @db.VarChar(90)
-
-  // Author Relation
-  Author   Author @relation(fields: [authorId], references: [id])
-  authorId String
-
-  // Category Relation
-  Category Genre  @relation(fields: [genreId], references: [id])
-  genreId  String
-
-  CreatedAt        DateTime @default(now())
-  PostNumber       Int      @unique @default(autoincrement())
-  UpdatedAut       DateTime @updatedAt
-  Image            String
-  ImageDescription String   @db.VarChar(100)
-  Slug             String   @unique
-
-  @@index([authorId])
-  @@index([genreId])
-}
-
 // Story Category 
 
 model Genre {
@@ -436,14 +209,9 @@ model Genre {
 
   // Story Realtions
 
-  HeadlinerStory         HeadlinerStory[]
-  SideStory              SideStory[]
-  MainStory              MainStory[]
-  TechHeadliner          TechHeadliner[]
-  NewsHeadliner          NewsHeadliner[]
-  EntertainmentHeadliner EntertainmentHeadliner[]
-  ReviewHeadliner        ReviewHeadliner[]
-  TopStories             TopStories[]
+  HeadlinerStory HeadlinerStory[]
+  SideStory      SideStory[]
+  MainStory      MainStory[]
 }
 
 // Feedback
@@ -451,7 +219,7 @@ model Genre {
 model Feedback {
   id        String   @id @unique @default(uuid())
   Name      String
-  Email     String   
+  Email     String
   Feedback  String
   CreatedAt DateTime @unique @default(now())
 }
@@ -460,10 +228,10 @@ model Feedback {
 
 model Tipus {
   id        String   @id @unique @default(uuid())
-  Detail   String
+  Detail    String
   Sentence  String
   Name      String
-  Email     String   
+  Email     String
   CreatedAt DateTime @unique @default(now())
 }
 

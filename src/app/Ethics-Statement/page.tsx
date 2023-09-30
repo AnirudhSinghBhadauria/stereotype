@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
       "Explore Stereotype's ethical principles, our commitment to integrity, inclusivity, and trust. Learn how we uphold the highest standards in tech, reviews, entertainment, and news content.",
     imgUrl:
       "https://cdn.sanity.io/images/aftdl3p2/production/6be92cc3f60e23a4f023a03b92adeb53cd2243c1-1200x630.jpg",
-    site: "https://breakingstereotypes.vercel.app/Ethics-Statement",
+    site: `${process.env.NEXT_PUBLIC_DOMAIN_URL}/Ethics-Statement`,
     theme: "#FFF",
   });
 

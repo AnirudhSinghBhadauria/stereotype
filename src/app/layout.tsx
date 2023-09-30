@@ -13,10 +13,13 @@ export const metadata = {
   keywords: ["Stereotype", "stereotype", "blog", "tech blog"],
   creator: "Anirudh Bhadauria",
   publisher: "Anirudh Bhadauria",
-  metadataBase: new URL("https://breakingstereotypes.vercel.app"),
+  metadataBase: new URL(`${process.env.NEXT_PUBLIC_DOMAIN_URL}`),
   icons: {
     icon: [{ url: "/favicon.ico" }],
     apple: [{ url: "/apple-icon.png" }],
+  },
+  other: {
+    "google-site-verification": `${process.env.NEXT_PUBLIC_GOOGLE_VER}`,
   },
 };
 

@@ -1,6 +1,6 @@
 import StoryHeroSection from "@/components/post/hero-section";
 import MoreFromSection from "@/components/post/more-from";
-import { getColorForPost } from "@/lib/global/get-colors";
+import { getColorForPost, getColors } from "@/lib/global/get-colors";
 import SiteFooter from "@/components/ui/site-footer";
 import React, { Fragment, Suspense } from "react";
 import ArticleBody from "@/components/post/article-body";
@@ -12,6 +12,20 @@ import { constructMetadata } from "@/lib/global/metadata-constructor";
 import { Metadata } from "next";
 import { getSinglePost } from "@/lib/Post/get-single-post";
 import { SinglePostInterface } from "@/utils/interfaces";
+import { getAllPosts } from "@/lib/Post/get-all-post";
+
+export async function generateStaticParams() {
+  const allPosts = await getAllPosts();
+
+  return allPosts.map(({ BackgroundColor, Category, Slug, format }) => ({
+    slug: [
+      Category.Category,
+      format,
+      Slug,
+      getColors(BackgroundColor).colorSlug,
+    ],
+  }));
+}
 
 export async function generateMetadata({
   params,
@@ -27,7 +41,7 @@ export async function generateMetadata({
     imgTitle: Title,
     imgDesc: "Delve into the comprehensive narrative on Stereotype.",
     imgUrl: Image,
-    site: `https://breakingstereotypes.vercel.app/Story/${params.slug[0]}/${params.slug[1]}/${params.slug[2]}/${params.slug[3]}`,
+    site: `${process.env.NEXT_PUBLIC_DOMAIN_URL}/Story/${params.slug[0]}/${params.slug[1]}/${params.slug[2]}/${params.slug[3]}`,
     theme: getColorForPost(params.slug[3]),
     authorData: [{ name: Author.Name, url: Author.Linkedin }],
   });

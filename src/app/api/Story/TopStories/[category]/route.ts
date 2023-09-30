@@ -13,8 +13,9 @@ export async function GET(
       where: {
         Category: { Category: category },
       },
-      take: 5,
       orderBy: { PostNumber: "desc" },
+      skip: 1,
+      take: 5,
       select: {
         Author: { select: { Name: true, Slug: true } },
         CreatedAt: true,

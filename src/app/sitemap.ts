@@ -1,8 +1,22 @@
 import { MetadataRoute } from "next";
 import { getAllAuthors } from "@/lib/author/get-all-authors";
+import { getAllPosts } from "@/lib/Post/get-all-post";
+import { getColors } from "@/lib/global/get-colors";
 
 export default async function sitemap() {
   const allAuthors = await getAllAuthors();
+  const allPosts = await getAllPosts();
+
+  const posts =
+    allPosts.map(({ BackgroundColor, Category, CreatedAt, Slug, format }) => {
+      return {
+        url: `${process.env.NEXT_PUBLIC_DOMAIN_URL}/Story/${
+          Category.Category
+        }/${format}/${Slug}/${getColors(BackgroundColor).colorSlug}`,
+        lastModified: CreatedAt,
+        priority: 0.8,
+      };
+    }) ?? [];
 
   const authors =
     allAuthors.map(({ Slug, JoinedAt }) => {
@@ -40,11 +54,6 @@ export default async function sitemap() {
       priority: 0.8,
     },
     {
-      url: `${process.env.NEXT_PUBLIC_DOMAIN_URL}/Story`,
-      lastModified: new Date(),
-      priority: 0.8,
-    },
-    {
       url: `${process.env.NEXT_PUBLIC_DOMAIN_URL}/About`,
       lastModified: new Date(),
       priority: 0.5,
@@ -65,5 +74,6 @@ export default async function sitemap() {
       priority: 0.5,
     },
     ...authors,
+    ...posts,
   ];
 }

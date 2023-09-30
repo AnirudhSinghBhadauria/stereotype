@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
       "Explore the vision, founder, and commitment of Stereotype, where diversity meets innovation in tech, reviews, entertainment, and news.",
     imgUrl:
       "https://cdn.sanity.io/images/aftdl3p2/production/6be92cc3f60e23a4f023a03b92adeb53cd2243c1-1200x630.jpg",
-    site: "https://breakingstereotypes.vercel.app/About",
+    site: `${process.env.NEXT_PUBLIC_DOMAIN_URL}/About`,
     theme: "#FFF",
   });
 

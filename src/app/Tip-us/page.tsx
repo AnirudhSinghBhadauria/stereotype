@@ -16,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
       "Have a tip or story to share? Connect with Stereotype's tip line and contribute to our coverage of tech, reviews, entertainment, and news.",
     imgUrl:
       "https://cdn.sanity.io/images/aftdl3p2/production/91dafaea31fc738aa6006b2579bd50517aed906c-1200x627.jpg",
-    site: "https://breakingstereotypes.vercel.app/Tip-us",
+    site: `${process.env.NEXT_PUBLIC_DOMAIN_URL}/Tip-us`,
     theme: "#FFF",
   });
 
