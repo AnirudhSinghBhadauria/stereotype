@@ -25,14 +25,19 @@ export async function generateMetadata({
     title: `${Title} - Stereotype`,
     description: Description,
     imgTitle: Title,
-    imgDesc: "Read full story on Stereotype.",
+    imgDesc: "Delve into the comprehensive narrative on Stereotype.",
     imgUrl: Image,
     site: `https://breakingstereotypes.vercel.app/Story/${params.slug[0]}/${params.slug[1]}/${params.slug[2]}/${params.slug[3]}`,
     theme: getColorForPost(params.slug[3]),
     authorData: [{ name: Author.Name, url: Author.Linkedin }],
   });
 
-  return metadata;
+  return {
+    ...metadata,
+    other: {
+      story_published_time: CreatedAt,
+    },
+  };
 }
 
 const Story = async ({ params }: { params: { slug: string[] } }) => {

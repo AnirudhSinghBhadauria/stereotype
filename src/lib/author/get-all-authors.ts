@@ -4,6 +4,7 @@ export const getAllAuthors = async () => {
   const authors = await prisma.author.findMany({
     select: {
       Slug: true,
+      JoinedAt: true,
     },
   });
 
