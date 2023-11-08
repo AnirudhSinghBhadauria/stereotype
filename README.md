@@ -1,4 +1,4 @@
-# [Stereotype](https://breakingstereotypes.vercel.app/))
+# [Stereotype](https://breakingstereotypes.vercel.app/)
 
 We're delighted to have you here at the official Stereotype documentation. Whether you're a tech enthusiast, a culture connoisseur, or just curious about what makes Stereotype unique, you're in the right place.
 In these pages, I'll guide you through Stereotype's features, and how to make the most of our platform. Whether you're a potential contributor, an avid reader, or someone looking to understand what Stereotype stands for, this documentation is your essential resource.
@@ -23,6 +23,8 @@ We're dedicated to embracing diversity, dismantling Stereotypes, and nurturing a
   <dd>In the Reviews category, we dive deep into product evaluations. Whether it's movies, books, gadgets, or other consumer products, our dedicated team of reviewers provides honest and unbiased assessments to help you make informed decisions. Find out what's worth your time and money with our thorough reviews.</dd>
 <dt>Entertainment : </dt>
   <dd>For those passionate about movies, TV shows, music, gaming, and pop culture, our Entertainment category is a treasure trove of content. Discover articles that explore the latest releases, discuss classic favorites, and delve into the world of entertainment.</dd>
+<dt>News : </dt>
+  <dd> Stay informed with our News section, which covers a wide range of topics from global affairs to groundbreaking discoveries. Here, you can find updates on current events and in-depth reporting on significant developments in various fields.</dd>
 </dl>
 
 Stereotype is committed to providing engaging and diverse content across these four categories, making it a one-stop destination for all your interests. Whether you're seeking tech advice, entertainment recommendations, thorough reviews, or the latest news, Stereotype has something for everyone. 
@@ -33,7 +35,7 @@ Then there are,
   <dt>Headliner Stories : </dt>
   <dd>Headliner stories are the headline attractions on our platform. Placed prominently at the top of the page, they feature the most significant and captivating narratives that demand your immediate attention. These stories often encapsulate the essence of what's currently making waves in the world of Stereotype.</dd>
 </dl>
-<img src="https://ik.imagekit.io/kvap7rsky/Dashboard-d.mp4?updatedAt=1699470307123">
+<img src="https://ik.imagekit.io/kvap7rsky/dash-d-1.png?updatedAt=1699469787633">
 
 <dl>
 <dt>Main Stories :</dt>
@@ -51,46 +53,42 @@ Then there are,
 </dl>
 <img src="https://ik.imagekit.io/kvap7rsky/main-side-d.png?updatedAt=1699469792000">
 
-## [Register](https://coergpv.vercel.app/Register)
+<dl>
+<dt>Download Figma File for Stereotype : </dt>
+ <dd>Explore the Stereotype Figma file to gain insights into the design and layout of our platform. This Figma file provides a visual representation of Stereotype's user interface and design elements. It's a valuable resource for designers, developers, or anyone interested in understanding the aesthetics and functionality of Stereotype.</dd>
 
-Your journey towards academic and technological brilliance starts here. Register today and be a part of a dynamic community striving for global recognition in technical education and research.
+<a target="_blank" href="https://cdn.sanity.io/files/aftdl3p2/production/871fd2cb42cac35968581722d12d833ecd95c869.fig" download>Click here to download</a>
 
-<img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/4c1444178350021.64e6578911a61.png">
+<dd>In the Figma file, you can view the various components, colors, typography, and layout of Stereotype, making it easier to visualize how our platform works and how it's structured. Whether you're looking to contribute to our design or simply want to get a closer look at our interface, this Figma file offers a comprehensive overview.</dd>
+</dl>
 
-<a target='_blank' href="https://coergpv.vercel.app/Register">Click me to Register</a>
+## [Author](https://breakingstereotypes.vercel.app/Author/AnirudhBhadauria/)
 
-## [Gallery](https://coergpv.vercel.app/Gallery)
+The "Author" page is a dedicated space for you to get to know the talented individuals behind Stereotype. Our community of authors and contributors is diverse and passionate, each bringing their unique perspectives to the platform. In this section, you can explore the profiles and backgrounds of the creative minds responsible for the thought-provoking content you find on Stereotype. Learn more about their expertise, interests, and contributions to our diverse community. 
 
-I respectfully invite you to spare a moment and delve into a gallery that highlights the Center of Excellence. Your exploration will provide valuable insights into our focused initiatives and exceptional offerings in various fields.
+<img src="https://ik.imagekit.io/kvap7rsky/author-d.png?updatedAt=1699469786948">
 
-<img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/1b0c86178350021.64e6578916708.png">
+The "Author" page celebrates the people who make Stereotype what it is—a dynamic hub for knowledge, entertainment, and innovation. We invite you to get acquainted with our authors and discover the depth of expertise that enriches our platform. Thank you for being a part of the Stereotype community!
 
-<a target='_blank' href="https://www.behance.net/gallery/178350021/Centre-of-Excellence">Click me to see gallery on Behance</a>
+## [About](https://breakingstereotypes.vercel.app/About)
 
-Snapshots and Videos of amazing animations made with **framer-motion** are available on **Behance**.
+At Stereotype, our mission is simple yet powerful: to challenge stereotypes and celebrate diversity. We believe that every voice matters and that by providing a platform for diverse perspectives, we can broaden horizons, break down barriers, and encourage meaningful conversations.
 
-## [About](https://coergpv.vercel.app/About)
+Stay tuned for exciting content and don't forget to subscribe to our newsletter to receive the latest updates directly in your inbox. Welcome to Stereotype, where diversity is at the heart of innovation!
 
-"We create future, technocrats,
-UIT Shivpuri where we're at ,nurturing skills and aristocrats"
-Know more about our institute UIT RGPV Shivpuri.
+<img src="https://ik.imagekit.io/kvap7rsky/about-d.png?updatedAt=1699469786155">
 
-<img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/d70e28178350021.64e65789095cb.png">
+## [Tip us](https://breakingstereotypes.vercel.app/Tip-us)
 
-Have a look at some mobile views of our page
+We believe in the power of community collaboration, and your contributions are invaluable. The "Tip Us" section provides a direct channel for sharing tips, stories, or interesting insights with the Stereotype community. Whether you've stumbled upon a fascinating tech discovery, an entertainment gem, or breaking news, your tips can spark engaging discussions and enhance our content. We encourage you to submit your tips, stories, or suggestions, helping us keep Stereotype's content fresh and engaging. Your participation in this exchange is vital, and we appreciate your contributions in making Stereotype a dynamic and interactive platform. Thank you for being a part of our journey!
 
-<p float="left" align="center">
-  <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/9761aa178350021.64e67c6860988.png" width="200" />
-  <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/65ea6c178350021.64e67c685e3d1.png" width="200" />
-  <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/09ee2f178350021.64e67c685f000.png" width="200" />
-  <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4c88bf178350021.64e67c685fbce.png" width="200" />
-</p>
+<img src="https://ik.imagekit.io/kvap7rsky/tip-us-d.png?updatedAt=1699469795748">
 
-## [Contact Us](https://coergpv.vercel.app/Contact)
+## [Feedback](https://breakingstereotypes.vercel.app/Feedback)
 
-We'd love to hear from you! Whether you have a question, comment, or just want to say hi, we're here to listen.Thank you for your interest in Centre of Excellence.
+We value your input! The "Feedback" section is your space to share your thoughts, suggestions, and ideas about Stereotype. Whether you've discovered a bug, have a feature request, or simply want to share your experiences, your feedback is essential in helping us improve the Stereotype platform. We encourage you to open issues, leave comments, or contribute to ongoing discussions to make Stereotype an even better place for our community. Your input is highly appreciated, and together, we can make Stereotype a more vibrant and user-friendly platform. Thank you for being part of our journey!
 
-<img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/f2d109178350021.64e657891d272.png">
+<img src="https://ik.imagekit.io/kvap7rsky/feedback-d.png?updatedAt=1699469788596">
 
 ## Conclusion
 
