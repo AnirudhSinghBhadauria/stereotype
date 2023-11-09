@@ -57,7 +57,7 @@ Then there are,
 <dt>Download Figma File for Stereotype : </dt>
  <dd>Explore the Stereotype Figma file to gain insights into the design and layout of our platform. This Figma file provides a visual representation of Stereotype's user interface and design elements. It's a valuable resource for designers, developers, or anyone interested in understanding the aesthetics and functionality of Stereotype.</dd>
 
-<a target="_blank" href="https://cdn.sanity.io/files/aftdl3p2/production/871fd2cb42cac35968581722d12d833ecd95c869.fig" download>Click here to download</a>
+&nbsp;&nbsp;&nbsp;<a target="_blank" href="https://cdn.sanity.io/files/aftdl3p2/production/871fd2cb42cac35968581722d12d833ecd95c869.fig" download>Click here to download</a>
 
 <dd>In the Figma file, you can view the various components, colors, typography, and layout of Stereotype, making it easier to visualize how our platform works and how it's structured. Whether you're looking to contribute to our design or simply want to get a closer look at our interface, this Figma file offers a comprehensive overview.</dd>
 </dl>
