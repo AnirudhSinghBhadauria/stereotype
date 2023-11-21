@@ -12,13 +12,13 @@ import { Metadata, ResolvingMetadata } from "next";
 import { getAuthorProfile } from "@/lib/author/get-author-profiles";
 import { AuthorProfileInterface } from "@/utils/interfaces";
 
-// export async function generateStaticParams() {
-//   const authors = await getAllAuthors();
+export async function generateStaticParams() {
+  const authors = await getAllAuthors();
 
-//   return authors.map(({ Slug }) => ({
-//     author: Slug,
-//   }));
-// }
+  return authors.map(({ Slug }) => ({
+    author: Slug,
+  }));
+}
 
 export async function generateMetadata(
   { params }: { params: { author: string } },
@@ -39,6 +39,7 @@ export async function generateMetadata(
     imgUrl:
       "https://cdn.sanity.io/images/aftdl3p2/production/87387d5bdc7235f33c05a4e5e4ec60602248a6bb-1200x630.jpg",
     site: `${process.env.NEXT_PUBLIC_DOMAIN_URL}/Author/${Name.split(" ").join("")}`,
+    theme: '#5200ff'
   });
 
   return metadata;

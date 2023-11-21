@@ -25,8 +25,6 @@ const AuthorIntro = async ({ author }: { author: string }) => {
     Twitter,
   } = Author;
 
-  console.log(Author);
-
   return (
     <Fragment>
       <section className="w-full bg-purple-100 pt-[10px]">

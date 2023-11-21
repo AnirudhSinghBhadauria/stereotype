@@ -9,8 +9,6 @@ import { Metadata } from "next";
 import { constructMetadata } from "@/lib/global/metadata-constructor";
 // import { seed } from "@/utils/seeding";
 
-export const dynamicParams = false;
-
 export async function generateMetadata(): Promise<Metadata> {
   const metadata = constructMetadata({
     title: "Stereotype",
@@ -21,7 +19,8 @@ export async function generateMetadata(): Promise<Metadata> {
       "Discover a world of diverse content in tech, reviews, entertainment, and news. Stereotype - Where Insights, Authenticity, and Inclusivity Meet. Explore now!",
     imgUrl:
       "https://cdn.sanity.io/images/aftdl3p2/production/6be92cc3f60e23a4f023a03b92adeb53cd2243c1-1200x630.jpg",
-    site: `${process.env.NEXT_PUBLIC_DOMAIN_URL}`
+    site: `${process.env.NEXT_PUBLIC_DOMAIN_URL}`,
+    theme: '#131313cc'
   });
 
   return metadata;
