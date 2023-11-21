@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { experimental_useFormStatus as useFormStatus } from "react-dom";
+import { useFormStatus } from "react-dom";
 
 const FeedbackSubmitButton = ({
   formStatus,
