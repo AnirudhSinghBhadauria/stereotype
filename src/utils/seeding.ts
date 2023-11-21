@@ -8,7 +8,7 @@ import { prisma } from "../../prisma/prismaClient";
     // const seeding = await prisma.sideStory.createMany({
     //   data: [
         // {
-        //   ThumbTitle: "Revolutionary Sony Walkman: Reshaping Musical Experience",
+        //   ThumbTitle: "Revolutionary Sony Walkman: Reshaping Musical Experiencei",
         //   ThumbDescriptionOne: "Experience the paradigm shift in auditory pleasure with Sony's groundbreaking Walkman.",
         //   ThumbDescriptionTwo: "Unveiling the Walkman: A technological marvel providing unparalleled sound immersion.",
         //   Title: "The Sonic Revolution: Sony's Walkman Reimagines Musical Mobility",
