@@ -34,7 +34,7 @@ export const getTopStories = cache(async () => {
 
 export const getTopStoriesForCategory = async (StoryCategory: Category) => {
   const topStories = await fetch(
-    `${process.env.NEXT_PUBLIC_DOMAIN_URL}/api/Story/TopStories/${StoryCategory}`,
+    `/api/Story/TopStories/${StoryCategory}`,
     {
       method: "GET",
       next: {
