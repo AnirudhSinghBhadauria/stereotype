@@ -5,7 +5,7 @@ export const getAuthorProfile = async (slug: string) => {
     {
       method: "GET",
       next: {
-        revalidate: 5
+        revalidate: 5,
       }
     }
   );
