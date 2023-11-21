@@ -42,7 +42,6 @@ export async function generateMetadata({
     imgDesc: "Delve into the comprehensive narrative on Stereotype.",
     imgUrl: Image,
     site: `${process.env.NEXT_PUBLIC_DOMAIN_URL}/Story/${params.slug[0]}/${params.slug[1]}/${params.slug[2]}/${params.slug[3]}`,
-    theme: getColorForPost(params.slug[3]),
     authorData: [{ name: Author.Name, url: Author.Linkedin }],
   });
 

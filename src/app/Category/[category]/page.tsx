@@ -45,7 +45,6 @@ export async function generateMetadata(
     imgDesc: `Discover captivating and engaging ${params.category} stories beyond the stereotypes.`,
     imgUrl: imgUrl,
     site: `${process.env.NEXT_PUBLIC_DOMAIN_URL}/Category/${params.category}`,
-    theme: "#131313cc",
   });
 
   return metadata;

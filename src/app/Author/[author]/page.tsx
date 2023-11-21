@@ -39,7 +39,6 @@ export async function generateMetadata(
     imgUrl:
       "https://cdn.sanity.io/images/aftdl3p2/production/87387d5bdc7235f33c05a4e5e4ec60602248a6bb-1200x630.jpg",
     site: `${process.env.NEXT_PUBLIC_DOMAIN_URL}/Author/${Name.split(" ").join("")}`,
-    theme: "#131313cc",
   });
 
   return metadata;

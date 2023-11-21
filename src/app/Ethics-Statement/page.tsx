@@ -16,7 +16,6 @@ export async function generateMetadata(): Promise<Metadata> {
     imgUrl:
       "https://cdn.sanity.io/images/aftdl3p2/production/6be92cc3f60e23a4f023a03b92adeb53cd2243c1-1200x630.jpg",
     site: `${process.env.NEXT_PUBLIC_DOMAIN_URL}/Ethics-Statement`,
-    theme: "#FFF",
   });
 
   return metadata;
