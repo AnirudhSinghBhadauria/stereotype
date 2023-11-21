@@ -32,7 +32,7 @@ export const getHeadlines = async () => {
 
 export const getHeadlineForCategory = async (StoryCategory: Category) => {
   const headlines = await fetch(
-    `/api/Story/HeadlinerStory/${StoryCategory}`,
+    `${process.env.NEXT_PUBLIC_DOMAIN_URL}/api/Story/HeadlinerStory/${StoryCategory}`,
     {
       method: "GET",
       next: {

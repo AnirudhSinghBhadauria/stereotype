@@ -4,7 +4,7 @@ export const getSinglePost = async (params: string[]) => {
   const slug = params[2];
 
   const singlePost = await fetch(
-    `/api/Global/Post/${category}/${format}/${slug}`,
+    `${process.env.NEXT_PUBLIC_DOMAIN_URL}/api/Global/Post/${category}/${format}/${slug}`,
     { method: "GET", next: { revalidate: 5 } }
   );
 

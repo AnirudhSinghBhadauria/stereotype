@@ -1,6 +1,6 @@
 export const getSideStories = async () => {
   const stories = await fetch(
-    `/api/Story/SideStories`,
+    `${process.env.NEXT_PUBLIC_DOMAIN_URL}/api/Story/SideStories`,
     {
       method: "GET",
       next: {

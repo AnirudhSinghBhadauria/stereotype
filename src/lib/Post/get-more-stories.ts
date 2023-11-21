@@ -1,6 +1,6 @@
 export const getMoreStories = async (category: string) => {
   const stories = await fetch(
-    `/api/Story/MoreStories/${category}`,
+    `${process.env.NEXT_PUBLIC_DOMAIN_URL}/api/Story/MoreStories/${category}`,
     { method: "GET", next: { revalidate: 5 } }
   );
 
