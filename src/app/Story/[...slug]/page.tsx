@@ -14,18 +14,18 @@ import { getSinglePost } from "@/lib/Post/get-single-post";
 import { SinglePostInterface } from "@/utils/interfaces";
 import { getAllPosts } from "@/lib/Post/get-all-post";
 
-export async function generateStaticParams() {
-  const allPosts = await getAllPosts();
+// export async function generateStaticParams() {
+//   const allPosts = await getAllPosts();
 
-  return allPosts.map(({ BackgroundColor, Category, Slug, format }) => ({
-    slug: [
-      Category.Category,
-      format,
-      Slug,
-      getColors(BackgroundColor).colorSlug,
-    ],
-  }));
-}
+//   return allPosts.map(({ BackgroundColor, Category, Slug, format }) => ({
+//     slug: [
+//       Category.Category,
+//       format,
+//       Slug,
+//       getColors(BackgroundColor).colorSlug,
+//     ],
+//   }));
+// }
 
 export async function generateMetadata({
   params,

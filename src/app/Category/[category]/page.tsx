@@ -9,14 +9,14 @@ import { Category } from "@prisma/client";
 import { Metadata, ResolvingMetadata } from "next";
 import React, { Suspense } from "react";
 
-export async function generateStaticParams() {
-  return [
-    { category: "Tech" },
-    { category: "Review" },
-    { category: "Entertainment" },
-    { category: "News" },
-  ];
-}
+// export async function generateStaticParams() {
+//   return [
+//     { category: "Tech" },
+//     { category: "Review" },
+//     { category: "Entertainment" },
+//     { category: "News" },
+//   ];
+// }
 
 export async function generateMetadata(
   { params }: { params: { category: string } },
