@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const metadata = constructMetadata({
     title: "Stereotype",
     description:
-      "Discover a world of diverse content in tech, reviews, entertainment, and news. Stereotype - Where Insights, Authenticity, and Inclusivity Meet. Explore now!",
+      "Discover a world of diverse content in tech, reviews, entertainment, and news. Stereotype - Where Insights, Authenticity, and Inclusivity Meet. Explore now!!",
     imgTitle: "Don't live upto your Stereotypes.",
     imgDesc:
       "Discover a world of diverse content in tech, reviews, entertainment, and news. Stereotype - Where Insights, Authenticity, and Inclusivity Meet. Explore now!",
