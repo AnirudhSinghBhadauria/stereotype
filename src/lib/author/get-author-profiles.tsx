@@ -4,9 +4,9 @@ export const getAuthorProfile = async (slug: string) => {
     `${process.env.NEXT_PUBLIC_DOMAIN_URL}/api/Author/Profile/${slug}`,
     {
       method: "GET",
-      // next: {
-      //   revalidate: 5
-      // }
+      next: {
+        revalidate: 5
+      }
     }
   );
 

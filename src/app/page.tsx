@@ -7,6 +7,7 @@ import StoriesWrapperSkeleton from "@/components/home/skeleton/stories-wrapper-s
 import TopStoriesSkellyWrapper from "@/components/home/skeleton/top-stories-skeleton-wraper";
 import { Metadata } from "next";
 import { constructMetadata } from "@/lib/global/metadata-constructor";
+// import { seed } from "@/utils/seeding";
 
 export const dynamicParams = false;
 
@@ -28,6 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const Home = () => {
+  // seed();
   return (
     <section className="w-full flex flex-col justify-center items-center">
       <div className="w-full primary-container relative flex flex-col lg:flex-row mb-[60px] px-[10px] lg:pl-[10px]">

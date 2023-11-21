@@ -4,8 +4,10 @@ const nextConfig = {
     serverActions: true,
   },
   images: {
-    remotePatterns: [{ hostname: "cdn.sanity.io" }],
+    remotePatterns: [{ hostname: "ik.imagekit.io" }],
   },
 };
 
 module.exports = nextConfig;
+// 
+// cdn.sanity.io

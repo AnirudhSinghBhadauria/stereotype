@@ -2,7 +2,6 @@ import React, { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import X from "@/misc/logos/author/twitter";
-import Tree from "@/misc/logos/author/link";
 import Mail from "@/misc/logos/author/email";
 import In from "@/misc/logos/author/linkedin";
 import { AuthorProfileInterface } from "@/utils/interfaces";

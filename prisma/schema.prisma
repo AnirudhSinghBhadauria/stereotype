@@ -74,7 +74,7 @@ model HeadlinerStory {
   ThumbTitle            String @unique @db.VarChar(70)
   ThumbDescription      String @db.VarChar(120)
   ThumbImage            String
-  ThumbImageDescription String @db.VarChar(100)
+  ThumbImageDescription String @db.VarChar(150)
 
   // Story Content 
 
@@ -126,8 +126,8 @@ model MainStory {
   ThumbDescription         String @db.VarChar(150)
   ThumbImageOne            String
   ThumbImageTwo            String
-  ThumbImageOneDescription String @db.VarChar(100)
-  ThumbImageTwoDescription String @db.VarChar(100)
+  ThumbImageOneDescription String @db.VarChar(150)
+  ThumbImageTwoDescription String @db.VarChar(150)
 
   SummaryHighlighted String @db.VarChar(200)
   Summary            String @db.VarChar(700)
@@ -180,7 +180,7 @@ model SideStory {
 
   ThumbTitle            String @db.VarChar(90)
   ThumbImage            String
-  ThumbImageDescription String @db.VarChar(100)
+  ThumbImageDescription String @db.VarChar(150)
   ThumbDescriptionOne   String @db.VarChar(105)
   ThumbDescriptionTwo   String @db.VarChar(105)
 
@@ -218,9 +218,9 @@ model Genre {
 
 model Feedback {
   id        String   @id @unique @default(uuid())
-  Name      String
-  Email     String
-  Feedback  String
+  Name      String   
+  Email     String   
+  Feedback  String   
   CreatedAt DateTime @unique @default(now())
 }
 
@@ -228,10 +228,10 @@ model Feedback {
 
 model Tipus {
   id        String   @id @unique @default(uuid())
-  Detail    String
-  Sentence  String
-  Name      String
-  Email     String
+  Detail    String  
+  Sentence  String  
+  Name      String  
+  Email     String  
   CreatedAt DateTime @unique @default(now())
 }
 
