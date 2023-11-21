@@ -29,7 +29,6 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const Home = () => {
-  // seed();
   return (
     <section className="w-full flex flex-col justify-center items-center">
       <div className="w-full primary-container relative flex flex-col lg:flex-row mb-[60px] px-[10px] lg:pl-[10px]">
