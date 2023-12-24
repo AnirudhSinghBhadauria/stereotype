@@ -33,7 +33,8 @@ const FeedbackSubmitButton = ({
         className="transition-all duration-300 flex flex-row justify-between items-center space-x-16 font-gen text-[14px] tracking-wide font-medium pl-[16px] pr-[32px] py-[8px] mt-[32px] rounded-[5px] bg-blue-200 text-black"
       >
         <p className="translate-y-[-0.8px] sm:translate-y-[-1.2px]">
-          <span className="hidden sm:inline">Success!&nbsp;&nbsp;</span>We got your feedback, Thank you.
+          <span className="hidden sm:inline">Success!&nbsp;&nbsp;</span>We got
+          your feedback, Thank you.
         </p>
         <p className="translate-y-[-2px]">x</p>
       </button>
@@ -42,4 +43,3 @@ const FeedbackSubmitButton = ({
 };
 
 export default FeedbackSubmitButton;
-
