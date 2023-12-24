@@ -7,7 +7,6 @@ export const constructMetadata = ({
   imgDesc,
   imgUrl,
   site,
-  theme,
   authorData,
 }: Metadata) => {
   return {
@@ -32,6 +31,5 @@ export const constructMetadata = ({
       creator: "@LieCheatSteal_",
       site: site,
     },
-    themeColor: theme,
   };
 };

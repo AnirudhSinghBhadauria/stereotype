@@ -209,6 +209,6 @@ export interface Metadata {
   imgDesc: string;
   imgUrl: string;
   site: string;
-  theme: string;
+  // theme: string;
   authorData?: [{ name?: string; url?: string }];
 }

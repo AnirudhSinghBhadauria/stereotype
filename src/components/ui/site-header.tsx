@@ -15,10 +15,6 @@ const SiteHeader = () => {
   const pathname = usePathname();
 
   const [sideBarState, setSideBarState] = useState<boolean>(false);
-  // const color =
-  //   pathname.slice(0, 6) === "/Story" || pathname.slice(0, 6) === "/About"
-  //     ? "black"
-  //     : "white";
 
   if (
     pathname.slice(0, 6) === "/About" ||

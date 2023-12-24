@@ -1,5 +1,6 @@
 "use client";
 
+import { deskNav, mobileNav } from "@/utils/sidebar-links";
 import Stereotype from "@/misc/logos/Stereotype";
 import StereotypeStroked from "@/misc/logos/stereotype-stroked";
 import Link from "next/link";
@@ -13,72 +14,6 @@ const Modal = ({
   sideBarCloseInvoker: () => void;
   sideBarState: boolean;
 }) => {
-  const mobileNav = [
-    {
-      name: "Home",
-      path: "/",
-    },
-    {
-      name: "Tech",
-      path: "/Category/Tech",
-    },
-    {
-      name: "Entertainment",
-      path: "/Category/Entertainment",
-    },
-    {
-      name: "Review",
-      path: "/Category/Review",
-    },
-    {
-      name: "News",
-      path: "/Category/News",
-    },
-    {
-      name: "About",
-      path: "/About",
-    },
-    {
-      name: "Feedback",
-      path: "/Feedback",
-    },
-  ];
-
-  const deskNav = [
-    {
-      name: "Tech",
-      path: "/Category/Tech",
-    },
-    {
-      name: "Entertainment",
-      path: "/Category/Entertainment",
-    },
-    {
-      name: "Review",
-      path: "/Category/Review",
-    },
-    {
-      name: "News",
-      path: "/Category/News",
-    },
-    {
-      name: "About",
-      path: "/About",
-    },
-    {
-      name: "Feedback",
-      path: "/Feedback",
-    },
-    {
-      name: "Tip us",
-      path: "/Tip-us",
-    },
-    {
-      name: "Ethics Statement",
-      path: "/Ethics-Statement",
-    },
-  ];
-
   return (
     <aside
       style={{

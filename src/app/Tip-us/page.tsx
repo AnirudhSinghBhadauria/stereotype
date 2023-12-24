@@ -17,10 +17,13 @@ export async function generateMetadata(): Promise<Metadata> {
     imgUrl:
       "https://cdn.sanity.io/images/aftdl3p2/production/91dafaea31fc738aa6006b2579bd50517aed906c-1200x627.jpg",
     site: `${process.env.NEXT_PUBLIC_DOMAIN_URL}/Tip-us`,
-    theme: '#FFF'
   });
 
   return metadata;
+}
+
+export const viewport = {
+  themeColor: '#FFF',
 }
 
 const TipUs = () => {

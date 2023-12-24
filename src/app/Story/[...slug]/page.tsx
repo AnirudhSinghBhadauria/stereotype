@@ -43,7 +43,6 @@ export async function generateMetadata({
     imgUrl: Image,
     site: `${process.env.NEXT_PUBLIC_DOMAIN_URL}/Story/${params.slug[0]}/${params.slug[1]}/${params.slug[2]}/${params.slug[3]}`,
     authorData: [{ name: Author.Name, url: Author.Linkedin }],
-    theme: getColorForPost(params.slug[3]),
   });
 
   return {
