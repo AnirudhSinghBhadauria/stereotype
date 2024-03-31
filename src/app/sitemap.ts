@@ -19,7 +19,7 @@ export default async function sitemap() {
     }) ?? [];
 
   const authors =
-    allAuthors.map(({ Slug, JoinedAt }) => {
+    allAuthors.map(({ Slug, JoinedAt }: {Slug: string, JoinedAt: Date}) => {
       return {
         url: `${process.env.NEXT_PUBLIC_DOMAIN_URL}/Author/${Slug}`,
         lastModified: JoinedAt,

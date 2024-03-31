@@ -3,7 +3,7 @@ import Link from "next/link";
 import Stereotype from "@/misc/logos/Stereotype";
 import SiteFooter from "@/components/ui/site-footer";
 import TipUsForm from "@/components/tip-us/tip-form";
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 import { constructMetadata } from "@/lib/global/metadata-constructor";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -22,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return metadata;
 }
 
-export const viewport = {
+export const viewport: Viewport = {
   themeColor: '#FFF',
 }
 

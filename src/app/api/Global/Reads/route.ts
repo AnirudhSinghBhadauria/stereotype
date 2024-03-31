@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
-import { Category, PrismaClient } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
+import { Category } from "@/utils/interfaces";
 // import { prisma } from "../../../../../prisma/prismaClient";
 
 export async function PUT(request: Request) {

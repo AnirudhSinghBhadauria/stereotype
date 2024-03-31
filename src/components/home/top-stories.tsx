@@ -5,7 +5,7 @@ import {
   getTopStories,
   getTopStoriesForCategory,
 } from "@/lib/Home/get-top-stories";
-import { Category } from "@prisma/client";
+import { Category } from "@/utils/interfaces";
 
 const TopStories = async ({ StoryCategory }: { StoryCategory?: Category }) => {
   let topStories: TopStoryInterface[] = !StoryCategory

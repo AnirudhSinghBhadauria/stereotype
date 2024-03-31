@@ -1,0 +1,8 @@
+node_modules
+planetscale-dump
+npm-debug.log
+README.md
+.dockerignore
+.next
+.git
+.env

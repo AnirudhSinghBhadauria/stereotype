@@ -5,9 +5,10 @@ import TopStoriesSkellyWrapper from "@/components/home/skeleton/top-stories-skel
 import StoriesWrapper from "@/components/home/stories-wrapper";
 import TopStories from "@/components/home/top-stories";
 import { constructMetadata } from "@/lib/global/metadata-constructor";
-import { Category } from "@prisma/client";
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata, ResolvingMetadata, Viewport } from "next";
 import React, { Suspense } from "react";
+import { Category } from "@/utils/interfaces";
+// import { Category } from "@/utils/interfaces";
 
 export async function generateStaticParams() {
   return [
@@ -50,7 +51,7 @@ export async function generateMetadata(
   return metadata;
 }
 
-export const viewport = {
+export const viewport: Viewport = {
   themeColor: "#131313cc",
 };
 

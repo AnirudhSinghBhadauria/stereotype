@@ -9,7 +9,7 @@ import StorySkeleton from "@/components/post/skeleton/story-skeleton";
 import ArticleBodySkeleton from "@/components/post/skeleton/article-body-skeleton";
 import MoreFromSkeletonSection from "@/components/post/skeleton/more-from-skeleton";
 import { constructMetadata } from "@/lib/global/metadata-constructor";
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 import { getSinglePost } from "@/lib/Post/get-single-post";
 import { SinglePostInterface } from "@/utils/interfaces";
 import { getAllPosts } from "@/lib/Post/get-all-post";
@@ -50,6 +50,18 @@ export async function generateMetadata({
     other: {
       story_published_time: CreatedAt,
     },
+  };
+}
+
+export function generateViewport({
+  params,
+}: {
+  params: { slug: string[] };
+}): Viewport {
+  const color = getColorForPost(params.slug[3]);
+
+  return {
+    themeColor: color,
   };
 }
 

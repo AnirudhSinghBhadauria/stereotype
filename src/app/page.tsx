@@ -5,7 +5,7 @@ import HeadlineSkeleton from "@/components/home/skeleton/headline-skeleton";
 import StoriesWrapper from "@/components/home/stories-wrapper";
 import StoriesWrapperSkeleton from "@/components/home/skeleton/stories-wrapper-skeleton";
 import TopStoriesSkellyWrapper from "@/components/home/skeleton/top-stories-skeleton-wraper";
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 import { constructMetadata } from "@/lib/global/metadata-constructor";
 // import { seed } from "@/utils/seeding";
 
@@ -25,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return metadata;
 }
 
-export const viewport = {
+export const viewport: Viewport = {
   themeColor: "#131313cc",
 };
 

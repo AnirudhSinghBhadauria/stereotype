@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  stereotype:
+    build:
+      context: .
+      dockerfile: Dockerfile
+     environment:
+      - NEXT_PUBLIC_DOMAIN_URL=${NEXT_PUBLIC_DOMAIN_URL}
+      - NEXT_PUBLIC_GOOGLE_VER=${NEXT_PUBLIC_GOOGLE_VER}
+      - DATABASE_URL=${DATABASE_URL}
+    image: stereotype
+    ports:
+      - "3000:3000"

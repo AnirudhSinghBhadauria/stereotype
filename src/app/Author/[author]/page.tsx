@@ -11,11 +11,12 @@ import { constructMetadata } from "@/lib/global/metadata-constructor";
 import { Metadata, ResolvingMetadata } from "next";
 import { getAuthorProfile } from "@/lib/author/get-author-profiles";
 import { AuthorProfileInterface } from "@/utils/interfaces";
+import { Viewport } from "next";
 
 export async function generateStaticParams() {
   const authors = await getAllAuthors();
 
-  return authors.map(({ Slug }) => ({
+  return authors.map(({ Slug }: { Slug: string }) => ({
     author: Slug,
   }));
 }
@@ -38,16 +39,18 @@ export async function generateMetadata(
     }'s diverse perspectives and contributions to Stereotype.`,
     imgUrl:
       "https://cdn.sanity.io/images/aftdl3p2/production/87387d5bdc7235f33c05a4e5e4ec60602248a6bb-1200x630.jpg",
-    site: `${process.env.NEXT_PUBLIC_DOMAIN_URL}/Author/${Name.split(" ").join("")}`,
+    site: `${process.env.NEXT_PUBLIC_DOMAIN_URL}/Author/${Name.split(" ").join(
+      ""
+    )}`,
     // theme: '#5200ff'
   });
 
   return metadata;
 }
 
-export const viewport = {
-  themeColor: '#5200ff',
-}
+export const viewport: Viewport = {
+  themeColor: "#5200ff",
+};
 
 const Author = async ({ params }: { params: { author: string } }) => {
   return (

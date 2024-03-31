@@ -1,7 +1,7 @@
 import SiteFooter from "@/components/ui/site-footer";
 import { constructMetadata } from "@/lib/global/metadata-constructor";
 import Stereotype from "@/misc/logos/Stereotype";
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 import Link from "next/link";
 import React, { Fragment } from "react"; 
 
@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return metadata;
 }
 
-export const viewport = {
+export const viewport: Viewport = {
   themeColor: "#fff",
 };
 
