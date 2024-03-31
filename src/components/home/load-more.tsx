@@ -50,7 +50,7 @@ const LoadMore = () => {
   }, [inView]);
 
   const mainLimit =
-    storiesLength && Math.floor(storiesLength.mainStoriesLength / 2) - 1;
+  storiesLength && Math.floor(storiesLength.mainStoriesLength / 2) - 1;
   const sideLimit = storiesLength && storiesLength.sideStoriesLength - 1;
 
   return (

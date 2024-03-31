@@ -28,6 +28,7 @@ const AuthorStories = async ({ author }: { author: string }) => {
             BackgroundColor,
           }) => (
             <StoryCard
+              key={Slug}
               Author={Author}
               Alt={ThumbImageOneDescription}
               CreatedAt={CreatedAt}
@@ -57,6 +58,7 @@ const AuthorStories = async ({ author }: { author: string }) => {
             BackgroundColor,
           }) => (
             <StoryCard
+              key={Slug}
               Author={Author}
               CreatedAt={CreatedAt}
               Slug={Slug}

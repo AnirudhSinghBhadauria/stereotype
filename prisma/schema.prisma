@@ -3,9 +3,8 @@ generator client {
 }
 
 datasource db {
-  provider     = "mysql"
-  url          = env("DATABASE_URL")
-  relationMode = "prisma"
+  provider = "cockroachdb"
+  url      = env("DATABASE_URL")
 }
 
 model FeedStatus {
@@ -17,15 +16,15 @@ model FeedStatus {
 model Author {
   id String @id @unique @default(uuid())
 
-  Name           String   @db.VarChar(18)
+  Name           String   @db.String(18)
   Slug           String   @unique
   ProfilePicture String   @unique
   Designation    String
-  DescriptionOne String   @db.VarChar(160)
-  DescriptionTwo String   @db.VarChar(500)
+  DescriptionOne String   @db.String(160)
+  DescriptionTwo String   @db.String(500)
   JoinedAt       DateTime @unique @default(now())
 
-  AuthorNumber Int @unique @default(autoincrement())
+  AuthorNumber BigInt @unique @default(autoincrement())
 
   // Socail Media
 
@@ -47,8 +46,8 @@ model HeadlinerStory {
 
   // Dedicated Page content
 
-  Title            String @unique @db.VarChar(90)
-  Description      String @db.VarChar(240)
+  Title            String @unique @db.String(90)
+  Description      String @db.String(240)
   // Author Relation
   Author           Author @relation(fields: [authorId], references: [id])
   authorId         String
@@ -58,36 +57,36 @@ model HeadlinerStory {
   Slug             String @unique
   Tag              String
   Image            String
-  ImageDescription String @db.VarChar(150)
+  ImageDescription String @db.String(150)
   format           String @default("Headline")
 
   // Miscllaneous Data
 
   BackgroundColor Colors   @default(LEAF)
-  PostNumber      Int      @unique @default(autoincrement())
+  PostNumber      BigInt   @unique @default(autoincrement())
   Reads           Int      @default(0)
   CreatedAt       DateTime @default(now())
   UpdatedAt       DateTime @updatedAt
 
   // Thumb Contnet
 
-  ThumbTitle            String @unique @db.VarChar(70)
-  ThumbDescription      String @db.VarChar(120)
+  ThumbTitle            String @unique @db.String(70)
+  ThumbDescription      String @db.String(120)
   ThumbImage            String
-  ThumbImageDescription String @db.VarChar(150)
+  ThumbImageDescription String @db.String(150)
 
   // Story Content 
 
-  IntroPara String  @db.VarChar(450)
-  ParaTwo   String  @db.VarChar(450)
-  ParaThree String  @db.VarChar(450)
-  ParaFour  String  @db.VarChar(450)
-  ParaFive  String? @db.VarChar(450)
-  ParaSix   String? @db.VarChar(450)
-  ParaSeven String  @db.VarChar(400)
-  ParaEight String  @db.VarChar(450)
+  IntroPara String  @db.String(450)
+  ParaTwo   String  @db.String(450)
+  ParaThree String  @db.String(450)
+  ParaFour  String  @db.String(450)
+  ParaFive  String? @db.String(450)
+  ParaSix   String? @db.String(450)
+  ParaSeven String  @db.String(400)
+  ParaEight String  @db.String(450)
 
-  AsideText String @db.VarChar(120)
+  AsideText String @db.String(120)
 
   @@index([authorId])
   @@index([genreId])
@@ -98,8 +97,8 @@ model MainStory {
 
   // Dedicated Page content 
 
-  Title            String @db.VarChar(90)
-  Description      String @db.VarChar(240)
+  Title            String @db.String(90)
+  Description      String @db.String(240)
   // Author Relation 
   Author           Author @relation(fields: [authorId], references: [id])
   authorId         String
@@ -109,41 +108,41 @@ model MainStory {
   Slug             String @unique
   Tag              String
   Image            String
-  ImageDescription String @db.VarChar(150)
+  ImageDescription String @db.String(150)
   format           String @default("Main")
 
   // Miscllaneous Data 
 
   BackgroundColor Colors   @default(LEAF)
-  PostNumber      Int      @unique @default(autoincrement())
+  PostNumber      BigInt   @unique @default(autoincrement())
   CreatedAt       DateTime @default(now())
   UpdatedAt       DateTime @updatedAt
   Reads           Int      @default(0)
 
   // Thumb Content 
 
-  ThumbTitle               String @db.VarChar(90)
-  ThumbDescription         String @db.VarChar(150)
+  ThumbTitle               String @db.String(90)
+  ThumbDescription         String @db.String(150)
   ThumbImageOne            String
   ThumbImageTwo            String
-  ThumbImageOneDescription String @db.VarChar(150)
-  ThumbImageTwoDescription String @db.VarChar(150)
+  ThumbImageOneDescription String @db.String(150)
+  ThumbImageTwoDescription String @db.String(150)
 
-  SummaryHighlighted String @db.VarChar(200)
-  Summary            String @db.VarChar(700)
+  SummaryHighlighted String @db.String(200)
+  Summary            String @db.String(700)
 
   // Story Content 
 
-  IntroPara String  @db.VarChar(450)
-  ParaTwo   String  @db.VarChar(450)
-  ParaThree String  @db.VarChar(450)
-  ParaFour  String  @db.VarChar(450)
-  ParaFive  String? @db.VarChar(450)
-  ParaSix   String? @db.VarChar(450)
-  ParaSeven String  @db.VarChar(400)
-  ParaEight String  @db.VarChar(450)
+  IntroPara String  @db.String(450)
+  ParaTwo   String  @db.String(450)
+  ParaThree String  @db.String(450)
+  ParaFour  String  @db.String(450)
+  ParaFive  String? @db.String(450)
+  ParaSix   String? @db.String(450)
+  ParaSeven String  @db.String(400)
+  ParaEight String  @db.String(450)
 
-  AsideText String @db.VarChar(120)
+  AsideText String @db.String(120)
 
   @@index([authorId])
   @@index([genreId])
@@ -154,8 +153,8 @@ model SideStory {
 
   // Dedicated Content 
 
-  Title            String @db.VarChar(90)
-  Description      String @db.VarChar(240)
+  Title            String @db.String(90)
+  Description      String @db.String(240)
   // Author Relation 
   Author           Author @relation(fields: [authorId], references: [id])
   authorId         String
@@ -165,37 +164,37 @@ model SideStory {
   Slug             String @unique
   Tag              String
   Image            String
-  ImageDescription String @db.VarChar(150)
+  ImageDescription String @db.String(150)
   format           String @default("Side")
 
   // Miscllaneous Data
 
   BackgroundColor Colors   @default(LEAF)
-  PostNumber      Int      @unique @default(autoincrement())
+  PostNumber      BigInt   @unique @default(autoincrement())
   CreatedAt       DateTime @default(now())
   UpdateAt        DateTime @updatedAt
   Reads           Int      @default(0)
 
   // Thumb Contnet
 
-  ThumbTitle            String @db.VarChar(90)
+  ThumbTitle            String @db.String(90)
   ThumbImage            String
-  ThumbImageDescription String @db.VarChar(150)
-  ThumbDescriptionOne   String @db.VarChar(105)
-  ThumbDescriptionTwo   String @db.VarChar(105)
+  ThumbImageDescription String @db.String(150)
+  ThumbDescriptionOne   String @db.String(105)
+  ThumbDescriptionTwo   String @db.String(105)
 
   // Story Content 
 
-  IntroPara String  @db.VarChar(450)
-  ParaTwo   String  @db.VarChar(450)
-  ParaThree String  @db.VarChar(450)
-  ParaFour  String  @db.VarChar(450)
-  ParaFive  String? @db.VarChar(450)
-  ParaSix   String? @db.VarChar(450)
-  ParaSeven String  @db.VarChar(400)
-  ParaEight String  @db.VarChar(450)
+  IntroPara String  @db.String(450)
+  ParaTwo   String  @db.String(450)
+  ParaThree String  @db.String(450)
+  ParaFour  String  @db.String(450)
+  ParaFive  String? @db.String(450)
+  ParaSix   String? @db.String(450)
+  ParaSeven String  @db.String(400)
+  ParaEight String  @db.String(450)
 
-  AsideText String @db.VarChar(120)
+  AsideText String @db.String(120)
 
   @@index([authorId])
   @@index([genreId])
@@ -218,9 +217,9 @@ model Genre {
 
 model Feedback {
   id        String   @id @unique @default(uuid())
-  Name      String   
-  Email     String   
-  Feedback  String   
+  Name      String
+  Email     String
+  Feedback  String
   CreatedAt DateTime @unique @default(now())
 }
 
@@ -228,10 +227,10 @@ model Feedback {
 
 model Tipus {
   id        String   @id @unique @default(uuid())
-  Detail    String  
-  Sentence  String  
-  Name      String  
-  Email     String  
+  Detail    String
+  Sentence  String
+  Name      String
+  Email     String
   CreatedAt DateTime @unique @default(now())
 }
 

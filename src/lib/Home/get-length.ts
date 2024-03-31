@@ -1,5 +1,5 @@
 export const getStoriesLength = async (StoryCategory: string | null) => {
-  const length = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN_URL}/api/Global/Length/${StoryCategory}`, {
+  const length = await fetch(`/api/Global/Length/${StoryCategory}`, {
     method: "GET",
     next: {
       revalidate: 5,

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { Fragment } from "react";
-import { experimental_useFormStatus as useFormStatus } from "react-dom";
+// import { experimental_useFormStatus as useFormStatus } from "react-dom";
 
 const TipSubmitButton = ({
   formStatus,
@@ -10,7 +10,7 @@ const TipSubmitButton = ({
   formStatus: boolean;
   onFormStatusHandeler: () => void;
 }) => {
-  const { pending } = useFormStatus();
+  // const { pending } = useFormStatus();
 
   let submitButtonStatus = !formStatus ? "block" : "none";
   let messageButtonStatus = formStatus ? "flex" : "none";
@@ -21,11 +21,12 @@ const TipSubmitButton = ({
         style={{ display: submitButtonStatus }}
         className="transition-all duration-300 flex flex-row justify-center items-center rounded-[5px] font-gen text-[14px] tracking-wide font-medium py-[8px] pl-[32px] pr-[32px] bg-black text-white space-x-16 mt-[32px] disabled:opacity-80"
         type="submit"
-        disabled={pending}
+        // disabled={pending}
       >
-        <p className="transition-all duration-300 translate-y-[-0.8px] sm:translate-y-[-1.2px]">
+        {/* <p className="transition-all duration-300 translate-y-[-0.8px] sm:translate-y-[-1.2px]">
           {pending ? "Submitting..." : "Submit"}
-        </p>
+        </p> */}
+        Submit
       </button>
 
       <button

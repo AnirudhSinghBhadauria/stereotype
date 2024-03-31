@@ -16,6 +16,7 @@
 /build
 
 # misc
+/planetscale-dump
 .DS_Store
 *.pem
 
